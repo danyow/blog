@@ -1,1 +1,1 @@
-Sitemap: https://danyow.github.io/blog/sitemap.xml
+Sitemap: https://www.danyow.cn/blog/sitemap.xml

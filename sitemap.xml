@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://danyow.github.io/blog/2019/05/26/%E6%B5%8B%E8%AF%95/</loc>
+<loc>https://www.danyow.cn/blog/2019/05/26/%E6%B5%8B%E8%AF%95/</loc>
 <lastmod>2019-05-26T02:52:49+00:00</lastmod>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/2019/05/26/welcome-to-jekyll/</loc>
+<loc>https://www.danyow.cn/blog/2019/05/26/welcome-to-jekyll/</loc>
 <lastmod>2019-05-26T05:18:17+00:00</lastmod>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/404/</loc>
+<loc>https://www.danyow.cn/blog/404/</loc>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/about/</loc>
+<loc>https://www.danyow.cn/blog/about/</loc>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/archives/</loc>
+<loc>https://www.danyow.cn/blog/archives/</loc>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/</loc>
+<loc>https://www.danyow.cn/blog/</loc>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/categories/jekyll/</loc>
+<loc>https://www.danyow.cn/blog/categories/jekyll/</loc>
 </url>
 <url>
-<loc>https://danyow.github.io/blog/categories/update/</loc>
+<loc>https://www.danyow.cn/blog/categories/update/</loc>
 </url>
 </urlset>
