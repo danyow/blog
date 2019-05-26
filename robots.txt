@@ -1,1 +1,1 @@
-Sitemap: /sitemap.xml
+Sitemap: https://danyow.github.io/blog/sitemap.xml

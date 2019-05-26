@@ -3,10 +3,10 @@
   <generator uri="http://jekyllrb.com" version="3.8.5">Jekyll</generator>
   
   
-  <link href="/feed.xml" rel="self" type="application/atom+xml" />
-  <link href="/" rel="alternate" type="text/html" />
-  <updated>2019-05-26T06:19:25+00:00</updated>
-  <id>//</id>
+  <link href="https://danyow.github.io/blog/feed.xml" rel="self" type="application/atom+xml" />
+  <link href="https://danyow.github.io/blog/" rel="alternate" type="text/html" />
+  <updated>2019-05-26T06:29:50+00:00</updated>
+  <id>https://danyow.github.io/blog//</id>
 
   
     <title type="html">📒 Danyow</title>
@@ -25,12 +25,12 @@
       <title type="html">Welcome to Jekyll!</title>
       
       
-      <link href="/2019/05/26/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" />
+      <link href="https://danyow.github.io/blog/2019/05/26/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" />
       
       <published>2019-05-26T05:18:17+00:00</published>
       <updated>2019-05-26T05:18:17+00:00</updated>
-      <id>/2019/05/26/welcome-to-jekyll</id>
-      <content type="html" xml:base="/2019/05/26/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+      <id>https://danyow.github.io/blog/2019/05/26/welcome-to-jekyll</id>
+      <content type="html" xml:base="https://danyow.github.io/blog/2019/05/26/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
 
 &lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
 
@@ -75,12 +75,12 @@
       <title type="html">欢迎来到</title>
       
       
-      <link href="/2019/05/26/%E6%B5%8B%E8%AF%95/" rel="alternate" type="text/html" title="欢迎来到" />
+      <link href="https://danyow.github.io/blog/2019/05/26/%E6%B5%8B%E8%AF%95/" rel="alternate" type="text/html" title="欢迎来到" />
       
       <published>2019-05-26T02:52:49+00:00</published>
       <updated>2019-05-26T02:52:49+00:00</updated>
-      <id>/2019/05/26/%E6%B5%8B%E8%AF%95</id>
-      <content type="html" xml:base="/2019/05/26/%E6%B5%8B%E8%AF%95/">&lt;p&gt;你会在&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;目录中找到这篇文章。继续编辑并重新构建网站以查看更改。您可以通过多种方式重建站点，但最常见的方法是运行&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，它会启动Web服务器并在文件更新时自动重新生成您的站点。&lt;/p&gt;
+      <id>https://danyow.github.io/blog/2019/05/26/%E6%B5%8B%E8%AF%95</id>
+      <content type="html" xml:base="https://danyow.github.io/blog/2019/05/26/%E6%B5%8B%E8%AF%95/">&lt;p&gt;你会在&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;目录中找到这篇文章。继续编辑并重新构建网站以查看更改。您可以通过多种方式重建站点，但最常见的方法是运行&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，它会启动Web服务器并在文件更新时自动重新生成您的站点。&lt;/p&gt;
 
 &lt;p&gt;要添加新帖子，只需在&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;目录中添加一个文件，该文件遵循惯例&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt;并包含必要的前置事项。看看这篇文章的来源，了解它的工作原理。&lt;/p&gt;
 
