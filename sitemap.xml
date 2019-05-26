@@ -2,7 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://blog.danyow.cn/2019/05/26/hello/</loc>
-<lastmod>2019-05-26T00:00:00+00:00</lastmod>
+<lastmod>2019-05-26T04:40:24+00:00</lastmod>
+</url>
+<url>
+<loc>https://blog.danyow.cn/2019/05/26/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/</loc>
+<lastmod>2019-05-26T12:40:24+00:00</lastmod>
 </url>
 <url>
 <loc>https://blog.danyow.cn/404/</loc>
@@ -27,5 +31,11 @@
 </url>
 <url>
 <loc>https://blog.danyow.cn/categories/travis/</loc>
+</url>
+<url>
+<loc>https://blog.danyow.cn/categories/note/</loc>
+</url>
+<url>
+<loc>https://blog.danyow.cn/categories/python/</loc>
 </url>
 </urlset>
