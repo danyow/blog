@@ -17,8 +17,8 @@ title: 📒 Danyow
 email: i.zuucol@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   📝
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://www.danyow.cn" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://blog.danyow.cn" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
 github_username:  danyow
 
