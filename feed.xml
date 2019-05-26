@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-05-26T07:30:17+00:00</updated>
+  <updated>2019-05-26T09:03:14+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -22,27 +22,179 @@
   
     <entry>
       
-      <title type="html">Welcome to Jekyll!</title>
+      <title type="html">Hello World!</title>
       
       
-      <link href="https://blog.danyow.cn/2019/05/26/welcome-to-jekyll/" rel="alternate" type="text/html" title="Welcome to Jekyll!" />
+      <link href="https://blog.danyow.cn/2019/05/26/hello/" rel="alternate" type="text/html" title="Hello World!" />
       
-      <published>2019-05-26T05:18:17+00:00</published>
-      <updated>2019-05-26T05:18:17+00:00</updated>
-      <id>https://blog.danyow.cn/2019/05/26/welcome-to-jekyll</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/05/26/welcome-to-jekyll/">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+      <published>2019-05-26T00:00:00+00:00</published>
+      <updated>2019-05-26T00:00:00+00:00</updated>
+      <id>https://blog.danyow.cn/2019/05/26/hello</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/05/26/hello/">&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;jekyll&lt;/strong&gt; 静态页面框架&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;whiteglass&lt;/strong&gt; 主题&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Disqus&lt;/strong&gt; 评论系统（国内&lt;em&gt;IP&lt;/em&gt;应该无法访问）&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Travis CI&lt;/strong&gt; 自动构建工具&lt;/li&gt;
+&lt;/ol&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;h2 id=&quot;jekyll&quot;&gt;jekyll&lt;/h2&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;p&gt;之所以采用 &lt;strong&gt;jekyll&lt;/strong&gt; 而没有去使用中文文档更为丰富的 &lt;em&gt;Hexo&lt;/em&gt;，是因为 &lt;em&gt;Github&lt;/em&gt; 官方推荐的是前者。 同时也有另外一个原因，&lt;strong&gt;jekyll&lt;/strong&gt; 看起来会简约许多。&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+&lt;p&gt;大致步骤如下:&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content>
+&lt;ol&gt;
+  &lt;li&gt;安装 &lt;em&gt;bundler&lt;/em&gt; 和 &lt;em&gt;jekyll&lt;/em&gt;
+ &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install bundler jekyll&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;创建项目
+&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog --skip-bundle&lt;/code&gt;
+后者是针对 &lt;strong&gt;whiteglass&lt;/strong&gt; 的，后面会讲到。&lt;/li&gt;
+  &lt;li&gt;进入目录&lt;/li&gt;
+  &lt;li&gt;启动本地调试
+&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;以上就算是把房子建好了，剩下的就是需要让房客（我的笔记）入住，和让房间更好看些（&lt;strong&gt;whiteglass&lt;/strong&gt;）。&lt;br /&gt;
+这些生成出来的文件直接推送到 &lt;em&gt;Github&lt;/em&gt; 时，是可以正常运行的。&lt;/p&gt;
+
+&lt;h2 id=&quot;whiteglass&quot;&gt;whiteglass&lt;/h2&gt;
+
+&lt;p&gt;这个是在 &lt;a href=&quot;https://jekyllthemes.dev/&quot;&gt;&lt;em&gt;jekyllthemes&lt;/em&gt;&lt;/a&gt; 主题网站上面找到的。
+推荐采用重新建房子的方式。&lt;/p&gt;
+
+&lt;p&gt;大致使用方法:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;创建项目 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog --skip-bundle&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;jekyll-whiteglass&quot;&lt;/code&gt; 到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;编辑 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-whiteglass&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-archives&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-paginate&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-sitemap&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/:year/:month/:day/:title/&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/posts/:num/&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt;
+
+  &lt;span class=&quot;na&quot;&gt;jekyll-archives&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
+      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;category_archives&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;permalinks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/:name/&lt;/span&gt;
+   &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/:name/&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;依次执行以下命令&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;index.md
+ curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/yous/whiteglass/raw/master/{index.html,about.md,archives.md,feed.xml}&quot;&lt;/span&gt;
+ curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--create-dirs&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; _data/navigation.yml https://github.com/yous/whiteglass/raw/master/_data/navigation.yml
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装所需文件和启动&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; bundle &lt;span class=&quot;nb&quot;&gt;install
+ &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;但这里做完之后直接推送到 &lt;em&gt;Github&lt;/em&gt; 上时是没有任何反应，看不到任何界面。
+这时需要 &lt;strong&gt;Travis CI&lt;/strong&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;travis-ci&quot;&gt;Travis CI&lt;/h2&gt;
+
+&lt;p&gt;由于主题用到了 &lt;em&gt;gem&lt;/em&gt; 包，而 &lt;em&gt;Github&lt;/em&gt; 又并不能直接支持去操作 &lt;em&gt;gem&lt;/em&gt;，所以需要一个类似 &lt;em&gt;Jenkins&lt;/em&gt; 的持续集成工具来完成该操作。&lt;br /&gt;
+&lt;strong&gt;Travis&lt;/strong&gt; 会根据当前 &lt;em&gt;master&lt;/em&gt; 分支下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; 这个文件去执行相应操作。&lt;br /&gt;
+根目录下新建 &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; 或者去 &lt;a href=&quot;https://github.com/yous/whiteglass/blob/master/.travis.yml&quot;&gt;下载最新的文件&lt;/a&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ruby&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundler&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.6.3&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem update --system&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem install bundler&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rm -rf _site&lt;/span&gt;
+  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle exec jekyll build&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;skip-cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;github-token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$GITHUB_TOKEN&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# &amp;lt;-- 1&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;keep-history&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;local-dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_site&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;target-branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gh-pages&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# &amp;lt;-- 2&lt;/span&gt;
+  &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;yml&lt;/em&gt; 区别于 &lt;em&gt;xml&lt;/em&gt;，其中 &lt;em&gt;tab&lt;/em&gt; 键以两个空格为主，可读性很高。&lt;/p&gt;
+
+&lt;p&gt;有几点说明:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;这个参数不需要修改，但是需要在 &lt;em&gt;Github&lt;/em&gt; 的设置（&lt;em&gt;Settings&lt;/em&gt;）后台的（&lt;em&gt;Developer settings&lt;/em&gt;）上添加一个（&lt;em&gt;Personal access tokens&lt;/em&gt;）. 得到这个 &lt;em&gt;key&lt;/em&gt; 后添加到 &lt;strong&gt;Travis&lt;/strong&gt; 的对应仓库的设置后台。 在 &lt;em&gt;Environment Variables&lt;/em&gt; 键入 &lt;em&gt;GITHUB_TOKEN&lt;/em&gt; 为 &lt;em&gt;Name&lt;/em&gt;，&lt;em&gt;key&lt;/em&gt; 为 &lt;em&gt;Value&lt;/em&gt;。 然后直接 &lt;em&gt;Add&lt;/em&gt; 即可。&lt;/li&gt;
+  &lt;li&gt;这里需要新建一个名为 &lt;em&gt;gh-pages&lt;/em&gt; 的分支，主要是给 &lt;strong&gt;Travis&lt;/strong&gt; 自动构建完后推送用。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;做完这些，新建一个新的提交，&lt;strong&gt;Travis&lt;/strong&gt; 就会自动开始运行，然后就可以查看网页了。&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;可能这里也并不能直接的查看网页，需要修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 为你的项目名&lt;/span&gt;
+&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://xxx.github.io&quot;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# xxx为你的 Github 用户名&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;disqus&quot;&gt;Disqus&lt;/h2&gt;
+
+&lt;p&gt;这个会比较简单:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;新建目录和文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/custom_comments_provider.html&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;comments: true&lt;/code&gt; 到 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;然后去到 &lt;strong&gt;Disqus&lt;/strong&gt; 的后台，新建站点，然后选择 &lt;strong&gt;jekyll&lt;/strong&gt;，把他的通用代码全部拷贝到刚刚新建的 &lt;em&gt;html&lt;/em&gt; 文件当中。&lt;/p&gt;
+
+&lt;h3 id=&quot;其他&quot;&gt;其他&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;自定义域名&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;自定义域名解析三处。&lt;/p&gt;
+
+    &lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*.xxx.com
+www.xxx.com
+@.xxx.com
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;ip&lt;/em&gt; 地址的获取 &lt;code class=&quot;highlighter-rouge&quot;&gt;ping xxx.github.io&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;由于变成了子域名，需要更改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.xml&lt;/code&gt;&lt;/p&gt;
+
+    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
+ &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://blog.xxx.com&quot;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# blog作为子域名放在前面 xxx为你的 Github 用户名&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content>
 
       
       
@@ -55,63 +207,17 @@
       
         <category term="jekyll" />
       
-        <category term="update" />
+        <category term="whiteglass" />
+      
+        <category term="Disqus" />
+      
+        <category term="Travis" />
       
 
       
 
       
-        <summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary>
-      
-
-      
-      
-    </entry>
-  
-  
-  
-    <entry xml:lang="zh">
-      
-      <title type="html">欢迎来到</title>
-      
-      
-      <link href="https://blog.danyow.cn/2019/05/26/%E6%B5%8B%E8%AF%95/" rel="alternate" type="text/html" title="欢迎来到" />
-      
-      <published>2019-05-26T02:52:49+00:00</published>
-      <updated>2019-05-26T02:52:49+00:00</updated>
-      <id>https://blog.danyow.cn/2019/05/26/%E6%B5%8B%E8%AF%95</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/05/26/%E6%B5%8B%E8%AF%95/">&lt;p&gt;你会在&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;目录中找到这篇文章。继续编辑并重新构建网站以查看更改。您可以通过多种方式重建站点，但最常见的方法是运行&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;，它会启动Web服务器并在文件更新时自动重新生成您的站点。&lt;/p&gt;
-
-&lt;p&gt;要添加新帖子，只需在&lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt;目录中添加一个文件，该文件遵循惯例&lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt;并包含必要的前置事项。看看这篇文章的来源，了解它的工作原理。&lt;/p&gt;
-
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      
-
-      
-        <category term="jekyll" />
-      
-        <category term="update" />
-      
-
-      
-
-      
-        <summary type="html">你会在_posts目录中找到这篇文章。继续编辑并重新构建网站以查看更改。您可以通过多种方式重建站点，但最常见的方法是运行jekyll serve，它会启动Web服务器并在文件更新时自动重新生成您的站点。</summary>
+        <summary type="html">jekyll 静态页面框架 whiteglass 主题 Disqus 评论系统（国内IP应该无法访问） Travis CI 自动构建工具</summary>
       
 
       
