@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Python3面向对象编程    </title>
+  <meta name="description" content="Title: 第二版">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/05/27/Python3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Python3面向对象编程    ">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/05/27/Python3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/">
+  <meta property="og:description" content="Title: 第二版">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Python3面向对象编程    ">
+  <meta name="twitter:description" content="Title: 第二版">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Python3面向对象编程    </h1>
+    
+    <p class="post-meta"><time datetime="2019-05-27T14:33:07+00:00" itemprop="datePublished">May 27, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/note/">note</a>,
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/python/">python</a>
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title: 第二版</p>
+
+<h2 id="2-python-对象">2. Python 对象</h2>
+
+<ul>
+  <li>自我解释 -&gt; 在规范自己所编写的类的时候，应该加入详尽的注释。</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="s">'这段是类注释，建议用单引号'</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="s">'''多行文档注释'''</span>
+        <span class="k">pass</span>
+
+    <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="s">'单行文档注释'</span>
+        <span class="k">pass</span>
+</code></pre></div></div>
+
+<ul>
+  <li>双下划线的命名的变量，是会对其实施<strong>命名改装</strong>。会自动封装 _<类名></类名></li>
+</ul>
+
+<h2 id="3-对象相似时">3. 对象相似时</h2>
+
+<ul>
+  <li>如果一个类继承了多个类，那么在初始化其父类时，直接调用父类 <code class="highlighter-rouge">super()</code> 是不可取的。</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Teacher</span><span class="p">(</span><span class="n">Person</span><span class="p">,</span> <span class="n">Title</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">studens</span><span class="p">):</span>
+        <span class="n">Person</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
+        <span class="n">Title</span><span class="o">.</span><span class="n">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">studens</span> <span class="o">=</span> <span class="n">studens</span>
+
+<span class="s">'''
+以上就是简单定义了一个多继承关系的类，这么看来是没什么问题的
+但作者提到了一个问题，如果在定义模型的时候，需要连接数据库，那么每次都是连接两次数据库。
+这里可以采用 __mro__ 来修改方法的调用顺序
+'''</span>
+</code></pre></div></div>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
