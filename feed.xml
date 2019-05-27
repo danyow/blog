@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-05-26T13:00:54+00:00</updated>
+  <updated>2019-05-27T13:08:05+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -25,12 +25,37 @@
       <title type="html">Python程序设计基础</title>
       
       
-      <link href="https://blog.danyow.cn/2019/05/26/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/" rel="alternate" type="text/html" title="Python程序设计基础" />
+      <link href="https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/" rel="alternate" type="text/html" title="Python程序设计基础" />
       
-      <published>2019-05-26T12:40:24+00:00</published>
-      <updated>2019-05-26T12:40:24+00:00</updated>
-      <id>https://blog.danyow.cn/2019/05/26/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/05/26/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">&lt;p&gt;Title: 上海市高等学校计算机等级考试（二级）推荐教材&lt;/p&gt;
+      <published>2019-05-27T13:06:13+00:00</published>
+      <updated>2019-05-27T13:06:13+00:00</updated>
+      <id>https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">&lt;p&gt;Title: 上海市高等学校计算机等级考试（二级）推荐教材&lt;/p&gt;
+
+&lt;h2 id=&quot;2-python程序的基本语法&quot;&gt;2. Python程序的基本语法&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;四舍六入五留双 &lt;code class=&quot;highlighter-rouge&quot;&gt;round()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;s&quot;&gt;'''
+2
+2
+'''&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3-python-程序的基本流程控制&quot;&gt;3. Python 程序的基本流程控制&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;允许 &lt;code class=&quot;highlighter-rouge&quot;&gt;x &amp;gt; y &amp;gt; z&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;x &amp;lt; y &amp;gt; z&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; 可以一起用 在退出循环的时候调用&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;4-python的特征数据类型&quot;&gt;4. Python的特征数据类型&lt;/h2&gt;
 
@@ -63,6 +88,28 @@ clear可以理解为是清除指针指向所在地址的内存
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;列表自己 append 自身的时候会无穷递归 &lt;code class=&quot;highlighter-rouge&quot;&gt;lst.append(list)&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;5-文件&quot;&gt;5. 文件&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;在表示路径的字符串中 &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; 等同于 &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;，但 &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt; 又必须转义为 &lt;code class=&quot;highlighter-rouge&quot;&gt;\\&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;D:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;file.txt&quot;&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;D:/Dir/file.txt&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;7-面向对象的程序设计&quot;&gt;7. 面向对象的程序设计&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dir()&lt;/code&gt; 是可以返回当前对象里面的所有参数 包括方法和属性&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;多继承时，如果其父类当做有共同的方法时，子类调用会以第一个为准，即先查找先调用。&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ul&gt;</content>
 

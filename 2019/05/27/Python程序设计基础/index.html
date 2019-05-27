@@ -14,7 +14,7 @@
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/05/26/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -24,7 +24,7 @@
   
   <meta property="og:title" content="Python程序设计基础">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/05/26/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">
   <meta property="og:description" content="Title: 上海市高等学校计算机等级考试（二级）推荐教材">
   
   
@@ -78,7 +78,7 @@
     
       <h1 class="post-title" itemprop="name headline">Python程序设计基础</h1>
     
-    <p class="post-meta"><time datetime="2019-05-26T12:40:24+00:00" itemprop="datePublished">May 26, 2019</time> •
+    <p class="post-meta"><time datetime="2019-05-27T13:06:13+00:00" itemprop="datePublished">May 27, 2019</time> •
   
     
     
@@ -123,6 +123,31 @@
   <div class="post-content" itemprop="articleBody">
     <p>Title: 上海市高等学校计算机等级考试（二级）推荐教材</p>
 
+<h2 id="2-python程序的基本语法">2. Python程序的基本语法</h2>
+
+<ul>
+  <li>四舍六入五留双 <code class="highlighter-rouge">round()</code></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">round</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span>
+<span class="nb">round</span><span class="p">(</span><span class="mf">2.5</span><span class="p">)</span>
+<span class="s">'''
+2
+2
+'''</span>
+</code></pre></div></div>
+
+<h2 id="3-python-程序的基本流程控制">3. Python 程序的基本流程控制</h2>
+
+<ul>
+  <li>
+    <p>允许 <code class="highlighter-rouge">x &gt; y &gt; z</code> <code class="highlighter-rouge">x &lt; y &gt; z</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">while</code> 和 <code class="highlighter-rouge">else</code> 可以一起用 在退出循环的时候调用</p>
+  </li>
+</ul>
+
 <h2 id="4-python的特征数据类型">4. Python的特征数据类型</h2>
 
 <ul>
@@ -154,6 +179,28 @@ clear可以理解为是清除指针指向所在地址的内存
   </li>
   <li>
     <p>列表自己 append 自身的时候会无穷递归 <code class="highlighter-rouge">lst.append(list)</code></p>
+  </li>
+</ul>
+
+<h2 id="5-文件">5. 文件</h2>
+
+<ul>
+  <li>在表示路径的字符串中 <code class="highlighter-rouge">/</code> 等同于 <code class="highlighter-rouge">\</code>，但 <code class="highlighter-rouge">\</code> 又必须转义为 <code class="highlighter-rouge">\\</code></li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="s">"D:</span><span class="se">\\</span><span class="s">Dir</span><span class="se">\\</span><span class="s">file.txt"</span>
+
+<span class="s">"D:/Dir/file.txt"</span>
+</code></pre></div></div>
+
+<h2 id="7-面向对象的程序设计">7. 面向对象的程序设计</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">dir()</code> 是可以返回当前对象里面的所有参数 包括方法和属性</p>
+  </li>
+  <li>
+    <p>多继承时，如果其父类当做有共同的方法时，子类调用会以第一个为准，即先查找先调用。</p>
   </li>
 </ul>
 
