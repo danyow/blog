@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-05-28T14:26:05+00:00</updated>
+  <updated>2019-05-28T14:39:13+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -22,10 +22,72 @@
   
     <entry>
       
+      <title type="html">Python 内置函数</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/" rel="alternate" type="text/html" title="Python 内置函数" />
+      
+      <published>2019-05-28T14:28:38+00:00</published>
+      <updated>2019-05-28T14:28:38+00:00</updated>
+      <id>https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">&lt;h2 id=&quot;evel&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;evel()&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;eval(expression[, globals[, locals]])&lt;/code&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;expression – 表达式。&lt;/li&gt;
+  &lt;li&gt;globals – 变量作用域，全局命名空间，如果被提供，则必须是一个字典对象。&lt;/li&gt;
+  &lt;li&gt;locals – 变量作用域，局部命名空间，如果被提供，可以是任何映射对象。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;7&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'3 * x'&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'pow(2,2)'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'2 + 2'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;4&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;81&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;eval&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;n + 4&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;mi&quot;&gt;85&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;就好像是在 &lt;em&gt;python&lt;/em&gt; 语言里面自建了一个 &lt;em&gt;python&lt;/em&gt; 解析器。&lt;/p&gt;
+&lt;/blockquote&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="note" />
+      
+        <category term="python" />
+      
+
+      
+
+      
+        <summary type="html">evel()</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
       <title type="html">Python3面向对象编程</title>
       
       
-      <link href="https://blog.danyow.cn/2019/05/27/Python3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" rel="alternate" type="text/html" title="Python3面向对象编程    " />
+      <link href="https://blog.danyow.cn/2019/05/27/Python3%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8B/" rel="alternate" type="text/html" title="Python3面向对象编程" />
       
       <published>2019-05-27T14:33:07+00:00</published>
       <updated>2019-05-27T14:33:07+00:00</updated>
