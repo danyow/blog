@@ -91,7 +91,13 @@
       
     
       
-        <a href="/categories/note/">note</a>,
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
+      
+    
+      
+    
+      
+    
       
     
       
@@ -111,6 +117,12 @@
     
       
         <a href="/categories/python/">python</a>
+      
+    
+      
+    
+      
+    
       
     
   
@@ -346,6 +358,75 @@ increment : 3, score : 0
   <li>发送的值赋给了 <code class="highlighter-rouge">yield</code> 语句左侧的变量。</li>
   <li>生成器继续执行，直至遇到下一个 <code class="highlighter-rouge">yield</code> 语句。</li>
 </ol>
+
+<h2 id="10-python-设计模式-i">10. Python 设计模式 I</h2>
+
+<ul>
+  <li>
+    <p>观察者模式在执行起来需要以下两个步骤</p>
+
+    <ol>
+      <li>被观察者主动通知观察者 通过 <code class="highlighter-rouge">_update_observers</code></li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">Inventory</span><span class="p">:</span>
+      <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">observers</span> <span class="o">=</span> <span class="p">[]</span>
+
+      <span class="k">def</span> <span class="nf">_update_observers</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="k">for</span> <span class="n">observer</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">observers</span><span class="p">:</span>
+              <span class="n">observer</span><span class="p">()</span>
+</code></pre></div>    </div>
+
+    <ol>
+      <li>观察者自身现实被调用方法 通过 <code class="highlighter-rouge">__call__</code></li>
+    </ol>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">class</span> <span class="nc">Observer</span><span class="p">:</span>
+      <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inventory</span><span class="p">):</span>
+          <span class="bp">self</span><span class="o">.</span><span class="n">inventory</span> <span class="o">=</span> <span class="n">inventory</span>
+
+      <span class="k">def</span> <span class="nf">__call__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+          <span class="k">print</span><span class="p">(</span><span class="s">"观察成功！"</span><span class="p">)</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="12-测试面向对象程序">12. 测试面向对象程序</h2>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">unittest</code> 的 <code class="highlighter-rouge">setUp()</code> 是用于每次执行测试时，都会调用该方法用以保证数据被污染 和 <code class="highlighter-rouge">tearDown()</code> 是用来保证每次测试结束后调用。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">py.test</code> 与之相对应的有类似几个。</p>
+
+    <ol>
+      <li><code class="highlighter-rouge">setup_module</code></li>
+      <li><code class="highlighter-rouge">teardown_module</code></li>
+      <li><code class="highlighter-rouge">setup_class</code></li>
+      <li><code class="highlighter-rouge">teardown_class</code></li>
+      <li><code class="highlighter-rouge">setup_method</code></li>
+      <li><code class="highlighter-rouge">teardown_method</code></li>
+    </ol>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">pytest_funcarg__&lt;idenntifier&gt;</code> 和被测试函数需要接受的参数作为测试</p>
+  </li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">pytest_funcarg__numbers</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">return</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">test_sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span>
+    <span class="k">assert</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">==</span> <span class="mi">6</span>
+</code></pre></div></div>
+
+<h2 id="13-并发">13. 并发</h2>
+
+<ul>
+  <li>自定义线程再被需要重写 <code class="highlighter-rouge">run()</code> 方法，但调用时用到的是 <code class="highlighter-rouge">start()</code></li>
+</ul>
 
   </div>
 

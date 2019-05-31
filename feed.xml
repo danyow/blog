@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-05-31T09:58:03+00:00</updated>
+  <updated>2019-05-31T13:42:11+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,94 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">对对子</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90/" rel="alternate" type="text/html" title="对对子" />
+      
+      <published>2019-05-30T13:24:23+00:00</published>
+      <updated>2019-05-30T13:24:23+00:00</updated>
+      <id>https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90/">&lt;p&gt;花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！&lt;/p&gt;
+
+&lt;p&gt;叶有常青绿，却无诗词颂，顾花忘落叶，花落拂袖去！人有离合，月有圆缺，似离却非离，似缺却非缺，泾渭分明时，现彼岸，彼岸有羞花，无色，亦无叶，花待叶，叶肥花红，登彼岸！&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="回忆" />
+      
+
+      
+
+      
+        <summary type="html">花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">嘻咦啊看</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/05/30/%E5%98%BB%E5%92%A6%E5%95%8A%E7%9C%8B/" rel="alternate" type="text/html" title="嘻咦啊看" />
+      
+      <published>2019-05-30T13:24:23+00:00</published>
+      <updated>2019-05-30T13:24:23+00:00</updated>
+      <id>https://blog.danyow.cn/2019/05/30/%E5%98%BB%E5%92%A6%E5%95%8A%E7%9C%8B</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/05/30/%E5%98%BB%E5%92%A6%E5%95%8A%E7%9C%8B/">&lt;p&gt;Title: 和有钱的文艺青年约会是什么样的体验？（已经被删）&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=xJ-wHmfnuek&quot;&gt;墙外链接&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;章台柳，章台柳；昔日青青今在否？&lt;br /&gt;
+东风恶，欢情薄；一杯愁绪，几年离索。&lt;br /&gt;
+而今却悔当时错，当时错；&lt;br /&gt;
+万事休休休莫莫；&lt;br /&gt;
+一夜湘君白发多，&lt;br /&gt;
+无人能唱采莲歌；&lt;br /&gt;
+夜长人奈何。&lt;br /&gt;
+人成各，今非昨；&lt;br /&gt;
+今日岱宗夫如何。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="嘻咦啊看" />
+      
+        <category term="文案" />
+      
+
+      
+
+      
+        <summary type="html">Title: 和有钱的文艺青年约会是什么样的体验？（已经被删）</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>
@@ -400,7 +488,7 @@
       
 
       
-        <category term="note" />
+        <category term="笔记" />
       
         <category term="python" />
       
@@ -462,7 +550,7 @@
       
 
       
-        <category term="note" />
+        <category term="笔记" />
       
         <category term="python" />
       
@@ -713,7 +801,76 @@ increment : 3, score : 0
   &lt;li&gt;在函数外执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;send()&lt;/code&gt; 方法，且激活了生成器。&lt;/li&gt;
   &lt;li&gt;发送的值赋给了 &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; 语句左侧的变量。&lt;/li&gt;
   &lt;li&gt;生成器继续执行，直至遇到下一个 &lt;code class=&quot;highlighter-rouge&quot;&gt;yield&lt;/code&gt; 语句。&lt;/li&gt;
-&lt;/ol&gt;</content>
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;10-python-设计模式-i&quot;&gt;10. Python 设计模式 I&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;观察者模式在执行起来需要以下两个步骤&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;被观察者主动通知观察者 通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;_update_observers&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Inventory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;observers&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;_update_observers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;observer&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;observers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+              &lt;span class=&quot;n&quot;&gt;observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;观察者自身现实被调用方法 通过 &lt;code class=&quot;highlighter-rouge&quot;&gt;__call__&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Observer&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;inventory&lt;/span&gt;
+
+      &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__call__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+          &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;观察成功！&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;12-测试面向对象程序&quot;&gt;12. 测试面向对象程序&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;unittest&lt;/code&gt; 的 &lt;code class=&quot;highlighter-rouge&quot;&gt;setUp()&lt;/code&gt; 是用于每次执行测试时，都会调用该方法用以保证数据被污染 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;tearDown()&lt;/code&gt; 是用来保证每次测试结束后调用。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;py.test&lt;/code&gt; 与之相对应的有类似几个。&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setup_module&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;teardown_module&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setup_class&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;teardown_class&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;setup_method&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;teardown_method&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pytest_funcarg__&amp;lt;idenntifier&amp;gt;&lt;/code&gt; 和被测试函数需要接受的参数作为测试&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;pytest_funcarg__numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;request&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;test_sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;assert&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sum&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;numbers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;13-并发&quot;&gt;13. 并发&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;自定义线程再被需要重写 &lt;code class=&quot;highlighter-rouge&quot;&gt;run()&lt;/code&gt; 方法，但调用时用到的是 &lt;code class=&quot;highlighter-rouge&quot;&gt;start()&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;</content>
 
       
       
@@ -724,7 +881,7 @@ increment : 3, score : 0
       
 
       
-        <category term="note" />
+        <category term="笔记" />
       
         <category term="python" />
       
@@ -843,7 +1000,7 @@ clear可以理解为是清除指针指向所在地址的内存
       
 
       
-        <category term="note" />
+        <category term="笔记" />
       
         <category term="python" />
       

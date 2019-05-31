@@ -9,12 +9,12 @@
   
   
   
-  <title>Python 内置函数</title>
-  <meta name="description" content="evel()">
+  <title>对对子</title>
+  <meta name="description" content="花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="Python 内置函数">
+  <meta property="og:title" content="对对子">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
-  <meta property="og:description" content="evel()">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90/">
+  <meta property="og:description" content="花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Python 内置函数">
-  <meta name="twitter:description" content="evel()">
+  <meta name="twitter:title" content="对对子">
+  <meta name="twitter:description" content="花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！">
   
   
 
@@ -76,32 +76,9 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">Python 内置函数</h1>
+      <h1 class="post-title" itemprop="name headline">对对子</h1>
     
-    <p class="post-meta"><time datetime="2019-05-28T14:28:38+00:00" itemprop="datePublished">May 28, 2019</time> •
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <p class="post-meta"><time datetime="2019-05-30T13:24:23+00:00" itemprop="datePublished">May 30, 2019</time> •
   
     
     
@@ -116,13 +93,13 @@
       
     
       
-        <a href="/categories/python/">python</a>
-      
     
       
     
       
     
+      
+        <a href="/categories/%E5%9B%9E%E5%BF%86/">回忆</a>
       
     
   
@@ -133,31 +110,9 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="evel"><code class="highlighter-rouge">evel()</code></h2>
+    <p>花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！</p>
 
-<p><code class="highlighter-rouge">eval(expression[, globals[, locals]])</code></p>
-
-<ul>
-  <li>expression – 表达式。</li>
-  <li>globals – 变量作用域，全局命名空间，如果被提供，则必须是一个字典对象。</li>
-  <li>locals – 变量作用域，局部命名空间，如果被提供，可以是任何映射对象。</li>
-</ul>
-
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span> <span class="s">'3 * x'</span> <span class="p">)</span>
-<span class="mi">21</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'pow(2,2)'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'2 + 2'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">n</span><span class="o">=</span><span class="mi">81</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">"n + 4"</span><span class="p">)</span>
-<span class="mi">85</span>
-</code></pre></div></div>
-
-<blockquote>
-  <p>就好像是在 <em>python</em> 语言里面自建了一个 <em>python</em> 解析器。</p>
-</blockquote>
+<p>叶有常青绿，却无诗词颂，顾花忘落叶，花落拂袖去！人有离合，月有圆缺，似离却非离，似缺却非缺，泾渭分明时，现彼岸，彼岸有羞花，无色，亦无叶，花待叶，叶肥花红，登彼岸！</p>
 
   </div>
 
