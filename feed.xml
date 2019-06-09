@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-06-09T07:25:41+00:00</updated>
+  <updated>2019-06-09T15:42:17+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,63 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">Flask全套组件及原理剖析</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/06/09/Flask%E5%85%A8%E5%A5%97%E7%BB%84%E4%BB%B6%E5%8F%8A%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/" rel="alternate" type="text/html" title="Flask全套组件及原理剖析" />
+      
+      <published>2019-06-09T14:31:08+00:00</published>
+      <updated>2019-06-09T14:31:08+00:00</updated>
+      <id>https://blog.danyow.cn/2019/06/09/Flask%E5%85%A8%E5%A5%97%E7%BB%84%E4%BB%B6%E5%8F%8A%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/06/09/Flask%E5%85%A8%E5%A5%97%E7%BB%84%E4%BB%B6%E5%8F%8A%E5%8E%9F%E7%90%86%E5%89%96%E6%9E%90/">&lt;p&gt;Title: &lt;a href=&quot;https://www.bilibili.com/video/av23109760/?p=1&quot;&gt;Bilibili&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;p8&quot;&gt;P8&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;使用字符串来导入类&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;__import__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;globals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;locals&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;None&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;fromlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;level&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;config&lt;/code&gt; 的配置文件路径默认在根目录下，需要更改目录的话，要查看对应的Api文档。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;p9&quot;&gt;P9&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;__name__&lt;/code&gt; 函数调用的话，可以获取这个函数的名称。&lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="笔记" />
+      
+        <category term="python" />
+      
+
+      
+
+      
+        <summary type="html">Title: Bilibili</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>
