@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-05-31T13:42:11+00:00</updated>
+  <updated>2019-06-09T03:54:35+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -22,6 +22,64 @@
   
     <entry>
       
+      <title type="html">Python高手之路</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/06/09/Python%E9%AB%98%E6%89%8B%E4%B9%8B%E8%B7%AF/" rel="alternate" type="text/html" title="Python高手之路" />
+      
+      <published>2019-06-09T03:28:32+00:00</published>
+      <updated>2019-06-09T03:28:32+00:00</updated>
+      <id>https://blog.danyow.cn/2019/06/09/Python%E9%AB%98%E6%89%8B%E4%B9%8B%E8%B7%AF</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/06/09/Python%E9%AB%98%E6%89%8B%E4%B9%8B%E8%B7%AF/">&lt;p&gt;Title: 第三版&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;10.1 生成器&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;查看一个函数是否是生成器 &lt;code class=&quot;highlighter-rouge&quot;&gt;isgeneratorfunction()&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;inspect&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;inspect&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isgeneratorfunction&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;获取生成器的当前状态 &lt;code class=&quot;highlighter-rouge&quot;&gt;getgeneratorstate()&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GEN_CREATED&lt;/code&gt;    等待被第一次执行&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GEN_RUNNING&lt;/code&gt;    正在被执行&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GEN_SUSPENDED&lt;/code&gt;  等待被 &lt;code class=&quot;highlighter-rouge&quot;&gt;next()&lt;/code&gt; 调用&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GEN_CLOSED&lt;/code&gt;     结束运行&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="笔记" />
+      
+        <category term="python" />
+      
+
+      
+
+      
+        <summary type="html">Title: 第三版</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
       <title type="html">对对子</title>
       
       
@@ -30,9 +88,9 @@
       <published>2019-05-30T13:24:23+00:00</published>
       <updated>2019-05-30T13:24:23+00:00</updated>
       <id>https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90/">&lt;p&gt;花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！&lt;/p&gt;
+      <content type="html" xml:base="https://blog.danyow.cn/2019/05/30/%E5%AF%B9%E5%AF%B9%E5%AD%90/">&lt;p&gt;花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！  —— Elewen&lt;/p&gt;
 
-&lt;p&gt;叶有常青绿，却无诗词颂，顾花忘落叶，花落拂袖去！人有离合，月有圆缺，似离却非离，似缺却非缺，泾渭分明时，现彼岸，彼岸有羞花，无色，亦无叶，花待叶，叶肥花红，登彼岸！&lt;/p&gt;</content>
+&lt;p&gt;叶有常青绿，却无诗词颂，顾花忘落叶，花落拂袖去！人有离合，月有圆缺，似离却非离，似缺却非缺，泾渭分明时，现彼岸，彼岸有羞花，无色，亦无叶，花待叶，叶肥花红，登彼岸！  —— Danyow&lt;/p&gt;</content>
 
       
       
@@ -49,7 +107,7 @@
       
 
       
-        <summary type="html">花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！</summary>
+        <summary type="html">花无百日红，却有百态生，一态又一态，毁灭至重生！水有清浊，人有正邪，似清却非清，似邪却非邪，鱼目混珠境，慧眼观，慧眼连慧心，非眼，亦非耳，心净静，心无杂念，方能辨！ —— Elewen</summary>
       
 
       
