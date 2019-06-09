@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-06-09T03:54:35+00:00</updated>
+  <updated>2019-06-09T07:25:41+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,104 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">天文与重力测量</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/06/09/%E5%A4%A9%E6%96%87%E4%B8%8E%E9%87%8D%E5%8A%9B%E6%B5%8B%E9%87%8F/" rel="alternate" type="text/html" title="天文与重力测量" />
+      
+      <published>2019-06-09T05:23:22+00:00</published>
+      <updated>2019-06-09T05:23:22+00:00</updated>
+      <id>https://blog.danyow.cn/2019/06/09/%E5%A4%A9%E6%96%87%E4%B8%8E%E9%87%8D%E5%8A%9B%E6%B5%8B%E9%87%8F</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/06/09/%E5%A4%A9%E6%96%87%E4%B8%8E%E9%87%8D%E5%8A%9B%E6%B5%8B%E9%87%8F/">&lt;script type=&quot;text/javascript&quot; src=&quot;http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Title: 高等院校测绘工程系列教材&lt;/p&gt;
+
+&lt;h2 id=&quot;1-天文测量简介&quot;&gt;1. 天文测量简介&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;宇宙的”宙”指的是时间&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;米（m），1791年为海平面上地球赤道到北极点距离的千万分之一作为 1 米，1983 年改为光在真空中的 1/299792458s 的时间间隔所经路程的长度作为 1 米。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;随后引入天文单位，AU（Astronomical Unit）日地距离&lt;/p&gt;
+
+    &lt;script type=&quot;math/tex; mode=display&quot;&gt;1 AU = 1.495 978 7\times10 ^{11} m&lt;/script&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;但这个天文单位还是太小，于是引入了光年ly（Light Year），1 光年约等于 9.46 万亿千米。&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;1 ly = 63 240 AU&lt;/script&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;质量的天文单位是太阳质量&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;地球自转&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;恒星日   地球上某点与恒星的周期间隔  真正自转周期 23h56m4s&lt;/li&gt;
+  &lt;li&gt;太阳日   地球上某点与太阳的周期间隔  昼夜交替周期 24h&lt;/li&gt;
+  &lt;li&gt;太阴日   地球上某点与月球的周期间隔  潮汐变化周期 24h50m&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;开普勒三大定律&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;所有行星轨道的形状是一个椭圆，太阳位于椭圆的一个焦点上。&lt;/li&gt;
+  &lt;li&gt;在相等的时间间隔内，行星与太阳的连线所扫过的面积相等。&lt;/li&gt;
+  &lt;li&gt;行星运动周期的平方与椭圆长半轴的立方成正比。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;星等 理解为就是亮度&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;星等越大亮度越小，连续的星等其亮度成几何级数，而且又 1 等星的亮度正好是 6 等星的 100 倍，&lt;script type=&quot;math/tex&quot;&gt;\sqrt[5]100 = 2.512&lt;/script&gt;，这个数为星等比。目前照相的方式可看到 23 等的暗星。&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;北极星 2.12 等&lt;/li&gt;
+  &lt;li&gt;牛郎星 0.89 等&lt;/li&gt;
+  &lt;li&gt;月亮 -12.5 等&lt;/li&gt;
+  &lt;li&gt;太阳 -27 等&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="阅读笔记" />
+      
+        <category term="天文" />
+      
+
+      
+
+      
+        <summary type="html"></summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>

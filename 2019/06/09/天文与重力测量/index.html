@@ -9,12 +9,12 @@
   
   
   
-  <title>Python 内置函数</title>
-  <meta name="description" content="evel()">
+  <title>天文与重力测量</title>
+  <meta name="description" content="">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/06/09/%E5%A4%A9%E6%96%87%E4%B8%8E%E9%87%8D%E5%8A%9B%E6%B5%8B%E9%87%8F/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="Python 内置函数">
+  <meta property="og:title" content="天文与重力测量">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
-  <meta property="og:description" content="evel()">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/06/09/%E5%A4%A9%E6%96%87%E4%B8%8E%E9%87%8D%E5%8A%9B%E6%B5%8B%E9%87%8F/">
+  <meta property="og:description" content="">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Python 内置函数">
-  <meta name="twitter:description" content="evel()">
+  <meta name="twitter:title" content="天文与重力测量">
+  <meta name="twitter:description" content="">
   
   
 
@@ -76,36 +76,9 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">Python 内置函数</h1>
+      <h1 class="post-title" itemprop="name headline">天文与重力测量</h1>
     
-    <p class="post-meta"><time datetime="2019-05-28T14:28:38+00:00" itemprop="datePublished">May 28, 2019</time> •
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <p class="post-meta"><time datetime="2019-06-09T05:23:22+00:00" itemprop="datePublished">Jun 9, 2019</time> •
   
     
     
@@ -120,7 +93,30 @@
       
     
       
-        <a href="/categories/python/">python</a>
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/">阅读笔记</a>,
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
       
     
       
@@ -131,6 +127,10 @@
     
       
     
+      
+    
+      
+        <a href="/categories/%E5%A4%A9%E6%96%87/">天文</a>
       
     
   
@@ -141,31 +141,67 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="evel"><code class="highlighter-rouge">evel()</code></h2>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 
-<p><code class="highlighter-rouge">eval(expression[, globals[, locals]])</code></p>
+<p>Title: 高等院校测绘工程系列教材</p>
+
+<h2 id="1-天文测量简介">1. 天文测量简介</h2>
 
 <ul>
-  <li>expression – 表达式。</li>
-  <li>globals – 变量作用域，全局命名空间，如果被提供，则必须是一个字典对象。</li>
-  <li>locals – 变量作用域，局部命名空间，如果被提供，可以是任何映射对象。</li>
+  <li>
+    <p>宇宙的”宙”指的是时间</p>
+  </li>
+  <li>
+    <p>米（m），1791年为海平面上地球赤道到北极点距离的千万分之一作为 1 米，1983 年改为光在真空中的 1/299792458s 的时间间隔所经路程的长度作为 1 米。</p>
+  </li>
+  <li>
+    <p>随后引入天文单位，AU（Astronomical Unit）日地距离</p>
+
+    <script type="math/tex; mode=display">1 AU = 1.495 978 7\times10 ^{11} m</script>
+  </li>
 </ul>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span> <span class="s">'3 * x'</span> <span class="p">)</span>
-<span class="mi">21</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'pow(2,2)'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'2 + 2'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">n</span><span class="o">=</span><span class="mi">81</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">"n + 4"</span><span class="p">)</span>
-<span class="mi">85</span>
-</code></pre></div></div>
+<p>但这个天文单位还是太小，于是引入了光年ly（Light Year），1 光年约等于 9.46 万亿千米。</p>
 
-<blockquote>
-  <p>就好像是在 <em>python</em> 语言里面自建了一个 <em>python</em> 解析器。</p>
-</blockquote>
+<script type="math/tex; mode=display">1 ly = 63 240 AU</script>
+
+<ul>
+  <li>
+    <p>质量的天文单位是太阳质量</p>
+  </li>
+  <li>
+    <p>地球自转</p>
+  </li>
+</ul>
+
+<ol>
+  <li>恒星日   地球上某点与恒星的周期间隔  真正自转周期 23h56m4s</li>
+  <li>太阳日   地球上某点与太阳的周期间隔  昼夜交替周期 24h</li>
+  <li>太阴日   地球上某点与月球的周期间隔  潮汐变化周期 24h50m</li>
+</ol>
+
+<ul>
+  <li>开普勒三大定律</li>
+</ul>
+
+<ol>
+  <li>所有行星轨道的形状是一个椭圆，太阳位于椭圆的一个焦点上。</li>
+  <li>在相等的时间间隔内，行星与太阳的连线所扫过的面积相等。</li>
+  <li>行星运动周期的平方与椭圆长半轴的立方成正比。</li>
+</ol>
+
+<ul>
+  <li>星等 理解为就是亮度</li>
+</ul>
+
+<p>星等越大亮度越小，连续的星等其亮度成几何级数，而且又 1 等星的亮度正好是 6 等星的 100 倍，<script type="math/tex">\sqrt[5]100 = 2.512</script>，这个数为星等比。目前照相的方式可看到 23 等的暗星。</p>
+
+<ol>
+  <li>北极星 2.12 等</li>
+  <li>牛郎星 0.89 等</li>
+  <li>月亮 -12.5 等</li>
+  <li>太阳 -27 等</li>
+</ol>
 
   </div>
 
