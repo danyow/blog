@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-06-09T15:42:17+00:00</updated>
+  <updated>2019-06-10T13:11:15+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,110 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">fullstack开源库</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/06/10/github-fullstack/" rel="alternate" type="text/html" title="fullstack开源库" />
+      
+      <published>2019-06-10T12:10:20+00:00</published>
+      <updated>2019-06-10T12:10:20+00:00</updated>
+      <id>https://blog.danyow.cn/2019/06/10/github-fullstack</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/06/10/github-fullstack/">&lt;p&gt;Title: 大致就是项目做完没给钱，然后就开源了。&lt;/p&gt;
+
+&lt;p&gt;Github：&lt;a href=&quot;https://github.com/TrillCyborg/fullstack&quot;&gt;fullstack&lt;/a&gt;
+提交是 &lt;em&gt;586fe8bea5d5a12406253994bb848c257109eb15&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;大致步骤&quot;&gt;大致步骤&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;首先准备本地环境
+    &lt;ol&gt;
+      &lt;li&gt;安装 node 环境 &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install node&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;安装 yarn &lt;code class=&quot;highlighter-rouge&quot;&gt;brew install yarn&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;去准备 api 参数
+    &lt;ol&gt;
+      &lt;li&gt;先去谷歌云平台 &lt;a href=&quot;https://console.cloud.google.com/&quot;&gt;Google Cloud Platform&lt;/a&gt; 里面创建一个凭据，在 &lt;em&gt;API和服务&lt;/em&gt; 里面的 &lt;em&gt;凭据&lt;/em&gt;, 这时候会获得一个密钥，将其记作 &lt;strong&gt;GOOGLE_MAPS_KEY&lt;/strong&gt;。&lt;/li&gt;
+      &lt;li&gt;然后到 &lt;em&gt;API和服务&lt;/em&gt; 里面的 &lt;em&gt;库&lt;/em&gt;，找的地图类别中的 &lt;em&gt;Places API&lt;/em&gt;，将其启用，谷歌这边就算是完成了。&lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;然后到 &lt;a href=&quot;https://plaid.com/&quot;&gt;PLAID&lt;/a&gt; 上注册账号，这个网站应该是专门获取银行账户内信息的一个聚合平台。完成后找到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Node.js&lt;/code&gt; 选项，下面会有对应的信息&lt;/p&gt;
+
+        &lt;div class=&quot;language-json highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ACCOUNTS_SECRET&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;secret&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PLAID_CLIENT_ID&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PLAID_SECRET&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PLAID_PUBLIC_KEY&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;xxxxxxxxxxxxxxxxxxxx&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PLAID_PRODUCTS&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;transactions&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PLAID_COUNTRY_CODES&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;US&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+      &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;PLAID_ENV&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;sandbox&quot;&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+  &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;w&quot;&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;填写参数
+    &lt;ol&gt;
+      &lt;li&gt;将 &lt;strong&gt;GOOGLE_MAPS_KEY&lt;/strong&gt; 替换到 &lt;code class=&quot;highlighter-rouge&quot;&gt;/client/src/config/example.env.json&lt;/code&gt; 文件内。&lt;/li&gt;
+      &lt;li&gt;将 &lt;strong&gt;PLAID_PUBLIC_KEY&lt;/strong&gt; 也替换到这个文件内。&lt;/li&gt;
+      &lt;li&gt;将 &lt;strong&gt;PLAID_CLIENT_ID&lt;/strong&gt;、&lt;strong&gt;PLAID_SECRET&lt;/strong&gt;、&lt;strong&gt;PLAID_PUBLIC_KEY&lt;/strong&gt; 替换到 &lt;code class=&quot;highlighter-rouge&quot;&gt;server/config/default.json&lt;/code&gt; 文件内。&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;然后启动本地的 mongo&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;mongod --dbpath /Users/imagons/mongo/data&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;这个只是我的启动方式。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;进入到 &lt;code class=&quot;highlighter-rouge&quot;&gt;server&lt;/code&gt; 目录, 然后执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn install&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn watch&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;另起一个终端，然后进入到 &lt;code class=&quot;highlighter-rouge&quot;&gt;client&lt;/code&gt; 目录，然后执行
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;cp ./src/config/example.env.json ./src/config/development.env.json&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;yarn install&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;yarn start&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;（这一步貌似不执行也能运行了）又再起一个终端，继续在 &lt;code class=&quot;highlighter-rouge&quot;&gt;client&lt;/code&gt; 目录，执行 &lt;code class=&quot;highlighter-rouge&quot;&gt;yarn gen:types:watch&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;注意事项&quot;&gt;注意事项&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;如果遇到 &lt;code class=&quot;highlighter-rouge&quot;&gt;npm&lt;/code&gt; 相关的问题，建议重装 &lt;code class=&quot;highlighter-rouge&quot;&gt;node&lt;/code&gt; 环境。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;4000 的端口和 3000 的端口不要被占用。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Github" />
+      
+
+      
+
+      
+        <summary type="html">Title: 大致就是项目做完没给钱，然后就开源了。</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>

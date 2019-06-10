@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>fullstack开源库</title>
+  <meta name="description" content="Title: 大致就是项目做完没给钱，然后就开源了。">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/06/10/github-fullstack/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="fullstack开源库">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/06/10/github-fullstack/">
+  <meta property="og:description" content="Title: 大致就是项目做完没给钱，然后就开源了。">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="fullstack开源库">
+  <meta name="twitter:description" content="Title: 大致就是项目做完没给钱，然后就开源了。">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">fullstack开源库</h1>
+    
+    <p class="post-meta"><time datetime="2019-06-10T12:10:20+00:00" itemprop="datePublished">Jun 10, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/github/">Github</a>
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title: 大致就是项目做完没给钱，然后就开源了。</p>
+
+<p>Github：<a href="https://github.com/TrillCyborg/fullstack">fullstack</a>
+提交是 <em>586fe8bea5d5a12406253994bb848c257109eb15</em></p>
+
+<h2 id="大致步骤">大致步骤</h2>
+
+<ol>
+  <li>首先准备本地环境
+    <ol>
+      <li>安装 node 环境 <code class="highlighter-rouge">brew install node</code></li>
+      <li>安装 yarn <code class="highlighter-rouge">brew install yarn</code></li>
+    </ol>
+  </li>
+  <li>去准备 api 参数
+    <ol>
+      <li>先去谷歌云平台 <a href="https://console.cloud.google.com/">Google Cloud Platform</a> 里面创建一个凭据，在 <em>API和服务</em> 里面的 <em>凭据</em>, 这时候会获得一个密钥，将其记作 <strong>GOOGLE_MAPS_KEY</strong>。</li>
+      <li>然后到 <em>API和服务</em> 里面的 <em>库</em>，找的地图类别中的 <em>Places API</em>，将其启用，谷歌这边就算是完成了。</li>
+      <li>
+        <p>然后到 <a href="https://plaid.com/">PLAID</a> 上注册账号，这个网站应该是专门获取银行账户内信息的一个聚合平台。完成后找到 <code class="highlighter-rouge">Node.js</code> 选项，下面会有对应的信息</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="w">  </span><span class="p">{</span><span class="w">
+      </span><span class="s2">"ACCOUNTS_SECRET"</span><span class="p">:</span><span class="w"> </span><span class="s2">"secret"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PLAID_CLIENT_ID"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PLAID_SECRET"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PLAID_PUBLIC_KEY"</span><span class="p">:</span><span class="w"> </span><span class="s2">"xxxxxxxxxxxxxxxxxxxx"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PLAID_PRODUCTS"</span><span class="p">:</span><span class="w"> </span><span class="s2">"transactions"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PLAID_COUNTRY_CODES"</span><span class="p">:</span><span class="w"> </span><span class="s2">"US"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"PLAID_ENV"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sandbox"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>填写参数
+    <ol>
+      <li>将 <strong>GOOGLE_MAPS_KEY</strong> 替换到 <code class="highlighter-rouge">/client/src/config/example.env.json</code> 文件内。</li>
+      <li>将 <strong>PLAID_PUBLIC_KEY</strong> 也替换到这个文件内。</li>
+      <li>将 <strong>PLAID_CLIENT_ID</strong>、<strong>PLAID_SECRET</strong>、<strong>PLAID_PUBLIC_KEY</strong> 替换到 <code class="highlighter-rouge">server/config/default.json</code> 文件内。</li>
+    </ol>
+  </li>
+  <li>
+    <p>然后启动本地的 mongo</p>
+
+    <p><code class="highlighter-rouge">mongod --dbpath /Users/imagons/mongo/data</code></p>
+
+    <p>这个只是我的启动方式。</p>
+  </li>
+  <li>进入到 <code class="highlighter-rouge">server</code> 目录, 然后执行 <code class="highlighter-rouge">yarn install</code> 和 <code class="highlighter-rouge">yarn watch</code></li>
+  <li>另起一个终端，然后进入到 <code class="highlighter-rouge">client</code> 目录，然后执行
+    <ol>
+      <li><code class="highlighter-rouge">cp ./src/config/example.env.json ./src/config/development.env.json</code></li>
+      <li><code class="highlighter-rouge">yarn install</code></li>
+      <li><code class="highlighter-rouge">yarn start</code></li>
+    </ol>
+  </li>
+  <li>（这一步貌似不执行也能运行了）又再起一个终端，继续在 <code class="highlighter-rouge">client</code> 目录，执行 <code class="highlighter-rouge">yarn gen:types:watch</code></li>
+</ol>
+
+<h2 id="注意事项">注意事项</h2>
+
+<ul>
+  <li>
+    <p>如果遇到 <code class="highlighter-rouge">npm</code> 相关的问题，建议重装 <code class="highlighter-rouge">node</code> 环境。</p>
+  </li>
+  <li>
+    <p>4000 的端口和 3000 的端口不要被占用。</p>
+  </li>
+</ul>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
