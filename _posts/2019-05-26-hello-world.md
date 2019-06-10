@@ -31,7 +31,7 @@ date: 2019-05-26 12:40:24 +0800
 
 ## whiteglass
 
-这个是在 [*jekyllthemes*](https://jekyllthemes.dev/) 主题网站上面找到的。
+这个是在 [*jekyllthemes*][jekyllthemes] 主题网站上面找到的。
 推荐采用重新建房子的方式。
 
 大致使用方法:
@@ -83,7 +83,7 @@ date: 2019-05-26 12:40:24 +0800
 
 由于主题用到了 *gem* 包，而 *Github* 又并不能直接支持去操作 *gem*，所以需要一个类似 *Jenkins* 的持续集成工具来完成该操作。  
 **Travis** 会根据当前 *master* 分支下的 `.travis.yml` 这个文件去执行相应操作。  
-根目录下新建 `.travis.yml` 或者去 [下载最新的文件](https://github.com/yous/whiteglass/blob/master/.travis.yml)  
+根目录下新建 `.travis.yml` 或者去 [下载最新的文件][new_yml]  
 
 ```yml
 language: ruby
@@ -155,3 +155,6 @@ url: "https://xxx.github.io"    # xxx为你的 Github 用户名
     baseurl: ""
     url: "https://blog.xxx.com"    # blog作为子域名放在前面 xxx为你的 Github 用户名
     ```
+
+[jekyllthemes]:https://jekyllthemes.dev/
+[new_yml]:https://github.com/yous/whiteglass/blob/master/.travis.yml

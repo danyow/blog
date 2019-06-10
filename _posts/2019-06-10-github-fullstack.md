@@ -9,7 +9,7 @@ published: true
 
 Title: 大致就是项目做完没给钱，然后就开源了。
 
-Github：[fullstack](https://github.com/TrillCyborg/fullstack)
+Github：[fullstack][fullstack]
 提交是 *586fe8bea5d5a12406253994bb848c257109eb15*
 
 ## 大致步骤
@@ -18,9 +18,9 @@ Github：[fullstack](https://github.com/TrillCyborg/fullstack)
    1. 安装 node 环境 `brew install node`
    2. 安装 yarn `brew install yarn`
 2. 去准备 api 参数
-   1. 先去谷歌云平台 [Google Cloud Platform](https://console.cloud.google.com/) 里面创建一个凭据，在 *API和服务* 里面的 *凭据*, 这时候会获得一个密钥，将其记作 **GOOGLE_MAPS_KEY**。
+   1. 先去谷歌云平台 [Google Cloud Platform][google_cloud] 里面创建一个凭据，在 *API和服务* 里面的 *凭据*, 这时候会获得一个密钥，将其记作 **GOOGLE_MAPS_KEY**。
    2. 然后到 *API和服务* 里面的 *库*，找的地图类别中的 *Places API*，将其启用，谷歌这边就算是完成了。
-   3. 然后到 [PLAID](https://plaid.com/) 上注册账号，这个网站应该是专门获取银行账户内信息的一个聚合平台。完成后找到 `Node.js` 选项，下面会有对应的信息
+   3. 然后到 [PLAID][plaid] 上注册账号，这个网站应该是专门获取银行账户内信息的一个聚合平台。完成后找到 `Node.js` 选项，下面会有对应的信息
 
         ```json
         {
@@ -56,3 +56,7 @@ Github：[fullstack](https://github.com/TrillCyborg/fullstack)
 * 如果遇到 `npm` 相关的问题，建议重装 `node` 环境。
 
 * 4000 的端口和 3000 的端口不要被占用。
+
+[fullstack]:https://github.com/TrillCyborg/fullstack
+[google_cloud]:https://console.cloud.google.com/
+[plaid]:https://plaid.com/
