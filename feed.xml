@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-06-10T13:11:15+00:00</updated>
+  <updated>2019-06-10T15:23:36+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -153,6 +153,29 @@
 
 &lt;ul&gt;
   &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;__name__&lt;/code&gt; 函数调用的话，可以获取这个函数的名称。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;p18&quot;&gt;P18&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;怎么用父类去约束子类必须实现某方法，意指接口（&lt;code class=&quot;highlighter-rouge&quot;&gt;interface&lt;/code&gt;）。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;Base&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;object&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;play&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;raise&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;NoImplementedError&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'必须实现该方法'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;顺带一提 &lt;a href=&quot;https://www.bilibili.com/video/av23109760/?p=18&quot;&gt;P18&lt;/a&gt; 这一讲当中大概是 20 几分钟左右讲到的配置去做某事的思路对我启发蛮大。并且有助于理解 &lt;em&gt;Django&lt;/em&gt; 的中间件。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;装饰器可以有多个，下面的会和被装饰的函数当成 inner 加入到上层的装饰器当中去。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;endpoint&lt;/code&gt; 的意义目前理解为 &lt;code class=&quot;highlighter-rouge&quot;&gt;id&lt;/code&gt;。&lt;/p&gt;
+  &lt;/li&gt;
 &lt;/ul&gt;</content>
 
       

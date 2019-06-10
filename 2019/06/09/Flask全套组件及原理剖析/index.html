@@ -166,6 +166,30 @@
   <li><code class="highlighter-rouge">__name__</code> 函数调用的话，可以获取这个函数的名称。</li>
 </ul>
 
+<h2 id="p18">P18</h2>
+
+<ul>
+  <li>怎么用父类去约束子类必须实现某方法，意指接口（<code class="highlighter-rouge">interface</code>）。</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">class</span> <span class="nc">Base</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">play</span><span class="p">():</span>
+        <span class="k">raise</span> <span class="n">NoImplementedError</span><span class="p">(</span><span class="s">'必须实现该方法'</span><span class="p">)</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>顺带一提 <a href="https://www.bilibili.com/video/av23109760/?p=18">P18</a> 这一讲当中大概是 20 几分钟左右讲到的配置去做某事的思路对我启发蛮大。并且有助于理解 <em>Django</em> 的中间件。</p>
+  </li>
+  <li>
+    <p>装饰器可以有多个，下面的会和被装饰的函数当成 inner 加入到上层的装饰器当中去。</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">endpoint</code> 的意义目前理解为 <code class="highlighter-rouge">id</code>。</p>
+  </li>
+</ul>
+
+
   </div>
 
   
