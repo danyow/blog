@@ -189,6 +189,108 @@
   </li>
 </ul>
 
+<h2 id="p19">P19</h2>
+
+<ul>
+  <li>利用 <code class="highlighter-rouge">functools.wraps()</code> 来帮助我们设置函数的元信息</li>
+</ul>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">functools</span>
+
+<span class="k">def</span> <span class="nf">wapper</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
+    <span class="o">@</span><span class="n">functools</span><span class="o">.</span><span class="n">wapper</span><span class="p">(</span><span class="n">func</span><span class="p">)</span> <span class="c1"># 保存元信息
+</span>    <span class="k">def</span> <span class="nf">inner</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">inner</span>
+
+<span class="o">@</span><span class="n">wapper</span>
+<span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
+    <span class="k">pass</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">foo</span><span class="o">.</span><span class="n">__name__</span><span class="p">)</span>
+
+<span class="s">'''
+如果不设置元信息的话，会导致打印的是 inner
+设置之后才可以确定是原先的函数
+'''</span>
+</code></pre></div></div>
+
+<h2 id="p20">P20</h2>
+
+<ul>
+  <li>
+    <p>闪现：类似于暂时存储部分内容的快照，取出来就没了。（阅后即焚）</p>
+
+    <p>应用场景：对临时数据的操作，例如错误信息。</p>
+  </li>
+  <li>
+    <p>请求扩展，指的是在请求之前和响应之前的监听，可以有多个监听，请求之前的监听是顺序执行，响应的是倒序执行。</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">before_request</span>
+  <span class="k">def</span> <span class="nf">before_request_1</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"before_request_1 进来了"</span><span class="p">)</span>
+
+  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">before_request</span>
+  <span class="k">def</span> <span class="nf">before_request_2</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"before_request_2 进来了"</span><span class="p">)</span>
+
+  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">after_request</span>
+  <span class="k">def</span> <span class="nf">after_request_1</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"after_request_1 走了"</span><span class="p">)</span>
+
+  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">after_request</span>
+  <span class="k">def</span> <span class="nf">after_request_2</span><span class="p">(</span><span class="n">response</span><span class="p">):</span>
+      <span class="k">print</span><span class="p">(</span><span class="s">"after_request_2 走了"</span><span class="p">)</span>
+
+  <span class="s">'''
+  打印顺序为
+  before_request_1 进来了
+  before_request_2 进来了
+  ...
+  after_request_2 走了
+  after_request_1 走了
+  '''</span>
+</code></pre></div>    </div>
+
+    <p>如果请求拦截之后，在他之后的请求就不会执行了，但响应的还是会继续执行。</p>
+  </li>
+  <li>
+    <p>根据状态码定义错误信息</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">errorhandler</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+  <span class="k">def</span> <span class="nf">error_404</span><span class="p">(</span><span class="n">args</span><span class="p">):</span>
+      <span class="k">return</span> <span class="s">"404页面没找到"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">before_first_request</code> 第一个请求</p>
+
+    <div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="o">@</span><span class="n">app</span><span class="o">.</span><span class="n">before_first_request</span>
+  <span class="k">def</span> <span class="nf">first</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kw</span><span class="p">):</span>
+      <span class="c1">## 连接数据库之类的
+</span>      <span class="k">pass</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="p22">P22</h2>
+
+<ul>
+  <li>中间件的讲解 <a href="https://www.bilibili.com/video/av23109760/?p=22">P22</a></li>
+</ul>
+
+<h2 id="p25">P25</h2>
+
+<ul>
+  <li><code class="highlighter-rouge">threading.local()</code> 给每个线程开辟一个内存空间用以对应的线程执行相应操作。达到类似加锁的目的。</li>
+</ul>
+
+<h2 id="p36">P36</h2>
+
+<ul>
+  <li>数据的链接池库采用 <code class="highlighter-rouge">DBUtils</code> ，但如果使用的是 <code class="highlighter-rouge">PooledDB</code> 模式的话，其中有个参数需要注意 <code class="highlighter-rouge">maxshared</code> : 链接池中最多共享的链接数量。0 为全部共享，但这个值设置的时候是由 <code class="highlighter-rouge">creator</code> 的 <code class="highlighter-rouge">threadsafety</code> 来判别的，也就是说设置后不一定会生效。</li>
+</ul>
+
 
   </div>
 
