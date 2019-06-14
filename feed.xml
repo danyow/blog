@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-06-14T12:04:25+00:00</updated>
+  <updated>2019-06-14T12:37:34+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -376,6 +376,29 @@
   &lt;li&gt;牛郎星 0.89 等&lt;/li&gt;
   &lt;li&gt;月亮 -12.5 等&lt;/li&gt;
   &lt;li&gt;太阳 -27 等&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;2-天球坐标系及各坐标系间关系&quot;&gt;2. 天球坐标系及各坐标系间关系&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;坐标系这块过于数学化，认输！&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3-时间系统及其换算&quot;&gt;3. 时间系统及其换算&lt;/h2&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;首先定义时间（时刻、历元）和（时间间隔），我们通常使用到的是后者。&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;时间的基本单位&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;地球自转 &lt;script type=&quot;math/tex&quot;&gt;1 \times 10^{-8}&lt;/script&gt;&lt;/li&gt;
+  &lt;li&gt;行星绕太阳的公转&lt;/li&gt;
+  &lt;li&gt;原子的谐波振荡 &lt;script type=&quot;math/tex&quot;&gt;1 \times 10^{-13}&lt;/script&gt;&lt;/li&gt;
 &lt;/ol&gt;</content>
 
       
