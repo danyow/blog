@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-06-19T00:53:10+00:00</updated>
+  <updated>2019-06-19T14:36:18+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -22,10 +22,70 @@
   
     <entry>
       
+      <title type="html">mac VSCode报错</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/06/19/mac-vscode/" rel="alternate" type="text/html" title="mac VSCode报错" />
+      
+      <published>2019-06-19T14:20:03+00:00</published>
+      <updated>2019-06-19T14:20:03+00:00</updated>
+      <id>https://blog.danyow.cn/2019/06/19/mac-vscode</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/06/19/mac-vscode/">&lt;p&gt;Title: &lt;em&gt;mac VSCode&lt;/em&gt; 更新失败，提示 &lt;em&gt;Permission denied&lt;/em&gt; 解决办法&lt;/p&gt;
+
+&lt;h2 id=&quot;1-针对右下提示如下&quot;&gt;1. 针对右下提示如下&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-error&quot;&gt;Could not create temporary directory: Permission denied
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&quot;解决办法&quot;&gt;解决办法&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;完全关闭 &lt;em&gt;VSCode&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;终端输入&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;sudo chown&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-R&lt;/span&gt; &lt;span class=&quot;nv&quot;&gt;$USER&lt;/span&gt; ~/Library/Caches/com.microsoft.VSCode.ShipIt/
+ xattr &lt;span class=&quot;nt&quot;&gt;-dr&lt;/span&gt; com.apple.quarantine /Applications/Visual&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Studio&lt;span class=&quot;se&quot;&gt;\ &lt;/span&gt;Code.app
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;完成&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;多去-vscode-底下的提交问题&quot;&gt;多去 &lt;em&gt;&lt;a href=&quot;https://github.com/microsoft/vscode&quot;&gt;VSCode&lt;/a&gt;&lt;/em&gt; 底下的提交问题&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/Microsoft/vscode/issues/7426&quot;&gt;原issues地址&lt;/a&gt;
+&lt;!-- [Github地址][Github] --&gt;&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="笔记" />
+      
+
+      
+
+      
+        <summary type="html">Title: mac VSCode 更新失败，提示 Permission denied 解决办法</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
       <title type="html">常用命令</title>
       
       
-      <link href="https://blog.danyow.cn/2019/06/16/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="alternate" type="text/html" title=" 常用命令" />
+      <link href="https://blog.danyow.cn/2019/06/16/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="alternate" type="text/html" title="常用命令" />
       
       <published>2019-06-16T13:03:12+00:00</published>
       <updated>2019-06-16T13:03:12+00:00</updated>
