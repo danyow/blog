@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title> 常用命令</title>
+  <meta name="description" content="Title: 记录下自己经常上网查的命令。">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/06/16/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content=" 常用命令">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/06/16/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
+  <meta property="og:description" content="Title: 记录下自己经常上网查的命令。">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content=" 常用命令">
+  <meta name="twitter:description" content="Title: 记录下自己经常上网查的命令。">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline"> 常用命令</h1>
+    
+    <p class="post-meta"><time datetime="2019-06-16T13:03:12+00:00" itemprop="datePublished">Jun 16, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title: 记录下自己经常上网查的命令。</p>
+
+<h2 id="nginx">Nginx</h2>
+
+<ul>
+  <li>查看是否还在运行</li>
+</ul>
+
+<p><code class="highlighter-rouge">ps -ef|grep nginx</code></p>
+
+<ul>
+  <li>
+    <p>重启</p>
+
+    <ol>
+      <li>验证 <code class="highlighter-rouge">nginx.conf</code> 是否正确。 <code class="highlighter-rouge">nginx -t</code></li>
+      <li>重启服务 <code class="highlighter-rouge">nginx -s reload</code></li>
+    </ol>
+  </li>
+</ul>
+
+<h2 id="macos">macOS</h2>
+
+<h3 id="安装-rvm">安装 <em>rvm</em></h3>
+
+<ol>
+  <li>
+    <p>安装 <em>rvm</em> , 一个基于 <em>ruby</em> 的工具库？</p>
+
+    <p><code class="highlighter-rouge">curl -L get.rvm.io | bash -s stable</code></p>
+  </li>
+  <li>
+    <p>安装好 <em>rvm</em> 之后</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">source</span> ~/.bashrc
+ <span class="nb">source</span> ~/.bash_profile
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>测试安装是否正常</p>
+
+    <p><code class="highlighter-rouge">rvm -v</code></p>
+  </li>
+  <li>
+    <p>查看当前 <em>ruby</em> 版本</p>
+
+    <p><code class="highlighter-rouge">ruby -v</code></p>
+  </li>
+  <li>
+    <p>列出已知的 <em>ruby</em> 版本</p>
+
+    <p><code class="highlighter-rouge">rvm list known</code></p>
+  </li>
+  <li>
+    <p>安装 <em>ruby</em></p>
+
+    <p><code class="highlighter-rouge">rvm install x.x.x</code></p>
+  </li>
+  <li>
+    <p>升级 <em>gem</em></p>
+
+    <p><code class="highlighter-rouge">sudo gem update --system</code></p>
+  </li>
+</ol>
+
+<h3 id="ssh"><em>SSH</em></h3>
+
+<ol>
+  <li>
+    <p>查看本地是否生成了 <em>SSH</em></p>
+
+    <p><code class="highlighter-rouge">ls -al ~/.ssh</code></p>
+  </li>
+  <li>
+    <p>生成新的 <em>SSH</em> <strong>key</strong></p>
+
+    <p><code class="highlighter-rouge">ssh-keygen -t rsa -C "i.zuucol@gmail.com"</code></p>
+  </li>
+  <li>
+    <p>查看公钥</p>
+
+    <p><code class="highlighter-rouge">cat ~/.ssh/id_rsa.pub</code></p>
+  </li>
+</ol>
+
+<h3 id="提示安装文件损坏">提示安装文件损坏</h3>
+
+<p><code class="highlighter-rouge">sudo spctl --master-disable</code></p>
+
+<h3 id="cocoapod-更新"><em>cocoapod</em> 更新</h3>
+
+<p><code class="highlighter-rouge">pod install --verbose --no-repo-update</code>
+<code class="highlighter-rouge">pod update --verbose --no-repo-update</code></p>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
