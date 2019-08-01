@@ -89,7 +89,7 @@ choco install notepadplusplus -y
 
 1. 搜狗输入法
 2. ShadowsocksR
-3. 木木模拟器
+3. ~~木木模拟器~~（已经删除，采用AS自带的模拟器）
 4. WeGame
 5. PanDownload（替换百度网盘）
 
