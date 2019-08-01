@@ -89,6 +89,7 @@ choco install notepadplusplus -y
 
 1. 搜狗输入法
 2. ShadowsocksR
+3. 木木模拟器
 
 [Home]:https://chocolatey.org
 [Packages]:https://chocolatey.org/packages
