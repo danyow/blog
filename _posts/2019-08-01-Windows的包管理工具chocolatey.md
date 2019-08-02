@@ -92,6 +92,7 @@ choco install notepadplusplus -y
 3. ~~木木模拟器~~（已经删除，采用AS自带的模拟器）
 4. WeGame
 5. PanDownload（替换百度网盘）
+6. Synergy
 
 [Home]:https://chocolatey.org
 [Packages]:https://chocolatey.org/packages
