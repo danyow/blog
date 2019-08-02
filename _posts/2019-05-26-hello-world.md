@@ -156,5 +156,13 @@ url: "https://xxx.github.io"    # xxx为你的 Github 用户名
     url: "https://blog.xxx.com"    # blog作为子域名放在前面 xxx为你的 Github 用户名
     ```
 
+>Ps: 2019年8月2日更新
+
+由于最近在 *Windows* 平台上开发, 所以遇到一个问题.
+*Travis CI* 不会自动运行构建了. 应该说每次运行都会报错.
+查找发现有个回答
+
+`啊，我明白了。您正在使用Windows计算机进行开发，但构建将在Linux上运行。如果您无法访问Linux机器，我认为最好不要Gemfile.lock登录您的Git存储库。`
+
 [jekyllthemes]:https://jekyllthemes.dev/
 [new_yml]:https://github.com/yous/whiteglass/blob/master/.travis.yml
