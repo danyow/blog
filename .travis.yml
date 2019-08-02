@@ -4,6 +4,7 @@ cache: bundler
 rvm:
   - 2.6.3
 before_install:
+  - npm install -g npm@3.x-latest
   - gem update --system
   - gem install bundler
 script:
