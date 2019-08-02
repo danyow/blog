@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-07-31T03:06:03+00:00</updated>
+  <updated>2019-08-02T10:23:11+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,440 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">SSH Windows</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/02/SSH/" rel="alternate" type="text/html" title="SSH Windows" />
+      
+      <published>2019-08-02T09:07:42+00:00</published>
+      <updated>2019-08-02T09:07:42+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/02/SSH</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/02/SSH/">&lt;p&gt;Title: Windows 下生成 &lt;em&gt;ssh&lt;/em&gt; 用来连接 &lt;em&gt;git&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;生成&quot;&gt;生成&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;ssh-keygen -t rsa -C &quot;i.zuucol@gmail.com&quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;然后他会询问你要存放的位置 -&amp;gt; 直接回车就是默认位置 -&amp;gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;C:\Users\Danyow/.ssh/id_rsa&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;然后让你输入密码 -&amp;gt; 直接回车就是为空即可&lt;/li&gt;
+  &lt;li&gt;然后获取刚刚生成出来的公钥 &lt;code class=&quot;highlighter-rouge&quot;&gt;cat C:\Users\Danyow\.ssh\id_rsa.pub&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Windows" />
+      
+        <category term="笔记" />
+      
+        <category term="ssh" />
+      
+
+      
+
+      
+        <summary type="html">Title: Windows 下生成 ssh 用来连接 git</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Windows To Go</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/02/Windows-To-Go/" rel="alternate" type="text/html" title="Windows To Go" />
+      
+      <published>2019-08-02T02:48:02+00:00</published>
+      <updated>2019-08-02T02:48:02+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/02/Windows%20To%20Go</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/02/Windows-To-Go/">&lt;p&gt;Title: Windows To Go 的一些使用说明&lt;/p&gt;
+
+&lt;h2 id=&quot;mac安装后键鼠供电问题&quot;&gt;Mac安装后键鼠供电问题&lt;/h2&gt;
+
+&lt;p&gt;在 &lt;em&gt;mac&lt;/em&gt; 供电方式推荐采用直接供电, 不推荐外接拓展坞，有可能导致键鼠使用出现问题.&lt;/p&gt;
+
+&lt;h2 id=&quot;访问本机磁盘&quot;&gt;访问本机磁盘&lt;/h2&gt;
+
+&lt;p&gt;默认本机磁盘是脱机状态的&lt;/p&gt;
+
+&lt;p&gt;启用本机磁盘:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;启动 &lt;em&gt;cmd&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;DISKPART.exe&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;san&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;san policy=onlineall&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;list disk&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;select disk 1&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;attributes disk clear readonly&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;online disk&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Windows" />
+      
+        <category term="笔记" />
+      
+        <category term="WTG" />
+      
+
+      
+
+      
+        <summary type="html">Title: Windows To Go 的一些使用说明</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Windows的包管理工具chocolatey</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/01/Windows%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7chocolatey/" rel="alternate" type="text/html" title="Windows的包管理工具chocolatey" />
+      
+      <published>2019-08-01T06:55:00+00:00</published>
+      <updated>2019-08-01T06:55:00+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/01/Windows%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7chocolatey</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/01/Windows%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7chocolatey/">&lt;p&gt;Title: chocolatey工具的使用&lt;/p&gt;
+
+&lt;h2 id=&quot;安裝-chocolatey&quot;&gt;安裝 &lt;strong&gt;chocolatey&lt;/strong&gt;&lt;/h2&gt;
+
+&lt;p&gt;官网首页：&lt;a href=&quot;https://chocolatey.org&quot;&gt;Home&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;使用 &lt;strong&gt;PowerShell&lt;/strong&gt; 即可&lt;/p&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;iex&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;((&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;new-object &lt;/span&gt;net.webclient&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;.DownloadString&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'https://chocolatey.org/install.ps1'&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;更改安裝软件存放位置&quot;&gt;更改安裝软件存放位置&lt;/h3&gt;
+
+&lt;p&gt;新建环境变量&lt;br /&gt;
+名为 &lt;em&gt;ChocolateyInstall&lt;/em&gt;&lt;br /&gt;
+值为 &lt;你想要存放的路径&gt;&lt;/你想要存放的路径&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;相关链接&quot;&gt;相关链接&lt;/h3&gt;
+
+&lt;p&gt;利用网页检索所需要的包 &lt;a href=&quot;https://chocolatey.org/packages&quot;&gt;Packages&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;常用指令&quot;&gt;常用指令&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;安装&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;choco install &amp;lt;package&amp;gt;&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;这是正常的安装，但只是装一两个软件还好，每次都需要你输入 &lt;em&gt;y、a、n&lt;/em&gt; 等进行交互，可以加入后缀 &lt;code class=&quot;highlighter-rouge&quot;&gt;-y&lt;/code&gt; 来自动全部确认&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;其他常用命令
+    &lt;ol&gt;
+      &lt;li&gt;卸载 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco uninstall &amp;lt;package&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;搜索 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco search &amp;lt;package&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;更新 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco upgrade &amp;lt;package&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;查看本地 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco list --local-only&lt;/code&gt; 或者 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco list -lo&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;不常用指令
+    &lt;ol&gt;
+      &lt;li&gt;搜索所有版本 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco search &amp;lt;package&amp;gt; -all&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;安裝指定版本 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco install &amp;lt;package&amp;gt; -version &amp;lt;版本号&amp;gt;&lt;/code&gt;&lt;/li&gt;
+      &lt;li&gt;更新所有 &lt;code class=&quot;highlighter-rouge&quot;&gt;choco upgrade -all&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;个人已经安装的&quot;&gt;个人已经安装的&lt;/h2&gt;
+
+&lt;div class=&quot;language-powershell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;7zip -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;androidstudio -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ccleaner -y
+choco &lt;span class=&quot;nb&quot;&gt;install curl&lt;/span&gt; -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;Everything -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gimp -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;git-lfs -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;github -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;github-desktop -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;golang -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;GoogleChrome -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;gradle -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;javaruntime -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jdk8 -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jekyll -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;jre8 -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;nodejs -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;openssh -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;php -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;PowerShell -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;steam -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;unity -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;unity-hub -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;vscode -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;wechat -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tim -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;flutter -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;mongodb -y
+choco &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;notepadplusplus -y
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;个人使用但无法在chocolatey上找到的&quot;&gt;个人使用但无法在chocolatey上找到的&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;搜狗输入法&lt;/li&gt;
+  &lt;li&gt;ShadowsocksR&lt;/li&gt;
+  &lt;li&gt;&lt;del&gt;木木模拟器&lt;/del&gt;（已经删除，采用AS自带的模拟器）&lt;/li&gt;
+  &lt;li&gt;WeGame&lt;/li&gt;
+  &lt;li&gt;PanDownload（替换百度网盘）&lt;/li&gt;
+  &lt;li&gt;Synergy&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Windows" />
+      
+        <category term="笔记" />
+      
+        <category term="chocolatey" />
+      
+
+      
+
+      
+        <summary type="html">Title: chocolatey工具的使用</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Hello flutter</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/01/Flutter/" rel="alternate" type="text/html" title="Hello flutter" />
+      
+      <published>2019-08-01T02:55:00+00:00</published>
+      <updated>2019-08-01T02:55:00+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/01/Flutter</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/01/Flutter/">&lt;p&gt;Title: 关于flutter的初体验&lt;/p&gt;
+
+&lt;p&gt;安装就不哔哔了&lt;/p&gt;
+
+&lt;h2 id=&quot;环境变量配置&quot;&gt;环境变量配置&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;macOS Todo&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;mac的，唉~由于在安装配置完后使用的是10.15的beta版本。 目前 fultter 还不支持就先告一段落了。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Windows&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;em&gt;bin&lt;/em&gt; 目录配置 &lt;em&gt;Path&lt;/em&gt; 即可&lt;/p&gt;
+
+&lt;h2 id=&quot;自检环节&quot;&gt;自检环节&lt;/h2&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flutter doctor&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;会检查以下几个环境&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Flutter 本身环境 （macOS 10.15 beta 就是在这里挂了）&lt;/li&gt;
+  &lt;li&gt;Android SDK 环境
+    &lt;ol&gt;
+      &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;flutter doctor --android-licenses&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Android Studio 环境 需要装插件
+    &lt;ol&gt;
+      &lt;li&gt;在开始界面点击 &lt;code class=&quot;highlighter-rouge&quot;&gt;Configure&lt;/code&gt; 里的 &lt;code class=&quot;highlighter-rouge&quot;&gt;Plugins&lt;/code&gt;&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+  &lt;li&gt;VSCode 环境 需要装插件&lt;/li&gt;
+  &lt;li&gt;连接设备&lt;/li&gt;
+  &lt;li&gt;Mac 下还会检测 XCode 以及其命令行环境&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="笔记" />
+      
+        <category term="flutter" />
+      
+
+      
+
+      
+        <summary type="html">Title: 关于flutter的初体验</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">上帝掷骰子吗？</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/07/04/%E4%B8%8A%E5%B8%9D%E6%8E%B7%E9%AA%B0%E5%AD%90%E5%90%97/" rel="alternate" type="text/html" title="上帝掷骰子吗？" />
+      
+      <published>2019-07-04T15:30:17+00:00</published>
+      <updated>2019-07-04T15:30:17+00:00</updated>
+      <id>https://blog.danyow.cn/2019/07/04/%E4%B8%8A%E5%B8%9D%E6%8E%B7%E9%AA%B0%E5%AD%90%E5%90%97%3F</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/07/04/%E4%B8%8A%E5%B8%9D%E6%8E%B7%E9%AA%B0%E5%AD%90%E5%90%97/">&lt;p&gt;Title: &lt;em&gt;思维实验室&lt;/em&gt; 推荐&lt;/p&gt;
+
+&lt;h2 id=&quot;黄金时代&quot;&gt;黄金时代&lt;/h2&gt;
+
+&lt;h3 id=&quot;赫兹&quot;&gt;赫兹&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;1887 年证实了电磁波。&lt;/li&gt;
+  &lt;li&gt;不到 37 岁卒。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;以太-伪科学定论&quot;&gt;以太 （伪科学定论）&lt;/h3&gt;
+
+&lt;h3 id=&quot;胡克---惨&quot;&gt;胡克 - 惨&lt;/h3&gt;
+
+&lt;h3 id=&quot;光的两个实验&quot;&gt;光的两个实验&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;双缝干涉（杨）&lt;/li&gt;
+  &lt;li&gt;圆盘衍射（菲涅尔）&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;麦克斯韦的电磁波光被划为其中&quot;&gt;麦克斯韦的电磁波（光被划为其中）&lt;/h3&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="笔记" />
+      
+        <category term="科学" />
+      
+
+      
+
+      
+        <summary type="html">Title: 思维实验室 推荐</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">CocosCreator 打包记录</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/07/04/cocos-build/" rel="alternate" type="text/html" title="CocosCreator 打包记录" />
+      
+      <published>2019-07-04T15:30:17+00:00</published>
+      <updated>2019-07-04T15:30:17+00:00</updated>
+      <id>https://blog.danyow.cn/2019/07/04/cocos-build</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/07/04/cocos-build/">&lt;p&gt;Title: 记录在打包过程中遇到的坑
+Version: 2.0.10&lt;/p&gt;
+
+&lt;h2 id=&quot;环境配置&quot;&gt;环境配置&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;NDK&lt;/em&gt; 环境
+ 推荐的是 &lt;em&gt;&lt;a href=&quot;http://dl.google.com/android/ndk/android-ndk-r10e-darwin-x86_64.bin&quot;&gt;r10e&lt;/a&gt;&lt;/em&gt;(点击即可下载了)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;但是打出的包不可使用！！！&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;…告辞&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="CocosCreator" />
+      
+        <category term="笔记" />
+      
+
+      
+
+      
+        <summary type="html">Title: 记录在打包过程中遇到的坑 Version: 2.0.10</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Windows的包管理工具chocolatey</title>
+  <meta name="description" content="Title: chocolatey工具的使用">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/08/01/Windows%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7chocolatey/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Windows的包管理工具chocolatey">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/08/01/Windows%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7chocolatey/">
+  <meta property="og:description" content="Title: chocolatey工具的使用">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Windows的包管理工具chocolatey">
+  <meta name="twitter:description" content="Title: chocolatey工具的使用">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Windows的包管理工具chocolatey</h1>
+    
+    <p class="post-meta"><time datetime="2019-08-01T06:55:00+00:00" itemprop="datePublished">Aug 1, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/windows/">Windows</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/chocolatey/">chocolatey</a>
+      
+    
+      
+    
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title: chocolatey工具的使用</p>
+
+<h2 id="安裝-chocolatey">安裝 <strong>chocolatey</strong></h2>
+
+<p>官网首页：<a href="https://chocolatey.org">Home</a></p>
+
+<p>使用 <strong>PowerShell</strong> 即可</p>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">iex</span> <span class="o">((</span><span class="nb">new-object </span>net.webclient<span class="o">)</span>.DownloadString<span class="o">(</span><span class="s1">'https://chocolatey.org/install.ps1'</span><span class="o">))</span>
+</code></pre></div></div>
+
+<h3 id="更改安裝软件存放位置">更改安裝软件存放位置</h3>
+
+<p>新建环境变量<br />
+名为 <em>ChocolateyInstall</em><br />
+值为 <你想要存放的路径></你想要存放的路径></p>
+
+<h3 id="相关链接">相关链接</h3>
+
+<p>利用网页检索所需要的包 <a href="https://chocolatey.org/packages">Packages</a></p>
+
+<h2 id="常用指令">常用指令</h2>
+
+<ol>
+  <li>
+    <p>安装</p>
+
+    <p><code class="highlighter-rouge">choco install &lt;package&gt;</code></p>
+
+    <p>这是正常的安装，但只是装一两个软件还好，每次都需要你输入 <em>y、a、n</em> 等进行交互，可以加入后缀 <code class="highlighter-rouge">-y</code> 来自动全部确认</p>
+  </li>
+  <li>其他常用命令
+    <ol>
+      <li>卸载 <code class="highlighter-rouge">choco uninstall &lt;package&gt;</code></li>
+      <li>搜索 <code class="highlighter-rouge">choco search &lt;package&gt;</code></li>
+      <li>更新 <code class="highlighter-rouge">choco upgrade &lt;package&gt;</code></li>
+      <li>查看本地 <code class="highlighter-rouge">choco list --local-only</code> 或者 <code class="highlighter-rouge">choco list -lo</code></li>
+    </ol>
+  </li>
+  <li>不常用指令
+    <ol>
+      <li>搜索所有版本 <code class="highlighter-rouge">choco search &lt;package&gt; -all</code></li>
+      <li>安裝指定版本 <code class="highlighter-rouge">choco install &lt;package&gt; -version &lt;版本号&gt;</code></li>
+      <li>更新所有 <code class="highlighter-rouge">choco upgrade -all</code></li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="个人已经安装的">个人已经安装的</h2>
+
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>choco <span class="nb">install </span>7zip -y
+choco <span class="nb">install </span>androidstudio -y
+choco <span class="nb">install </span>ccleaner -y
+choco <span class="nb">install curl</span> -y
+choco <span class="nb">install </span>Everything -y
+choco <span class="nb">install </span>gimp -y
+choco <span class="nb">install </span>git -y
+choco <span class="nb">install </span>git-lfs -y
+choco <span class="nb">install </span>github -y
+choco <span class="nb">install </span>github-desktop -y
+choco <span class="nb">install </span>golang -y
+choco <span class="nb">install </span>GoogleChrome -y
+choco <span class="nb">install </span>gradle -y
+choco <span class="nb">install </span>javaruntime -y
+choco <span class="nb">install </span>jdk8 -y
+choco <span class="nb">install </span>jekyll -y
+choco <span class="nb">install </span>jre8 -y
+choco <span class="nb">install </span>nodejs -y
+choco <span class="nb">install </span>openssh -y
+choco <span class="nb">install </span>php -y
+choco <span class="nb">install </span>PowerShell -y
+choco <span class="nb">install </span>python -y
+choco <span class="nb">install </span>ruby -y
+choco <span class="nb">install </span>steam -y
+choco <span class="nb">install </span>unity -y
+choco <span class="nb">install </span>unity-hub -y
+choco <span class="nb">install </span>vscode -y
+choco <span class="nb">install </span>wechat -y
+choco <span class="nb">install </span>tim -y
+choco <span class="nb">install </span>flutter -y
+choco <span class="nb">install </span>mongodb -y
+choco <span class="nb">install </span>notepadplusplus -y
+</code></pre></div></div>
+
+<h3 id="个人使用但无法在chocolatey上找到的">个人使用但无法在chocolatey上找到的</h3>
+
+<ol>
+  <li>搜狗输入法</li>
+  <li>ShadowsocksR</li>
+  <li><del>木木模拟器</del>（已经删除，采用AS自带的模拟器）</li>
+  <li>WeGame</li>
+  <li>PanDownload（替换百度网盘）</li>
+  <li>Synergy</li>
+</ol>
+
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

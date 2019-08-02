@@ -9,12 +9,12 @@
   
   
   
-  <title>mac VSCode报错</title>
-  <meta name="description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <title>CocosCreator 打包记录</title>
+  <meta name="description" content="Title: 记录在打包过程中遇到的坑 Version: 2.0.10">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/06/19/mac-vscode/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/07/04/cocos-build/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="mac VSCode报错">
+  <meta property="og:title" content="CocosCreator 打包记录">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/06/19/mac-vscode/">
-  <meta property="og:description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/07/04/cocos-build/">
+  <meta property="og:description" content="Title: 记录在打包过程中遇到的坑 Version: 2.0.10">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="mac VSCode报错">
-  <meta name="twitter:description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <meta name="twitter:title" content="CocosCreator 打包记录">
+  <meta name="twitter:description" content="Title: 记录在打包过程中遇到的坑 Version: 2.0.10">
   
   
 
@@ -76,9 +76,52 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">mac VSCode报错</h1>
+      <h1 class="post-title" itemprop="name headline">CocosCreator 打包记录</h1>
     
-    <p class="post-meta"><time datetime="2019-06-19T14:20:03+00:00" itemprop="datePublished">Jun 19, 2019</time> •
+    <p class="post-meta"><time datetime="2019-07-04T15:30:17+00:00" itemprop="datePublished">Jul 4, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/cocoscreator/">CocosCreator</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
   
     
     
@@ -130,32 +173,22 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Title: <em>mac VSCode</em> 更新失败，提示 <em>Permission denied</em> 解决办法</p>
+    <p>Title: 记录在打包过程中遇到的坑
+Version: 2.0.10</p>
 
-<h2 id="1-针对右下提示如下">1. 针对右下提示如下</h2>
-
-<pre><code class="language-error">Could not create temporary directory: Permission denied
-</code></pre>
-
-<h3 id="解决办法">解决办法</h3>
+<h2 id="环境配置">环境配置</h2>
 
 <ol>
-  <li>完全关闭 <em>VSCode</em></li>
   <li>
-    <p>终端输入</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="nv">$USER</span> ~/Library/Caches/com.microsoft.VSCode.ShipIt/
- xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
-</code></pre></div>    </div>
+    <p><em>NDK</em> 环境
+ 推荐的是 <em><a href="http://dl.google.com/android/ndk/android-ndk-r10e-darwin-x86_64.bin">r10e</a></em>(点击即可下载了)</p>
   </li>
-  <li>完成</li>
+  <li>
+    <p>但是打出的包不可使用！！！</p>
+  </li>
 </ol>
 
-<h2 id="多去-vscode-底下的提交问题">多去 <em><a href="https://github.com/microsoft/vscode">VSCode</a></em> 底下的提交问题</h2>
-
-<p><a href="https://github.com/Microsoft/vscode/issues/7426">原issues地址</a>
-<!-- [Github地址][Github] --></p>
-
+<p>…告辞</p>
 
   </div>
 

@@ -9,12 +9,12 @@
   
   
   
-  <title>mac VSCode报错</title>
-  <meta name="description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <title>Hello flutter</title>
+  <meta name="description" content="Title: 关于flutter的初体验">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/06/19/mac-vscode/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/08/01/Flutter/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="mac VSCode报错">
+  <meta property="og:title" content="Hello flutter">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/06/19/mac-vscode/">
-  <meta property="og:description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/08/01/Flutter/">
+  <meta property="og:description" content="Title: 关于flutter的初体验">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="mac VSCode报错">
-  <meta name="twitter:description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <meta name="twitter:title" content="Hello flutter">
+  <meta name="twitter:description" content="Title: 关于flutter的初体验">
   
   
 
@@ -76,9 +76,9 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">mac VSCode报错</h1>
+      <h1 class="post-title" itemprop="name headline">Hello flutter</h1>
     
-    <p class="post-meta"><time datetime="2019-06-19T14:20:03+00:00" itemprop="datePublished">Jun 19, 2019</time> •
+    <p class="post-meta"><time datetime="2019-08-01T02:55:00+00:00" itemprop="datePublished">Aug 1, 2019</time> •
   
     
     
@@ -91,7 +91,7 @@
       
     
       
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
       
     
       
@@ -112,6 +112,49 @@
     
       
     
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/flutter/">flutter</a>
       
     
       
@@ -130,32 +173,46 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Title: <em>mac VSCode</em> 更新失败，提示 <em>Permission denied</em> 解决办法</p>
+    <p>Title: 关于flutter的初体验</p>
 
-<h2 id="1-针对右下提示如下">1. 针对右下提示如下</h2>
+<p>安装就不哔哔了</p>
 
-<pre><code class="language-error">Could not create temporary directory: Permission denied
-</code></pre>
+<h2 id="环境变量配置">环境变量配置</h2>
 
-<h3 id="解决办法">解决办法</h3>
+<blockquote>
+  <p>macOS Todo</p>
+</blockquote>
+
+<p>mac的，唉~由于在安装配置完后使用的是10.15的beta版本。 目前 fultter 还不支持就先告一段落了。</p>
+
+<blockquote>
+  <p>Windows</p>
+</blockquote>
+
+<p><em>bin</em> 目录配置 <em>Path</em> 即可</p>
+
+<h2 id="自检环节">自检环节</h2>
+
+<p><code class="highlighter-rouge">flutter doctor</code></p>
+
+<p>会检查以下几个环境</p>
 
 <ol>
-  <li>完全关闭 <em>VSCode</em></li>
-  <li>
-    <p>终端输入</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="nv">$USER</span> ~/Library/Caches/com.microsoft.VSCode.ShipIt/
- xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
-</code></pre></div>    </div>
+  <li>Flutter 本身环境 （macOS 10.15 beta 就是在这里挂了）</li>
+  <li>Android SDK 环境
+    <ol>
+      <li><code class="highlighter-rouge">flutter doctor --android-licenses</code></li>
+    </ol>
   </li>
-  <li>完成</li>
+  <li>Android Studio 环境 需要装插件
+    <ol>
+      <li>在开始界面点击 <code class="highlighter-rouge">Configure</code> 里的 <code class="highlighter-rouge">Plugins</code></li>
+    </ol>
+  </li>
+  <li>VSCode 环境 需要装插件</li>
+  <li>连接设备</li>
+  <li>Mac 下还会检测 XCode 以及其命令行环境</li>
 </ol>
-
-<h2 id="多去-vscode-底下的提交问题">多去 <em><a href="https://github.com/microsoft/vscode">VSCode</a></em> 底下的提交问题</h2>
-
-<p><a href="https://github.com/Microsoft/vscode/issues/7426">原issues地址</a>
-<!-- [Github地址][Github] --></p>
-
 
   </div>
 

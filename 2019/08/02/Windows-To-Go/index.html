@@ -9,12 +9,12 @@
   
   
   
-  <title>mac VSCode报错</title>
-  <meta name="description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <title>Windows To Go</title>
+  <meta name="description" content="Title: Windows To Go 的一些使用说明">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/06/19/mac-vscode/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/08/02/Windows-To-Go/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="mac VSCode报错">
+  <meta property="og:title" content="Windows To Go">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/06/19/mac-vscode/">
-  <meta property="og:description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/08/02/Windows-To-Go/">
+  <meta property="og:description" content="Title: Windows To Go 的一些使用说明">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="mac VSCode报错">
-  <meta name="twitter:description" content="Title: mac VSCode 更新失败，提示 Permission denied 解决办法">
+  <meta name="twitter:title" content="Windows To Go">
+  <meta name="twitter:description" content="Title: Windows To Go 的一些使用说明">
   
   
 
@@ -76,9 +76,9 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">mac VSCode报错</h1>
+      <h1 class="post-title" itemprop="name headline">Windows To Go</h1>
     
-    <p class="post-meta"><time datetime="2019-06-19T14:20:03+00:00" itemprop="datePublished">Jun 19, 2019</time> •
+    <p class="post-meta"><time datetime="2019-08-02T02:48:02+00:00" itemprop="datePublished">Aug 2, 2019</time> •
   
     
     
@@ -91,7 +91,50 @@
       
     
       
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/windows/">Windows</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
       
     
       
@@ -118,6 +161,49 @@
     
       
     
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/wtg/">WTG</a>
       
     
       
@@ -130,32 +216,28 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Title: <em>mac VSCode</em> 更新失败，提示 <em>Permission denied</em> 解决办法</p>
+    <p>Title: Windows To Go 的一些使用说明</p>
 
-<h2 id="1-针对右下提示如下">1. 针对右下提示如下</h2>
+<h2 id="mac安装后键鼠供电问题">Mac安装后键鼠供电问题</h2>
 
-<pre><code class="language-error">Could not create temporary directory: Permission denied
-</code></pre>
+<p>在 <em>mac</em> 供电方式推荐采用直接供电, 不推荐外接拓展坞，有可能导致键鼠使用出现问题.</p>
 
-<h3 id="解决办法">解决办法</h3>
+<h2 id="访问本机磁盘">访问本机磁盘</h2>
+
+<p>默认本机磁盘是脱机状态的</p>
+
+<p>启用本机磁盘:</p>
 
 <ol>
-  <li>完全关闭 <em>VSCode</em></li>
-  <li>
-    <p>终端输入</p>
-
-    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">sudo chown</span> <span class="nt">-R</span> <span class="nv">$USER</span> ~/Library/Caches/com.microsoft.VSCode.ShipIt/
- xattr <span class="nt">-dr</span> com.apple.quarantine /Applications/Visual<span class="se">\ </span>Studio<span class="se">\ </span>Code.app
-</code></pre></div>    </div>
-  </li>
-  <li>完成</li>
+  <li>启动 <em>cmd</em></li>
+  <li><code class="highlighter-rouge">DISKPART.exe</code></li>
+  <li><code class="highlighter-rouge">san</code></li>
+  <li><code class="highlighter-rouge">san policy=onlineall</code></li>
+  <li><code class="highlighter-rouge">list disk</code></li>
+  <li><code class="highlighter-rouge">select disk 1</code></li>
+  <li><code class="highlighter-rouge">attributes disk clear readonly</code></li>
+  <li><code class="highlighter-rouge">online disk</code></li>
 </ol>
-
-<h2 id="多去-vscode-底下的提交问题">多去 <em><a href="https://github.com/microsoft/vscode">VSCode</a></em> 底下的提交问题</h2>
-
-<p><a href="https://github.com/Microsoft/vscode/issues/7426">原issues地址</a>
-<!-- [Github地址][Github] --></p>
-
 
   </div>
 
