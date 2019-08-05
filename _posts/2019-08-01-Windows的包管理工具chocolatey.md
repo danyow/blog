@@ -83,6 +83,8 @@ choco install tim -y
 choco install flutter -y
 choco install mongodb -y
 choco install notepadplusplus -y
+choco install sourcetree -y
+choco install beyondcompare -y
 ```
 
 ### 个人使用但无法在chocolatey上找到的
