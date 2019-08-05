@@ -83,6 +83,7 @@ choco install tim -y
 choco install flutter -y
 choco install mongodb -y
 choco install notepadplusplus -y
+choco install dotnetcore-sdk -y
 choco install sourcetree -y
 choco install beyondcompare -y
 ```
