@@ -9,12 +9,12 @@
   
   
   
-  <title>Python 内置函数</title>
-  <meta name="description" content="evel()">
+  <title>Mac的包管理工具brew</title>
+  <meta name="description" content="Title: brew工具的使用">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/08/06/Mac%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7brew/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="Python 内置函数">
+  <meta property="og:title" content="Mac的包管理工具brew">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
-  <meta property="og:description" content="evel()">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/08/06/Mac%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7brew/">
+  <meta property="og:description" content="Title: brew工具的使用">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Python 内置函数">
-  <meta name="twitter:description" content="evel()">
+  <meta name="twitter:title" content="Mac的包管理工具brew">
+  <meta name="twitter:description" content="Title: brew工具的使用">
   
   
 
@@ -76,9 +76,58 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">Python 内置函数</h1>
+      <h1 class="post-title" itemprop="name headline">Mac的包管理工具brew</h1>
     
-    <p class="post-meta"><time datetime="2019-05-28T14:28:38+00:00" itemprop="datePublished">May 28, 2019</time> •
+    <p class="post-meta"><time datetime="2019-08-06T06:55:00+00:00" itemprop="datePublished">Aug 6, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/mac/">Mac</a>,
+      
+    
+      
+    
+      
+    
   
     
     
@@ -142,8 +191,6 @@
       
     
       
-        <a href="/categories/python/">python</a>
-      
     
       
     
@@ -173,6 +220,8 @@
     
       
     
+      
+        <a href="/categories/brew/">brew</a>
       
     
       
@@ -185,31 +234,66 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="evel"><code class="highlighter-rouge">evel()</code></h2>
+    <p>Title: brew工具的使用</p>
 
-<p><code class="highlighter-rouge">eval(expression[, globals[, locals]])</code></p>
+<h2 id="相关指令介绍">相关指令介绍</h2>
 
-<ul>
-  <li>expression – 表达式。</li>
-  <li>globals – 变量作用域，全局命名空间，如果被提供，则必须是一个字典对象。</li>
-  <li>locals – 变量作用域，局部命名空间，如果被提供，可以是任何映射对象。</li>
-</ul>
+<ol>
+  <li>
+    <p>升级本体</p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span> <span class="s">'3 * x'</span> <span class="p">)</span>
-<span class="mi">21</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'pow(2,2)'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'2 + 2'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">n</span><span class="o">=</span><span class="mi">81</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">"n + 4"</span><span class="p">)</span>
-<span class="mi">85</span>
+    <p><code class="highlighter-rouge">brew update</code></p>
+  </li>
+  <li>
+    <p>升级所有程序</p>
+
+    <p><code class="highlighter-rouge">brew upgrade</code></p>
+  </li>
+  <li>
+    <p>查看本地安装了哪些’环境’和’应用’</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> brew list
+ brew cask list
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h2 id="相关使用技巧">相关使用技巧</h2>
+
+<ol>
+  <li>经常在安装的会去检查本体的更新, 可能会导致长时间的等待. 所以可以采用关闭自动更新.
+<code class="highlighter-rouge">export HOMEBREW_NO_AUTO_UPDATE=true</code></li>
+</ol>
+
+<h2 id="个人已经安装的">个人已经安装的</h2>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew cask <span class="nb">install </span>visual-studio-code
+brew cask <span class="nb">install </span>the-unarchiver
+brew cask <span class="nb">install </span>google-chrome
+brew cask <span class="nb">install </span>sourcetree
+brew cask <span class="nb">install </span>wechat
+brew cask <span class="nb">install </span>iterm2
+brew cask <span class="nb">install </span>powershell
+brew cask <span class="nb">install </span>sogouinput <span class="c">## 需要自己重新打开一下</span>
+brew cask <span class="nb">install </span>qq
+brew cask <span class="nb">install </span>synergy
+brew cask <span class="nb">install </span>unity-hub
+brew cask <span class="nb">install </span>beyond-compare
+brew cask <span class="nb">install </span>steam
+brew cask <span class="nb">install </span>neteasemusic
+brew cask <span class="nb">install </span>baiducloud
+
+brew <span class="nb">install </span>antigen <span class="c">## zsh下的管理工具</span>
 </code></pre></div></div>
 
-<blockquote>
-  <p>就好像是在 <em>python</em> 语言里面自建了一个 <em>python</em> 解析器。</p>
-</blockquote>
+<h3 id="vscode-所使用到的插件"><em>VSCode</em> 所使用到的插件</h3>
+
+<ol>
+  <li>Chinese</li>
+  <li>Markdown All in One -&gt; 快捷键</li>
+  <li>markdownlint -&gt; 语法纠查</li>
+</ol>
+
 
   </div>
 

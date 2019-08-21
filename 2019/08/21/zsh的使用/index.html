@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>zsh的使用</title>
+  <meta name="description" content="Title:貌似这样可以让你的终端变得很好看呢">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/08/21/zsh%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="zsh的使用">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/08/21/zsh%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  <meta property="og:description" content="Title:貌似这样可以让你的终端变得很好看呢">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="zsh的使用">
+  <meta name="twitter:description" content="Title:貌似这样可以让你的终端变得很好看呢">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">zsh的使用</h1>
+    
+    <p class="post-meta"><time datetime="2019-08-21T15:33:55+00:00" itemprop="datePublished">Aug 21, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/mac/">Mac</a>,
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/item2/">item2</a>
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title:貌似这样可以让你的终端变得很好看呢</p>
+
+<h2 id="使用-zsh">使用 <em>zsh</em></h2>
+
+<p>切换默认的终端 <em>zsh</em>, 这会提示你输入密码.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`chsh -s /bin/zsh`
+</code></pre></div></div>
+
+<p>如果想改回来的话</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`chsh -s /bin/bash`
+</code></pre></div></div>
+
+<h2 id="使用-antigen-来安装-oh-my-zsh">使用 <em>antigen</em> 来安装 <em>oh my zsh</em></h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`brew install antigen`
+</code></pre></div></div>
+
+<p>这里安装完后会有个提示说 源目录在哪? 让你自己写到 <strong>.zshrc</strong> 里面去.</p>
+
+<h2 id="新建-zshrc-文件-填入下面内容">新建 <strong>.zshrc</strong> 文件 填入下面内容</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```shell
+source /usr/local/share/antigen/antigen.zsh
+
+# 加载oh-my-zsh库
+antigen use oh-my-zsh
+
+# 加载原版oh-my-zsh中的功能(robbyrussell's oh-my-zsh).
+antigen bundle brew
+antigen bundle command-not-found
+antigen bundle git
+antigen bundle pip
+
+# 语法高亮功能
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# 代码提示功能
+antigen bundle zsh-users/zsh-autosuggestions
+
+# 自动补全功能
+antigen bundle zsh-users/zsh-completions
+
+# 这个不知道是啥
+antigen bundle zsh-users/zsh-apple-touchbar
+
+# 加载主题
+# antigen theme robbyrussell
+antigen theme https://github.com/bhilburn/powerlevel9k powerlevel9k
+
+# 保存更改
+antigen apply
+
+## 配合powerlevel9k主题使用
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
+POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm node_version)
+
+POWERLEVEL9K_OS_ICON_BACKGROUND="white"
+POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
+POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
+```
+</code></pre></div></div>
+
+<h2 id="这时候终端界面会呈现为部分乱码-因为缺少对应的图标字体">这时候终端界面会呈现为部分乱码, 因为缺少对应的图标字体</h2>
+
+<p>在终端执行以下步骤:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```shell
+# 下载
+git clone https://github.com/powerline/fonts.git
+# 安装
+cd fonts
+./install.sh
+# 删除安装包
+cd ..
+rm -rf fonts
+```
+</code></pre></div></div>
+
+<h2 id="在对应的终端工具内选择安装的字体">在对应的终端工具内选择安装的字体</h2>
+
+<p>以 <em>VSCode</em> 为例, 在设置界面内查找字体, 然后找到终端输入 <em>Meslo LG S for Powerline</em> 就可以了!</p>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

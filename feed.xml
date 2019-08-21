@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-08-15T15:08:25+00:00</updated>
+  <updated>2019-08-21T17:35:24+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,233 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">zsh的使用</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/21/zsh%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="alternate" type="text/html" title="zsh的使用" />
+      
+      <published>2019-08-21T15:33:55+00:00</published>
+      <updated>2019-08-21T15:33:55+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/21/zsh%E7%9A%84%E4%BD%BF%E7%94%A8</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/21/zsh%E7%9A%84%E4%BD%BF%E7%94%A8/">&lt;p&gt;Title:貌似这样可以让你的终端变得很好看呢&lt;/p&gt;
+
+&lt;h2 id=&quot;使用-zsh&quot;&gt;使用 &lt;em&gt;zsh&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;切换默认的终端 &lt;em&gt;zsh&lt;/em&gt;, 这会提示你输入密码.&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`chsh -s /bin/zsh`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;如果想改回来的话&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`chsh -s /bin/bash`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;使用-antigen-来安装-oh-my-zsh&quot;&gt;使用 &lt;em&gt;antigen&lt;/em&gt; 来安装 &lt;em&gt;oh my zsh&lt;/em&gt;&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`brew install antigen`
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;这里安装完后会有个提示说 源目录在哪? 让你自己写到 &lt;strong&gt;.zshrc&lt;/strong&gt; 里面去.&lt;/p&gt;
+
+&lt;h2 id=&quot;新建-zshrc-文件-填入下面内容&quot;&gt;新建 &lt;strong&gt;.zshrc&lt;/strong&gt; 文件 填入下面内容&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```shell
+source /usr/local/share/antigen/antigen.zsh
+
+# 加载oh-my-zsh库
+antigen use oh-my-zsh
+
+# 加载原版oh-my-zsh中的功能(robbyrussell's oh-my-zsh).
+antigen bundle brew
+antigen bundle command-not-found
+antigen bundle git
+antigen bundle pip
+
+# 语法高亮功能
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+# 代码提示功能
+antigen bundle zsh-users/zsh-autosuggestions
+
+# 自动补全功能
+antigen bundle zsh-users/zsh-completions
+
+# 这个不知道是啥
+antigen bundle zsh-users/zsh-apple-touchbar
+
+# 加载主题
+# antigen theme robbyrussell
+antigen theme https://github.com/bhilburn/powerlevel9k powerlevel9k
+
+# 保存更改
+antigen apply
+
+## 配合powerlevel9k主题使用
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+
+POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm node_version)
+
+POWERLEVEL9K_OS_ICON_BACKGROUND=&quot;white&quot;
+POWERLEVEL9K_OS_ICON_FOREGROUND=&quot;blue&quot;
+POWERLEVEL9K_DIR_HOME_FOREGROUND=&quot;white&quot;
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=&quot;white&quot;
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=&quot;white&quot;
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;这时候终端界面会呈现为部分乱码-因为缺少对应的图标字体&quot;&gt;这时候终端界面会呈现为部分乱码, 因为缺少对应的图标字体&lt;/h2&gt;
+
+&lt;p&gt;在终端执行以下步骤:&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```shell
+# 下载
+git clone https://github.com/powerline/fonts.git
+# 安装
+cd fonts
+./install.sh
+# 删除安装包
+cd ..
+rm -rf fonts
+```
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;在对应的终端工具内选择安装的字体&quot;&gt;在对应的终端工具内选择安装的字体&lt;/h2&gt;
+
+&lt;p&gt;以 &lt;em&gt;VSCode&lt;/em&gt; 为例, 在设置界面内查找字体, 然后找到终端输入 &lt;em&gt;Meslo LG S for Powerline&lt;/em&gt; 就可以了!&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Mac" />
+      
+        <category term="笔记" />
+      
+        <category term="item2" />
+      
+
+      
+
+      
+        <summary type="html">Title:貌似这样可以让你的终端变得很好看呢</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Mac的包管理工具brew</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/06/Mac%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7brew/" rel="alternate" type="text/html" title="Mac的包管理工具brew" />
+      
+      <published>2019-08-06T06:55:00+00:00</published>
+      <updated>2019-08-06T06:55:00+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/06/Mac%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7brew</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/06/Mac%E7%9A%84%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7brew/">&lt;p&gt;Title: brew工具的使用&lt;/p&gt;
+
+&lt;h2 id=&quot;相关指令介绍&quot;&gt;相关指令介绍&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;升级本体&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew update&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;升级所有程序&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew upgrade&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;查看本地安装了哪些’环境’和’应用’&lt;/p&gt;
+
+    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; brew list
+ brew cask list
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;相关使用技巧&quot;&gt;相关使用技巧&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;经常在安装的会去检查本体的更新, 可能会导致长时间的等待. 所以可以采用关闭自动更新.
+&lt;code class=&quot;highlighter-rouge&quot;&gt;export HOMEBREW_NO_AUTO_UPDATE=true&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;个人已经安装的&quot;&gt;个人已经安装的&lt;/h2&gt;
+
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;visual-studio-code
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;the-unarchiver
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;google-chrome
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;sourcetree
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;wechat
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;iterm2
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;powershell
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;sogouinput &lt;span class=&quot;c&quot;&gt;## 需要自己重新打开一下&lt;/span&gt;
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;qq
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;synergy
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;unity-hub
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;beyond-compare
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;steam
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;neteasemusic
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;baiducloud
+
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;antigen &lt;span class=&quot;c&quot;&gt;## zsh下的管理工具&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;vscode-所使用到的插件&quot;&gt;&lt;em&gt;VSCode&lt;/em&gt; 所使用到的插件&lt;/h3&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Chinese&lt;/li&gt;
+  &lt;li&gt;Markdown All in One -&amp;gt; 快捷键&lt;/li&gt;
+  &lt;li&gt;markdownlint -&amp;gt; 语法纠查&lt;/li&gt;
+&lt;/ol&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Mac" />
+      
+        <category term="笔记" />
+      
+        <category term="brew" />
+      
+
+      
+
+      
+        <summary type="html">Title: brew工具的使用</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>
@@ -2099,222 +2326,6 @@ clear可以理解为是清除指针指向所在地址的内存
 
       
         <summary type="html">Title: 上海市高等学校计算机等级考试（二级）推荐教材</summary>
-      
-
-      
-      
-    </entry>
-  
-  
-  
-    <entry>
-      
-      <title type="html">Hello World!</title>
-      
-      
-      <link href="https://blog.danyow.cn/2019/05/26/hello-world/" rel="alternate" type="text/html" title="Hello World!" />
-      
-      <published>2019-05-26T04:40:24+00:00</published>
-      <updated>2019-05-26T04:40:24+00:00</updated>
-      <id>https://blog.danyow.cn/2019/05/26/hello-world</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/05/26/hello-world/">&lt;ol&gt;
-  &lt;li&gt;&lt;strong&gt;jekyll&lt;/strong&gt; 静态页面框架&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;whiteglass&lt;/strong&gt; 主题&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Disqus&lt;/strong&gt; 评论系统（国内&lt;em&gt;IP&lt;/em&gt;应该无法访问）&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Travis CI&lt;/strong&gt; 自动构建工具&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&quot;jekyll&quot;&gt;jekyll&lt;/h2&gt;
-
-&lt;p&gt;之所以采用 &lt;strong&gt;jekyll&lt;/strong&gt; 而没有去使用中文文档更为丰富的 &lt;em&gt;Hexo&lt;/em&gt;，是因为 &lt;em&gt;Github&lt;/em&gt; 官方推荐的是前者。 同时也有另外一个原因，&lt;strong&gt;jekyll&lt;/strong&gt; 看起来会简约许多。&lt;/p&gt;
-
-&lt;p&gt;大致步骤如下:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;安装 &lt;em&gt;bundler&lt;/em&gt; 和 &lt;em&gt;jekyll&lt;/em&gt;
- &lt;code class=&quot;highlighter-rouge&quot;&gt;gem install bundler jekyll&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;创建项目
-&lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog --skip-bundle&lt;/code&gt;
-后者是针对 &lt;strong&gt;whiteglass&lt;/strong&gt; 的，后面会讲到。&lt;/li&gt;
-  &lt;li&gt;进入目录&lt;/li&gt;
-  &lt;li&gt;启动本地调试
-&lt;code class=&quot;highlighter-rouge&quot;&gt;bundle exec jekyll serve&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;以上就算是把房子建好了，剩下的就是需要让房客（我的笔记）入住，和让房间更好看些（&lt;strong&gt;whiteglass&lt;/strong&gt;）。&lt;br /&gt;
-这些生成出来的文件直接推送到 &lt;em&gt;Github&lt;/em&gt; 时，是可以正常运行的。&lt;/p&gt;
-
-&lt;h2 id=&quot;whiteglass&quot;&gt;whiteglass&lt;/h2&gt;
-
-&lt;p&gt;这个是在 &lt;a href=&quot;https://jekyllthemes.dev/&quot;&gt;&lt;em&gt;jekyllthemes&lt;/em&gt;&lt;/a&gt; 主题网站上面找到的。
-推荐采用重新建房子的方式。&lt;/p&gt;
-
-&lt;p&gt;大致使用方法:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;创建项目 &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll new blog --skip-bundle&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;gem &quot;jekyll-whiteglass&quot;&lt;/code&gt; 到 &lt;code class=&quot;highlighter-rouge&quot;&gt;Gemfile&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;编辑 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &lt;span class=&quot;na&quot;&gt;theme&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-whiteglass&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;plugins&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-archives&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-paginate&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;jekyll-sitemap&lt;/span&gt;
-
-  &lt;span class=&quot;na&quot;&gt;permalink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/:year/:month/:day/:title/&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;paginate_path&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/posts/:num/&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;paginate&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;5&lt;/span&gt;
-
-  &lt;span class=&quot;na&quot;&gt;jekyll-archives&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;enabled&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;categories&lt;/span&gt;
-      &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;tags&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;category_archives&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;permalinks&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-      &lt;span class=&quot;na&quot;&gt;category&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/categories/:name/&lt;/span&gt;
-   &lt;span class=&quot;na&quot;&gt;tag&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;/tags/:name/&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;依次执行以下命令&lt;/p&gt;
-
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;nb&quot;&gt;rm &lt;/span&gt;index.md
- curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-O&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;https://github.com/yous/whiteglass/raw/master/{index.html,about.md,archives.md,feed.xml}&quot;&lt;/span&gt;
- curl &lt;span class=&quot;nt&quot;&gt;-L&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--create-dirs&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-o&lt;/span&gt; _data/navigation.yml https://github.com/yous/whiteglass/raw/master/_data/navigation.yml
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;安装所需文件和启动&lt;/p&gt;
-
-    &lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; bundle &lt;span class=&quot;nb&quot;&gt;install
- &lt;/span&gt;bundle &lt;span class=&quot;nb&quot;&gt;exec &lt;/span&gt;jekyll serve
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;但这里做完之后直接推送到 &lt;em&gt;Github&lt;/em&gt; 上时是没有任何反应，看不到任何界面。
-这时需要 &lt;strong&gt;Travis CI&lt;/strong&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;travis-ci&quot;&gt;Travis CI&lt;/h2&gt;
-
-&lt;p&gt;由于主题用到了 &lt;em&gt;gem&lt;/em&gt; 包，而 &lt;em&gt;Github&lt;/em&gt; 又并不能直接支持去操作 &lt;em&gt;gem&lt;/em&gt;，所以需要一个类似 &lt;em&gt;Jenkins&lt;/em&gt; 的持续集成工具来完成该操作。&lt;br /&gt;
-&lt;strong&gt;Travis&lt;/strong&gt; 会根据当前 &lt;em&gt;master&lt;/em&gt; 分支下的 &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; 这个文件去执行相应操作。&lt;br /&gt;
-根目录下新建 &lt;code class=&quot;highlighter-rouge&quot;&gt;.travis.yml&lt;/code&gt; 或者去 &lt;a href=&quot;https://github.com/yous/whiteglass/blob/master/.travis.yml&quot;&gt;下载最新的文件&lt;/a&gt;&lt;/p&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;ruby&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;sudo&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;false&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;cache&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundler&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;rvm&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;2.6.3&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;before_install&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem update --system&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gem install bundler&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;script&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;rm -rf _site&lt;/span&gt;
-  &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;bundle exec jekyll build&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;branches&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;only&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;pi&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;deploy&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;provider&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;pages&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;skip-cleanup&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;github-token&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;$GITHUB_TOKEN&lt;/span&gt;  &lt;span class=&quot;c1&quot;&gt;# &amp;lt;-- 1&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;keep-history&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;true&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;local-dir&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;_site&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;target-branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;gh-pages&lt;/span&gt;   &lt;span class=&quot;c1&quot;&gt;# &amp;lt;-- 2&lt;/span&gt;
-  &lt;span class=&quot;na&quot;&gt;on&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;branch&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;master&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;p&gt;&lt;em&gt;yml&lt;/em&gt; 区别于 &lt;em&gt;xml&lt;/em&gt;，其中 &lt;em&gt;tab&lt;/em&gt; 键以两个空格为主，可读性很高。&lt;/p&gt;
-
-&lt;p&gt;有几点说明:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;这个参数不需要修改，但是需要在 &lt;em&gt;Github&lt;/em&gt; 的设置（&lt;em&gt;Settings&lt;/em&gt;）后台的（&lt;em&gt;Developer settings&lt;/em&gt;）上添加一个（&lt;em&gt;Personal access tokens&lt;/em&gt;）. 得到这个 &lt;em&gt;key&lt;/em&gt; 后添加到 &lt;strong&gt;Travis&lt;/strong&gt; 的对应仓库的设置后台。 在 &lt;em&gt;Environment Variables&lt;/em&gt; 键入 &lt;em&gt;GITHUB_TOKEN&lt;/em&gt; 为 &lt;em&gt;Name&lt;/em&gt;，&lt;em&gt;key&lt;/em&gt; 为 &lt;em&gt;Value&lt;/em&gt;。 然后直接 &lt;em&gt;Add&lt;/em&gt; 即可。&lt;/li&gt;
-  &lt;li&gt;这里需要新建一个名为 &lt;em&gt;gh-pages&lt;/em&gt; 的分支，主要是给 &lt;strong&gt;Travis&lt;/strong&gt; 自动构建完后推送用。&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;做完这些，新建一个新的提交，&lt;strong&gt;Travis&lt;/strong&gt; 就会自动开始运行，然后就可以查看网页了。&lt;/p&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;可能这里也并不能直接的查看网页，需要修改 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;/blog&quot;&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;# 为你的项目名&lt;/span&gt;
-&lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://xxx.github.io&quot;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# xxx为你的 Github 用户名&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;disqus&quot;&gt;Disqus&lt;/h2&gt;
-
-&lt;p&gt;这个会比较简单:&lt;/p&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;新建目录和文件 &lt;code class=&quot;highlighter-rouge&quot;&gt;_includes/custom_comments_provider.html&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;添加 &lt;code class=&quot;highlighter-rouge&quot;&gt;comments: true&lt;/code&gt; 到 &lt;code class=&quot;highlighter-rouge&quot;&gt;_config.yml&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;然后去到 &lt;strong&gt;Disqus&lt;/strong&gt; 的后台，新建站点，然后选择 &lt;strong&gt;jekyll&lt;/strong&gt;，把他的通用代码全部拷贝到刚刚新建的 &lt;em&gt;html&lt;/em&gt; 文件当中。&lt;/p&gt;
-
-&lt;h3 id=&quot;其他&quot;&gt;其他&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;自定义域名&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;自定义域名解析三处。&lt;/p&gt;
-
-    &lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;*.xxx.com
-www.xxx.com
-@.xxx.com
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;em&gt;ip&lt;/em&gt; 地址的获取 &lt;code class=&quot;highlighter-rouge&quot;&gt;ping xxx.github.io&lt;/code&gt;&lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;由于变成了子域名，需要更改&lt;code class=&quot;highlighter-rouge&quot;&gt;_config.xml&lt;/code&gt;&lt;/p&gt;
-
-    &lt;div class=&quot;language-yml highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &lt;span class=&quot;na&quot;&gt;baseurl&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;&lt;/span&gt;
- &lt;span class=&quot;na&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;https://blog.xxx.com&quot;&lt;/span&gt;    &lt;span class=&quot;c1&quot;&gt;# blog作为子域名放在前面 xxx为你的 Github 用户名&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Ps: 2019年8月2日更新&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;由于最近在 &lt;em&gt;Windows&lt;/em&gt; 平台上开发, 所以遇到一个问题.
-&lt;em&gt;Travis CI&lt;/em&gt; 不会自动运行构建了. 应该说每次运行都会报错.
-查找发现有个回答&lt;/p&gt;
-
-&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;啊，我明白了。您正在使用Windows计算机进行开发，但构建将在Linux上运行。如果您无法访问Linux机器，我认为最好不要Gemfile.lock登录您的Git存储库。&lt;/code&gt;&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      
-
-      
-        <category term="jekyll" />
-      
-        <category term="whiteglass" />
-      
-        <category term="Disqus" />
-      
-        <category term="Travis" />
-      
-
-      
-
-      
-        <summary type="html">jekyll 静态页面框架 whiteglass 主题 Disqus 评论系统（国内IP应该无法访问） Travis CI 自动构建工具</summary>
       
 
       
