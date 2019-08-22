@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-08-22T06:41:26+00:00</updated>
+  <updated>2019-08-22T06:52:29+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -36,18 +36,15 @@
 
 &lt;p&gt;切换默认的终端 &lt;em&gt;zsh&lt;/em&gt;, 这会提示你输入密码.&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`chsh -s /bin/zsh`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chsh -s /bin/zsh&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;如果想改回来的话&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`chsh -s /bin/bash`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;chsh -s /bin/bash&lt;/code&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;使用-antigen-来安装-oh-my-zsh&quot;&gt;使用 &lt;em&gt;antigen&lt;/em&gt; 来安装 &lt;em&gt;oh my zsh&lt;/em&gt;&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`brew install antigen`
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;brew install antigen&lt;/code&gt;&lt;/p&gt;
 
 &lt;p&gt;这里安装完后会有个提示说: 源目录在某个位置, 让你自己写到 &lt;strong&gt;.zshrc&lt;/strong&gt; 里面去.&lt;/p&gt;
 
@@ -74,68 +71,65 @@
 
 &lt;h2 id=&quot;新建-zshrc-文件-填入下面内容&quot;&gt;新建 &lt;strong&gt;.zshrc&lt;/strong&gt; 文件 填入下面内容&lt;/h2&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```shell
-source /usr/local/share/antigen/antigen.zsh
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;source&lt;/span&gt; /usr/local/share/antigen/antigen.zsh
 
-# 加载oh-my-zsh库
+&lt;span class=&quot;c&quot;&gt;# 加载oh-my-zsh库&lt;/span&gt;
 antigen use oh-my-zsh
 
-# 加载原版oh-my-zsh中的功能(robbyrussell's oh-my-zsh).
+&lt;span class=&quot;c&quot;&gt;# 加载原版oh-my-zsh中的功能(robbyrussell's oh-my-zsh).&lt;/span&gt;
 antigen bundle brew
 antigen bundle command-not-found
 antigen bundle git
 antigen bundle pip
 
-# 语法高亮功能
+&lt;span class=&quot;c&quot;&gt;# 语法高亮功能&lt;/span&gt;
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# 代码提示功能
+&lt;span class=&quot;c&quot;&gt;# 代码提示功能&lt;/span&gt;
 antigen bundle zsh-users/zsh-autosuggestions
 
-# 自动补全功能
+&lt;span class=&quot;c&quot;&gt;# 自动补全功能&lt;/span&gt;
 antigen bundle zsh-users/zsh-completions
 
-# 这个不知道是啥
+&lt;span class=&quot;c&quot;&gt;# 这个不知道是啥&lt;/span&gt;
 antigen bundle zsh-users/zsh-apple-touchbar
 
-# 加载主题
-# antigen theme robbyrussell
+&lt;span class=&quot;c&quot;&gt;# 加载主题&lt;/span&gt;
+&lt;span class=&quot;c&quot;&gt;# antigen theme robbyrussell&lt;/span&gt;
 antigen theme https://github.com/bhilburn/powerlevel9k powerlevel9k
 
-# 保存更改
+&lt;span class=&quot;c&quot;&gt;# 保存更改&lt;/span&gt;
 antigen apply
 
-## 配合powerlevel9k主题使用
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+&lt;span class=&quot;c&quot;&gt;## 配合powerlevel9k主题使用&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_PROMPT_ON_NEWLINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_RPROMPT_ON_NEWLINE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;true
 
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm node_version)
+&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_MODE&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'awesome-patched'&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_SHORTEN_DIR_LENGTH&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;2
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_LEFT_PROMPT_ELEMENTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;os_icon &lt;span class=&quot;nb&quot;&gt;dir &lt;/span&gt;vcs&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=(&lt;/span&gt;status nvm node_version&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
 
-POWERLEVEL9K_OS_ICON_BACKGROUND=&quot;white&quot;
-POWERLEVEL9K_OS_ICON_FOREGROUND=&quot;blue&quot;
-POWERLEVEL9K_DIR_HOME_FOREGROUND=&quot;white&quot;
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=&quot;white&quot;
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=&quot;white&quot;
-```
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_OS_ICON_BACKGROUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;white&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_OS_ICON_FOREGROUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;blue&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_DIR_HOME_FOREGROUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;white&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;white&quot;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;POWERLEVEL9K_DIR_DEFAULT_FOREGROUND&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;white&quot;&lt;/span&gt;
+
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;这时候终端界面会呈现为部分乱码-因为缺少对应的图标字体&quot;&gt;这时候终端界面会呈现为部分乱码, 因为缺少对应的图标字体&lt;/h2&gt;
 
 &lt;p&gt;在终端执行以下步骤:&lt;/p&gt;
 
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;```shell
-# 下载
+&lt;div class=&quot;language-shell highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# 下载&lt;/span&gt;
 git clone https://github.com/powerline/fonts.git
-# 安装
-cd fonts
+&lt;span class=&quot;c&quot;&gt;# 安装&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd &lt;/span&gt;fonts
 ./install.sh
-# 删除安装包
-cd ..
-rm -rf fonts
-```
+&lt;span class=&quot;c&quot;&gt;# 删除安装包&lt;/span&gt;
+&lt;span class=&quot;nb&quot;&gt;cd&lt;/span&gt; ..
+&lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rf&lt;/span&gt; fonts
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;h2 id=&quot;在对应的终端工具内选择安装的字体&quot;&gt;在对应的终端工具内选择安装的字体&lt;/h2&gt;

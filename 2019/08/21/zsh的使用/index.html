@@ -368,18 +368,15 @@
 
 <p>切换默认的终端 <em>zsh</em>, 这会提示你输入密码.</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`chsh -s /bin/zsh`
-</code></pre></div></div>
+<p><code class="highlighter-rouge">chsh -s /bin/zsh</code></p>
 
 <p>如果想改回来的话</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`chsh -s /bin/bash`
-</code></pre></div></div>
+<p><code class="highlighter-rouge">chsh -s /bin/bash</code></p>
 
 <h2 id="使用-antigen-来安装-oh-my-zsh">使用 <em>antigen</em> 来安装 <em>oh my zsh</em></h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`brew install antigen`
-</code></pre></div></div>
+<p><code class="highlighter-rouge">brew install antigen</code></p>
 
 <p>这里安装完后会有个提示说: 源目录在某个位置, 让你自己写到 <strong>.zshrc</strong> 里面去.</p>
 
@@ -406,68 +403,65 @@
 
 <h2 id="新建-zshrc-文件-填入下面内容">新建 <strong>.zshrc</strong> 文件 填入下面内容</h2>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```shell
-source /usr/local/share/antigen/antigen.zsh
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> /usr/local/share/antigen/antigen.zsh
 
-# 加载oh-my-zsh库
+<span class="c"># 加载oh-my-zsh库</span>
 antigen use oh-my-zsh
 
-# 加载原版oh-my-zsh中的功能(robbyrussell's oh-my-zsh).
+<span class="c"># 加载原版oh-my-zsh中的功能(robbyrussell's oh-my-zsh).</span>
 antigen bundle brew
 antigen bundle command-not-found
 antigen bundle git
 antigen bundle pip
 
-# 语法高亮功能
+<span class="c"># 语法高亮功能</span>
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# 代码提示功能
+<span class="c"># 代码提示功能</span>
 antigen bundle zsh-users/zsh-autosuggestions
 
-# 自动补全功能
+<span class="c"># 自动补全功能</span>
 antigen bundle zsh-users/zsh-completions
 
-# 这个不知道是啥
+<span class="c"># 这个不知道是啥</span>
 antigen bundle zsh-users/zsh-apple-touchbar
 
-# 加载主题
-# antigen theme robbyrussell
+<span class="c"># 加载主题</span>
+<span class="c"># antigen theme robbyrussell</span>
 antigen theme https://github.com/bhilburn/powerlevel9k powerlevel9k
 
-# 保存更改
+<span class="c"># 保存更改</span>
 antigen apply
 
-## 配合powerlevel9k主题使用
-POWERLEVEL9K_PROMPT_ON_NEWLINE=true
-POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
+<span class="c">## 配合powerlevel9k主题使用</span>
+<span class="nv">POWERLEVEL9K_PROMPT_ON_NEWLINE</span><span class="o">=</span><span class="nb">true
+</span><span class="nv">POWERLEVEL9K_RPROMPT_ON_NEWLINE</span><span class="o">=</span><span class="nb">true
 
-POWERLEVEL9K_MODE='awesome-patched'
-POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon dir vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status nvm node_version)
+</span><span class="nv">POWERLEVEL9K_MODE</span><span class="o">=</span><span class="s1">'awesome-patched'</span>
+<span class="nv">POWERLEVEL9K_SHORTEN_DIR_LENGTH</span><span class="o">=</span>2
+<span class="nv">POWERLEVEL9K_LEFT_PROMPT_ELEMENTS</span><span class="o">=(</span>os_icon <span class="nb">dir </span>vcs<span class="o">)</span>
+<span class="nv">POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS</span><span class="o">=(</span>status nvm node_version<span class="o">)</span>
 
-POWERLEVEL9K_OS_ICON_BACKGROUND="white"
-POWERLEVEL9K_OS_ICON_FOREGROUND="blue"
-POWERLEVEL9K_DIR_HOME_FOREGROUND="white"
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="white"
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="white"
-```
+<span class="nv">POWERLEVEL9K_OS_ICON_BACKGROUND</span><span class="o">=</span><span class="s2">"white"</span>
+<span class="nv">POWERLEVEL9K_OS_ICON_FOREGROUND</span><span class="o">=</span><span class="s2">"blue"</span>
+<span class="nv">POWERLEVEL9K_DIR_HOME_FOREGROUND</span><span class="o">=</span><span class="s2">"white"</span>
+<span class="nv">POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND</span><span class="o">=</span><span class="s2">"white"</span>
+<span class="nv">POWERLEVEL9K_DIR_DEFAULT_FOREGROUND</span><span class="o">=</span><span class="s2">"white"</span>
+
 </code></pre></div></div>
 
 <h2 id="这时候终端界面会呈现为部分乱码-因为缺少对应的图标字体">这时候终端界面会呈现为部分乱码, 因为缺少对应的图标字体</h2>
 
 <p>在终端执行以下步骤:</p>
 
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>```shell
-# 下载
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 下载</span>
 git clone https://github.com/powerline/fonts.git
-# 安装
-cd fonts
+<span class="c"># 安装</span>
+<span class="nb">cd </span>fonts
 ./install.sh
-# 删除安装包
-cd ..
-rm -rf fonts
-```
+<span class="c"># 删除安装包</span>
+<span class="nb">cd</span> ..
+<span class="nb">rm</span> <span class="nt">-rf</span> fonts
 </code></pre></div></div>
 
 <h2 id="在对应的终端工具内选择安装的字体">在对应的终端工具内选择安装的字体</h2>
