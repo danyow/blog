@@ -81,6 +81,10 @@
 <lastmod>2019-08-06T06:55:00+00:00</lastmod>
 </url>
 <url>
+<loc>https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
+<lastmod>2019-08-15T06:55:00+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.danyow.cn/2019/08/21/zsh%E7%9A%84%E4%BD%BF%E7%94%A8/</loc>
 <lastmod>2019-08-21T15:33:55+00:00</lastmod>
 </url>
@@ -160,7 +164,16 @@
 <loc>https://blog.danyow.cn/categories/brew/</loc>
 </url>
 <url>
+<loc>https://blog.danyow.cn/categories/scoop/</loc>
+</url>
+<url>
 <loc>https://blog.danyow.cn/categories/item2/</loc>
+</url>
+<url>
+<loc>https://blog.danyow.cn/categories/zsh/</loc>
+</url>
+<url>
+<loc>https://blog.danyow.cn/categories/antigen/</loc>
 </url>
 <url>
 <loc>https://blog.danyow.cn/posts/2/</loc>

@@ -128,6 +128,12 @@
     
       
     
+      
+    
+      
+    
+      
+    
   
     
     
@@ -177,6 +183,12 @@
     
       
     
+      
+    
+      
+    
+      
+    
   
     
     
@@ -223,7 +235,123 @@
       
     
       
-        <a href="/categories/item2/">item2</a>
+    
+      
+        <a href="/categories/item2/">item2</a>,
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/zsh/">zsh</a>,
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/antigen/">antigen</a>
       
     
   
@@ -253,7 +381,28 @@
 <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>`brew install antigen`
 </code></pre></div></div>
 
-<p>这里安装完后会有个提示说 源目录在哪? 让你自己写到 <strong>.zshrc</strong> 里面去.</p>
+<p>这里安装完后会有个提示说: 源目录在某个位置, 让你自己写到 <strong>.zshrc</strong> 里面去.</p>
+
+<h3 id="关于-antigen-的简单介绍">关于 <em>antigen</em> 的简单介绍</h3>
+
+<blockquote>
+  <p>一款类似在 <em>bash</em> 下管理的 <em>brew</em> 工具, 因为直接使用 <em>oh my zsh</em> 会使得你的配置变得稍稍复杂.</p>
+</blockquote>
+
+<ol>
+  <li>安装官方插件 <code class="highlighter-rouge">antigen bundle brew</code></li>
+  <li>安装<em>github</em>上的插件 <code class="highlighter-rouge">antigen bundle zsh-users/zsh-syntax-highlighting</code></li>
+  <li>生成缓存, 加快下次载入过程 <code class="highlighter-rouge">antigen cache-gen</code></li>
+  <li>更新某个或者全部插件 <code class="highlighter-rouge">antigen update [&lt;bundle-name&gt;]</code>: 如果留空那么就是更新全部.</li>
+  <li>回滚更新 <code class="highlighter-rouge">antigen revert</code>: 回滚到更新前的状态</li>
+  <li>列出本地安装的插件列表 <code class="highlighter-rouge">antigen list [--simple|--short|--long]</code></li>
+  <li>清理没有使用到的插件 <code class="highlighter-rouge">antigen cleanup</code></li>
+  <li>删除插件 <code class="highlighter-rouge">antigen purge</code></li>
+  <li>使用zsh框架 <code class="highlighter-rouge">antigen use oh-my-zsh</code></li>
+  <li>使用主题 <code class="highlighter-rouge">antigen theme</code></li>
+  <li>应用更改 <code class="highlighter-rouge">antigen apply</code></li>
+  <li>自身更新 <code class="highlighter-rouge">antigen selfupdate</code></li>
+</ol>
 
 <h2 id="新建-zshrc-文件-填入下面内容">新建 <strong>.zshrc</strong> 文件 填入下面内容</h2>
 

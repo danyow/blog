@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-08-21T17:38:38+00:00</updated>
+  <updated>2019-08-22T06:41:26+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -49,7 +49,28 @@
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;`brew install antigen`
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
-&lt;p&gt;这里安装完后会有个提示说 源目录在哪? 让你自己写到 &lt;strong&gt;.zshrc&lt;/strong&gt; 里面去.&lt;/p&gt;
+&lt;p&gt;这里安装完后会有个提示说: 源目录在某个位置, 让你自己写到 &lt;strong&gt;.zshrc&lt;/strong&gt; 里面去.&lt;/p&gt;
+
+&lt;h3 id=&quot;关于-antigen-的简单介绍&quot;&gt;关于 &lt;em&gt;antigen&lt;/em&gt; 的简单介绍&lt;/h3&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;一款类似在 &lt;em&gt;bash&lt;/em&gt; 下管理的 &lt;em&gt;brew&lt;/em&gt; 工具, 因为直接使用 &lt;em&gt;oh my zsh&lt;/em&gt; 会使得你的配置变得稍稍复杂.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;安装官方插件 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen bundle brew&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;安装&lt;em&gt;github&lt;/em&gt;上的插件 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen bundle zsh-users/zsh-syntax-highlighting&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;生成缓存, 加快下次载入过程 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen cache-gen&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;更新某个或者全部插件 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen update [&amp;lt;bundle-name&amp;gt;]&lt;/code&gt;: 如果留空那么就是更新全部.&lt;/li&gt;
+  &lt;li&gt;回滚更新 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen revert&lt;/code&gt;: 回滚到更新前的状态&lt;/li&gt;
+  &lt;li&gt;列出本地安装的插件列表 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen list [--simple|--short|--long]&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;清理没有使用到的插件 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen cleanup&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;删除插件 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen purge&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;使用zsh框架 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen use oh-my-zsh&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;使用主题 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen theme&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;应用更改 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen apply&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;自身更新 &lt;code class=&quot;highlighter-rouge&quot;&gt;antigen selfupdate&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h2 id=&quot;新建-zshrc-文件-填入下面内容&quot;&gt;新建 &lt;strong&gt;.zshrc&lt;/strong&gt; 文件 填入下面内容&lt;/h2&gt;
 
@@ -136,11 +157,77 @@ rm -rf fonts
       
         <category term="item2" />
       
+        <category term="zsh" />
+      
+        <category term="antigen" />
+      
 
       
 
       
         <summary type="html">Title:貌似这样可以让你的终端变得很好看呢</summary>
+      
+
+      
+      
+    </entry>
+  
+  
+  
+    <entry>
+      
+      <title type="html">Scoop的安装</title>
+      
+      
+      <link href="https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="alternate" type="text/html" title="Scoop的安装" />
+      
+      <published>2019-08-15T06:55:00+00:00</published>
+      <updated>2019-08-15T06:55:00+00:00</updated>
+      <id>https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">&lt;p&gt;Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 &lt;em&gt;Bucket&lt;/em&gt; .&lt;/p&gt;
+
+&lt;h2 id=&quot;scoop的安装&quot;&gt;Scoop的安装&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;PowerShell&lt;/em&gt; 下运行下述内容，确保 &lt;em&gt;PowerShell&lt;/em&gt; 允许可以执行本地脚本。&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set-executionpolicy remotesigned -scope currentuser&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;然后安装 &lt;em&gt;Scoop&lt;/em&gt; ，看网速来的。&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iex (new-object net.webclient).downloadstring('https://get.scoop.sh')&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;进入桶子环境准备阶段。即添加 &lt;em&gt;Bucket&lt;/em&gt; 库。但由于 &lt;em&gt;Bucket&lt;/em&gt; 是依托于 &lt;em&gt;Github&lt;/em&gt; ，所以要先安装 &lt;em&gt;git&lt;/em&gt; 环境&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scoop install git&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果你没有 7zip 的话，会顺手给你安装git的依赖。&lt;/p&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Windows" />
+      
+        <category term="笔记" />
+      
+        <category term="scoop" />
+      
+
+      
+
+      
+        <summary type="html">Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 Bucket .</summary>
       
 
       
@@ -185,10 +272,9 @@ rm -rf fonts
 
 &lt;h2 id=&quot;相关使用技巧&quot;&gt;相关使用技巧&lt;/h2&gt;
 
-&lt;ol&gt;
-  &lt;li&gt;经常在安装的会去检查本体的更新, 可能会导致长时间的等待. 所以可以采用关闭自动更新.
-&lt;code class=&quot;highlighter-rouge&quot;&gt;export HOMEBREW_NO_AUTO_UPDATE=true&lt;/code&gt;&lt;/li&gt;
-&lt;/ol&gt;
+&lt;ul&gt;
+  &lt;li&gt;经常在安装的会去检查本体的更新, 可能会导致长时间的等待. 所以可以采用关闭自动更新. &lt;code class=&quot;highlighter-rouge&quot;&gt;export HOMEBREW_NO_AUTO_UPDATE=true&lt;/code&gt; 但每次重启后都需要重新设置, 可以将这行加入到对应的shell配置文件中去.&lt;/li&gt;
+&lt;/ul&gt;
 
 &lt;h2 id=&quot;个人已经安装的&quot;&gt;个人已经安装的&lt;/h2&gt;
 
@@ -2207,125 +2293,6 @@ increment : 3, score : 0
 
       
         <summary type="html">Title: 第二版</summary>
-      
-
-      
-      
-    </entry>
-  
-  
-  
-    <entry>
-      
-      <title type="html">Python程序设计基础</title>
-      
-      
-      <link href="https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/" rel="alternate" type="text/html" title="Python程序设计基础" />
-      
-      <published>2019-05-27T13:06:13+00:00</published>
-      <updated>2019-05-27T13:06:13+00:00</updated>
-      <id>https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/05/27/Python%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80/">&lt;p&gt;Title: 上海市高等学校计算机等级考试（二级）推荐教材&lt;/p&gt;
-
-&lt;h2 id=&quot;2-python程序的基本语法&quot;&gt;2. Python程序的基本语法&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;四舍六入五留双 &lt;code class=&quot;highlighter-rouge&quot;&gt;round()&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;nb&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;'''
-2
-2
-'''&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;3-python-程序的基本流程控制&quot;&gt;3. Python 程序的基本流程控制&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;允许 &lt;code class=&quot;highlighter-rouge&quot;&gt;x &amp;gt; y &amp;gt; z&lt;/code&gt; &lt;code class=&quot;highlighter-rouge&quot;&gt;x &amp;lt; y &amp;gt; z&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;while&lt;/code&gt; 和 &lt;code class=&quot;highlighter-rouge&quot;&gt;else&lt;/code&gt; 可以一起用 在退出循环的时候调用&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;4-python的特征数据类型&quot;&gt;4. Python的特征数据类型&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;列表和字典的 &lt;code class=&quot;highlighter-rouge&quot;&gt;clear()&lt;/code&gt; 方法&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-py highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;b&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'y'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;clear&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;'''
-[1, 2, 3] [1, 2, 3]
-[] []
-{'x': 1, 'y': 2} {'x': 1, 'y': 2}
-{} {}
-clear可以理解为是清除指针指向所在地址的内存
-'''&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;集合里面不能包含有列表或字典&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;列表自己 append 自身的时候会无穷递归 &lt;code class=&quot;highlighter-rouge&quot;&gt;lst.append(list)&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;5-文件&quot;&gt;5. 文件&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;在表示路径的字符串中 &lt;code class=&quot;highlighter-rouge&quot;&gt;/&lt;/code&gt; 等同于 &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt;，但 &lt;code class=&quot;highlighter-rouge&quot;&gt;\&lt;/code&gt; 又必须转义为 &lt;code class=&quot;highlighter-rouge&quot;&gt;\\&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;s&quot;&gt;&quot;D:&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Dir&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\\&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;file.txt&quot;&lt;/span&gt;
-
-&lt;span class=&quot;s&quot;&gt;&quot;D:/Dir/file.txt&quot;&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;7-面向对象的程序设计&quot;&gt;7. 面向对象的程序设计&lt;/h2&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;dir()&lt;/code&gt; 是可以返回当前对象里面的所有参数 包括方法和属性&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;多继承时，如果其父类当做有共同的方法时，子类调用会以第一个为准，即先查找先调用。&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</content>
-
-      
-      
-      
-      
-      
-
-      
-
-      
-        <category term="笔记" />
-      
-        <category term="python" />
-      
-
-      
-
-      
-        <summary type="html">Title: 上海市高等学校计算机等级考试（二级）推荐教材</summary>
       
 
       
