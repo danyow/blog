@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-08-31T13:20:57+00:00</updated>
+  <updated>2019-09-05T15:10:36+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -347,11 +347,30 @@ brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;impactor
 brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;thunder
 brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;epic-games
 brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;svnx
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;visual-studio
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;weiyun
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;spotifree
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;spotify
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;free-download-manager &lt;span class=&quot;c&quot;&gt;## 顶替迅雷的&lt;/span&gt;
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;tencent-lemon &lt;span class=&quot;c&quot;&gt;## 顶替CMM的&lt;/span&gt;
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;android-studio
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;genymotion
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;airserver &lt;span class=&quot;c&quot;&gt;## 哎~ 这个还是之后自行破解或者付费吧 只能14天&lt;/span&gt;
 
 brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;antigen &lt;span class=&quot;c&quot;&gt;## zsh下的管理工具&lt;/span&gt;
 brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python3
 brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;node
+brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;dotnet
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;额外无法在brew上找到的&quot;&gt;额外无法在brew上找到的&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;人人影视&lt;/li&gt;
+  &lt;li&gt;Parallels Desktop&lt;/li&gt;
+  &lt;li&gt;C4D&lt;/li&gt;
+  &lt;li&gt;MAYA&lt;/li&gt;
+&lt;/ol&gt;
 
 &lt;h3 id=&quot;vscode-所使用到的插件&quot;&gt;&lt;em&gt;VSCode&lt;/em&gt; 所使用到的插件&lt;/h3&gt;
 
@@ -362,6 +381,8 @@ brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;node
   &lt;li&gt;Python&lt;/li&gt;
   &lt;li&gt;TSLint&lt;/li&gt;
   &lt;li&gt;Comment Translate&lt;/li&gt;
+  &lt;li&gt;luaide -&amp;gt; 密码不能有符号&lt;/li&gt;
+  &lt;li&gt;Better Align -&amp;gt; 代码对齐 -&amp;gt; 需要在键盘快捷方式里面加入键值绑定&lt;/li&gt;
 &lt;/ol&gt;</content>
 
       
@@ -991,7 +1012,11 @@ Version: 2.0.10&lt;/p&gt;
 &lt;h3 id=&quot;cocoapod-更新&quot;&gt;&lt;em&gt;cocoapod&lt;/em&gt; 更新&lt;/h3&gt;
 
 &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;pod install --verbose --no-repo-update&lt;/code&gt;
-&lt;code class=&quot;highlighter-rouge&quot;&gt;pod update --verbose --no-repo-update&lt;/code&gt;&lt;/p&gt;</content>
+&lt;code class=&quot;highlighter-rouge&quot;&gt;pod update --verbose --no-repo-update&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;xcode-无法被检测到时&quot;&gt;&lt;em&gt;Xcode&lt;/em&gt; 无法被检测到时&lt;/h3&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer&lt;/code&gt;&lt;/p&gt;</content>
 
       
       
