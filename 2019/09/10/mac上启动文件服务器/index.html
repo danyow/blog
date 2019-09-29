@@ -9,12 +9,12 @@
   
   
   
-  <title>Python 内置函数</title>
-  <meta name="description" content="evel()">
+  <title>mac上启动文件服务器</title>
+  <meta name="description" content="Title: 使用 mac 自带的apache 启动文件服务器">
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/09/10/mac%E4%B8%8A%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -22,16 +22,16 @@
   
 
   
-  <meta property="og:title" content="Python 内置函数">
+  <meta property="og:title" content="mac上启动文件服务器">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/05/28/Python%E5%86%85%E7%BD%AE%E5%87%BD%E6%95%B0/">
-  <meta property="og:description" content="evel()">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/09/10/mac%E4%B8%8A%E5%90%AF%E5%8A%A8%E6%96%87%E4%BB%B6%E6%9C%8D%E5%8A%A1%E5%99%A8/">
+  <meta property="og:description" content="Title: 使用 mac 自带的apache 启动文件服务器">
   
   
   <meta name="twitter:card" content="summary">
   
-  <meta name="twitter:title" content="Python 内置函数">
-  <meta name="twitter:description" content="evel()">
+  <meta name="twitter:title" content="mac上启动文件服务器">
+  <meta name="twitter:description" content="Title: 使用 mac 自带的apache 启动文件服务器">
   
   
 
@@ -76,68 +76,9 @@
 
   <header class="post-header">
     
-      <h1 class="post-title" itemprop="name headline">Python 内置函数</h1>
+      <h1 class="post-title" itemprop="name headline">mac上启动文件服务器</h1>
     
-    <p class="post-meta"><time datetime="2019-05-28T14:28:38+00:00" itemprop="datePublished">May 28, 2019</time> •
-  
-    
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>,
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
+    <p class="post-meta"><time datetime="2019-09-10T14:39:06+00:00" itemprop="datePublished">Sep 10, 2019</time> •
   
     
     
@@ -152,7 +93,66 @@
       
     
       
-        <a href="/categories/python/">python</a>
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/mac/">Mac</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+      
+    
       
     
       
@@ -205,31 +205,26 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <h2 id="evel"><code class="highlighter-rouge">evel()</code></h2>
+    <p>Title: 使用 <em>mac</em> 自带的<em>apache</em> 启动文件服务器</p>
 
-<p><code class="highlighter-rouge">eval(expression[, globals[, locals]])</code></p>
+<ol>
+  <li>
+    <p>开启 <em>apache</em></p>
 
-<ul>
-  <li>expression – 表达式。</li>
-  <li>globals – 变量作用域，全局命名空间，如果被提供，则必须是一个字典对象。</li>
-  <li>locals – 变量作用域，局部命名空间，如果被提供，可以是任何映射对象。</li>
-</ul>
+    <p><code class="highlighter-rouge">sudo apachectl start</code></p>
+  </li>
+  <li><code class="highlighter-rouge">cd</code> 到对应的目录下</li>
+  <li>
+    <p>开启 <em>HttpServer</em></p>
 
-<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&gt;&gt;&gt;</span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span> <span class="s">'3 * x'</span> <span class="p">)</span>
-<span class="mi">21</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'pow(2,2)'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">'2 + 2'</span><span class="p">)</span>
-<span class="mi">4</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="n">n</span><span class="o">=</span><span class="mi">81</span>
-<span class="o">&gt;&gt;&gt;</span> <span class="nb">eval</span><span class="p">(</span><span class="s">"n + 4"</span><span class="p">)</span>
-<span class="mi">85</span>
-</code></pre></div></div>
+    <p><code class="highlighter-rouge">python -m SimpleHTTPServer</code></p>
+  </li>
+  <li>
+    <p>访问链接</p>
 
-<blockquote>
-  <p>就好像是在 <em>python</em> 语言里面自建了一个 <em>python</em> 解析器。</p>
-</blockquote>
+    <p><code class="highlighter-rouge">http://localhost:8000</code></p>
+  </li>
+</ol>
 
   </div>
 
