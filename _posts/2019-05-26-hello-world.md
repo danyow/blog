@@ -23,6 +23,7 @@ date: 2019-05-26 12:40:24 +0800
    `jekyll new blog` 和 `jekyll new blog --skip-bundle`
    后者是针对 **whiteglass** 的，后面会讲到。
 3. 进入目录
+   `bundle install`
 4. 启动本地调试
    `bundle exec jekyll serve`
 
