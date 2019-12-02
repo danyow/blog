@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2019-09-29T09:19:31+00:00</updated>
+  <updated>2019-12-02T00:49:43+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -471,6 +471,13 @@ brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;android-studio
 brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;genymotion
 brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;airserver &lt;span class=&quot;c&quot;&gt;## 哎~ 这个还是之后自行破解或者付费吧 只能14天&lt;/span&gt;
 brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;java
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;postman
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;microsoft-remote-desktop-beta
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;qqmusic
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;adobe-air
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;poedit
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;yinxiangbiji
+brew cask &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;mailmaster
 
 brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;antigen &lt;span class=&quot;c&quot;&gt;## zsh下的管理工具&lt;/span&gt;
 brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;python3
@@ -493,6 +500,7 @@ brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby &lt;span class=&
 &lt;ol&gt;
   &lt;li&gt;Better Align -&amp;gt; 代码对齐 -&amp;gt; 需要在键盘快捷方式里面加入键值绑定&lt;/li&gt;
   &lt;li&gt;C#&lt;/li&gt;
+  &lt;li&gt;C# XML Documentation Comments&lt;/li&gt;
   &lt;li&gt;Chinese&lt;/li&gt;
   &lt;li&gt;Comment Translate&lt;/li&gt;
   &lt;li&gt;Debugger for Unity&lt;/li&gt;
@@ -504,6 +512,7 @@ brew &lt;span class=&quot;nb&quot;&gt;install &lt;/span&gt;ruby &lt;span class=&
   &lt;li&gt;markdownlint -&amp;gt; 语法纠查&lt;/li&gt;
   &lt;li&gt;Material Icon Theme&lt;/li&gt;
   &lt;li&gt;Material Theme&lt;/li&gt;
+  &lt;li&gt;Partial Diff -&amp;gt; 代码比对&lt;/li&gt;
   &lt;li&gt;Paste Image&lt;/li&gt;
   &lt;li&gt;Python&lt;/li&gt;
   &lt;li&gt;Python&lt;/li&gt;
