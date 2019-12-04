@@ -101,6 +101,10 @@
 <lastmod>2019-09-10T14:39:06+00:00</lastmod>
 </url>
 <url>
+<loc>https://blog.danyow.cn/2019/12/04/Rust/</loc>
+<lastmod>2019-12-04T14:39:06+00:00</lastmod>
+</url>
+<url>
 <loc>https://blog.danyow.cn/404/</loc>
 </url>
 <url>
@@ -192,6 +196,9 @@
 </url>
 <url>
 <loc>https://blog.danyow.cn/categories/ruby/</loc>
+</url>
+<url>
+<loc>https://blog.danyow.cn/categories/rust/</loc>
 </url>
 <url>
 <loc>https://blog.danyow.cn/posts/2/</loc>

@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Rust</title>
+  <meta name="description" content="Title: Mac 下学习使用 Rust">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2019/12/04/Rust/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Rust">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2019/12/04/Rust/">
+  <meta property="og:description" content="Title: Mac 下学习使用 Rust">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Rust">
+  <meta name="twitter:description" content="Title: Mac 下学习使用 Rust">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Rust</h1>
+    
+    <p class="post-meta"><time datetime="2019-12-04T14:39:06+00:00" itemprop="datePublished">Dec 4, 2019</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/mac/">Mac</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/rust/">Rust</a>,
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title: Mac 下学习使用 <em>Rust</em></p>
+
+<h2 id="安装">安装</h2>
+
+<h3 id="brew-安装">brew 安装</h3>
+
+<p>测试之后, 环境有很多内容有没安装上, 估计也是没有配置环境的原因</p>
+
+<h3 id="官网方法">官网方法</h3>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh</code></p>
+  </li>
+  <li>
+    <p>导入环境参数 <code class="highlighter-rouge">export PATH="$PATH:$HOME/.cargo/bin"</code></p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">rustc --version</code></p>
+  </li>
+</ol>
+
+<h2 id="入门">入门</h2>
+
+<h3 id="rustc-编译">rustc 编译</h3>
+
+<p>随便写一个 <code class="highlighter-rouge">main.rs</code> 文件, 然后键入下述内容.</p>
+
+<div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="nd">println!</span><span class="p">(</span><span class="s">"Hello, world!"</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>然后执行<code class="highlighter-rouge">rustc main.rs</code>得到编译后的可执行文件<code class="highlighter-rouge">./main</code>即可看到打印</p>
+
+<h3 id="cargo">Cargo</h3>
+
+<p>如果安装的时候用的是官网的方法的话, 是会让你选择第几个安装方式, 我们通常选择第一个采用默认的方式, 这样就会把Cargo所需要的也就一起下载安装下来了. 在到我们配置环境输入的<code class="highlighter-rouge">PATH</code>也是一样</p>
+
+<ol>
+  <li>
+    <p>新建项目
+<code class="highlighter-rouge">cargo new hello_cargo</code></p>
+  </li>
+  <li>
+    <p>编译项目
+<code class="highlighter-rouge">cargo build</code> or <code class="highlighter-rouge">cargo build --release</code></p>
+  </li>
+  <li>
+    <p>运行项目
+<code class="highlighter-rouge">cargo run</code></p>
+  </li>
+</ol>
+
+<h3 id="编写猜谜游戏">编写猜谜游戏</h3>
+
+<ol>
+  <li>
+    <p>直接编写</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>    <span class="c">// 使用标准库的io</span>
+
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"Guess the number!"</span><span class="p">);</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"Please input your guess."</span><span class="p">);</span>
+
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">guess</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span> <span class="c">// 定义一个可变的变量</span>
+
+     <span class="nn">io</span><span class="p">::</span><span class="nf">stdin</span><span class="p">()</span><span class="nf">.read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">guess</span><span class="p">)</span>   <span class="c">// 换行的原因只是因为过长了</span>
+         <span class="nf">.expect</span><span class="p">(</span><span class="s">"Failed to read line"</span><span class="p">);</span> <span class="c">// 处理可能的报错</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"You guessed: {}"</span><span class="p">,</span> <span class="n">guess</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>加入<code class="highlighter-rouge">rand</code>库</p>
+
+    <p>在<code class="highlighter-rouge">Cargo.toml</code>文件中加入</p>
+
+    <div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nn">[dependencies]</span>
+
+ <span class="py">rand</span> <span class="p">=</span> <span class="s">"0.3.14"</span>
+</code></pre></div>    </div>
+
+    <p>然后编译<code class="highlighter-rouge">cargo build</code>或者是<code class="highlighter-rouge">cargo run</code>可能会遇到
+ <code class="highlighter-rouge">Blocking waiting for file lock on package cache</code>
+ 如果执行得是<code class="highlighter-rouge">cargo update</code>就不会遇到<code class="highlighter-rouge">Cargo.lock</code>文件了</p>
+
+    <p>这里指定了<code class="highlighter-rouge">0.3.14</code>版本并不是真的就只使用该版本, 而是会使用兼容该版本的更高版本</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">io</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nn">rand</span><span class="p">::</span><span class="n">Rng</span><span class="p">;</span>  <span class="c">// 导入 随机库</span>
+
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"Guess the number!"</span><span class="p">);</span>
+
+     <span class="k">let</span> <span class="n">secret_number</span> <span class="o">=</span> <span class="nn">rand</span><span class="p">::</span><span class="nf">thread_rng</span><span class="p">()</span><span class="nf">.gen_range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">);</span>   <span class="c">// 生成一个 0 ~ 100 的随机数</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"The secret number is: {}"</span><span class="p">,</span> <span class="n">secret_number</span><span class="p">);</span>    <span class="c">// 测试打印</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"Please input your guess."</span><span class="p">);</span>
+
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">guess</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">new</span><span class="p">();</span>
+
+     <span class="nn">io</span><span class="p">::</span><span class="nf">stdin</span><span class="p">()</span><span class="nf">.read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">guess</span><span class="p">)</span>
+         <span class="nf">.expect</span><span class="p">(</span><span class="s">"Failed to read line"</span><span class="p">);</span>
+
+     <span class="c">// trim 的是就是删除某些东西 由于 键入的时候最后面会敲击回车 导致\n会加入进来</span>
+     <span class="k">let</span> <span class="n">guess</span><span class="p">:</span> <span class="nb">u32</span> <span class="o">=</span> <span class="n">guess</span><span class="nf">.trim</span><span class="p">()</span><span class="nf">.parse</span><span class="p">()</span>   <span class="c">// 用 同一个变量名 去覆盖 guess 并转成 u32类型</span>
+         <span class="nf">.expect</span><span class="p">(</span><span class="s">"Please type a number!"</span><span class="p">);</span>   <span class="c">// 转换类型也是有可能报错的</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"You guessed: {}"</span><span class="p">,</span> <span class="n">guess</span><span class="p">);</span>
+
+     <span class="k">match</span> <span class="n">guess</span><span class="nf">.cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span> <span class="p">{</span>
+         <span class="nn">Ordering</span><span class="p">::</span><span class="n">Less</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Too small!"</span><span class="p">),</span>
+         <span class="nn">Ordering</span><span class="p">::</span><span class="n">Greater</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Too big!"</span><span class="p">),</span>
+         <span class="nn">Ordering</span><span class="p">::</span><span class="n">Equal</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"You win!"</span><span class="p">),</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>加入循环</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">// --snip--</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"The secret number is: {}"</span><span class="p">,</span> <span class="n">secret_number</span><span class="p">);</span>
+
+     <span class="k">loop</span> <span class="p">{</span>  <span class="c">// 加入循环</span>
+         <span class="nd">println!</span><span class="p">(</span><span class="s">"Please input your guess."</span><span class="p">);</span>
+
+         <span class="c">// --snip--</span>
+
+         <span class="k">match</span> <span class="n">guess</span><span class="nf">.cmp</span><span class="p">(</span><span class="o">&amp;</span><span class="n">secret_number</span><span class="p">)</span> <span class="p">{</span>
+             <span class="nn">Ordering</span><span class="p">::</span><span class="n">Less</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Too small!"</span><span class="p">),</span>
+             <span class="nn">Ordering</span><span class="p">::</span><span class="n">Greater</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"Too big!"</span><span class="p">),</span>
+             <span class="nn">Ordering</span><span class="p">::</span><span class="n">Equal</span> <span class="k">=&gt;</span> <span class="p">{</span>
+                 <span class="nd">println!</span><span class="p">(</span><span class="s">"You win!"</span><span class="p">);</span>
+                 <span class="k">break</span><span class="p">;</span>  <span class="c">// 在这里退出循环</span>
+             <span class="p">},</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>处理非数字的输入</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">// --snip--</span>
+
+ <span class="nn">io</span><span class="p">::</span><span class="nf">stdin</span><span class="p">()</span><span class="nf">.read_line</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">guess</span><span class="p">)</span>
+     <span class="nf">.expect</span><span class="p">(</span><span class="s">"Failed to read line"</span><span class="p">);</span>
+
+ <span class="c">// 加入match来对报错的 continue来处理非数字的输入</span>
+ <span class="k">let</span> <span class="n">guess</span><span class="p">:</span> <span class="nb">u32</span> <span class="o">=</span> <span class="k">match</span> <span class="n">guess</span><span class="nf">.trim</span><span class="p">()</span><span class="nf">.parse</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nf">Ok</span><span class="p">(</span><span class="n">num</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">num</span><span class="p">,</span>
+     <span class="nf">Err</span><span class="p">(</span><span class="n">_</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="n">continue</span><span class="p">,</span>
+ <span class="p">};</span>
+
+ <span class="nd">println!</span><span class="p">(</span><span class="s">"You guessed: {}"</span><span class="p">,</span> <span class="n">guess</span><span class="p">);</span>
+
+ <span class="c">// --snip--</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="通用编程概念">通用编程概念</h3>
+
+<h4 id="变量和可变性">变量和可变性</h4>
+
+<ol>
+  <li>这里的变量不是指能变的量, 而是一个定义, 但只要赋予了 <code class="highlighter-rouge">mut</code> 才是真的可以变</li>
+  <li>常量的命名规则 单词全大写 下划线分隔 就连int <code class="highlighter-rouge">100,000</code> 都可以表示为 <code class="highlighter-rouge">100_000</code></li>
+  <li>变量可以被重复声明并覆盖原值 但不能改变原有数据类型 也就是不能 string =&gt; int</li>
+</ol>
+
+<h4 id="资料类型">资料类型</h4>
+
+<ol>
+  <li>
+    <p>编译时需要帮忙确定类型</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="n">guess</span><span class="p">:</span> <span class="nb">u32</span> <span class="o">=</span> <span class="s">"42"</span><span class="nf">.parse</span><span class="p">()</span><span class="nf">.expect</span><span class="p">(</span><span class="s">"Not a number!"</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>整型的表示形式有</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="cm">/*
+     小数        98_222
+     十六        0xff
+     八进        0o77
+     二元        0b1111_0000
+     字节（u8仅） b'A'
+ */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>bool类型就只有真假 不会默认帮忙转换</li>
+  <li>
+    <p>元组</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">x</span><span class="p">:</span> <span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">f64</span><span class="p">,</span> <span class="nb">u8</span><span class="p">)</span> <span class="o">=</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mf">6.4</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+     <span class="k">let</span> <span class="n">five_hundred</span> <span class="o">=</span> <span class="n">x</span><span class="err">.</span><span class="mi">0</span><span class="p">;</span>
+     <span class="k">let</span> <span class="n">six_point_four</span> <span class="o">=</span> <span class="n">x</span><span class="err">.</span><span class="mi">1</span><span class="p">;</span>
+     <span class="k">let</span> <span class="n">one</span> <span class="o">=</span> <span class="n">x</span><span class="err">.</span><span class="mi">2</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>数组</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">c</span><span class="p">:</span> <span class="p">[</span><span class="nb">i32</span><span class="p">;</span> <span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">;</span> <span class="mi">5</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">first</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">second</span> <span class="o">=</span> <span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="p">];</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="函数">函数</h4>
+
+<ol>
+  <li>不带;表示返回值</li>
+  <li>
+    <p>指定返回值</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">plus_one</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">i32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">i32</span> <span class="p">{</span>
+     <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="注释">注释</h4>
+
+<p>讲解Crates.io的时候才说</p>
+
+<h4 id="控制流">控制流</h4>
+
+<ol>
+  <li>
+    <p>使用<code class="highlighter-rouge">if</code>的<code class="highlighter-rouge">let</code>语句</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">condition</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+     <span class="k">let</span> <span class="n">number</span> <span class="o">=</span> <span class="k">if</span> <span class="n">condition</span> <span class="p">{</span>
+         <span class="mi">5</span>
+     <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+         <span class="mi">6</span>
+     <span class="p">};</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"The value of number is: {}"</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>从循环里面返回值出来</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+
+     <span class="k">let</span> <span class="n">result</span> <span class="o">=</span> <span class="k">loop</span> <span class="p">{</span>
+         <span class="n">counter</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+
+         <span class="k">if</span> <span class="n">counter</span> <span class="o">==</span> <span class="mi">10</span> <span class="p">{</span>
+             <span class="k">break</span> <span class="n">counter</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span><span class="c">// 我在想 这里没有; 为什么也能有值返回出去呢?</span>
+         <span class="p">}</span>
+     <span class="p">};</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"The result is {}"</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>遍历</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">];</span>
+
+     <span class="c">// 方法1</span>
+     <span class="k">for</span> <span class="n">element</span> <span class="n">in</span> <span class="n">a</span><span class="nf">.iter</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nd">println!</span><span class="p">(</span><span class="s">"the value is: {}"</span><span class="p">,</span> <span class="n">element</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="c">// 方法2</span>
+     <span class="k">for</span> <span class="n">number</span> <span class="nf">in</span> <span class="p">(</span><span class="mi">1</span><span class="o">..</span><span class="mi">4</span><span class="p">)</span><span class="nf">.rev</span><span class="p">()</span> <span class="p">{</span>
+         <span class="nd">println!</span><span class="p">(</span><span class="s">"{}!"</span><span class="p">,</span> <span class="n">number</span><span class="p">);</span>
+     <span class="p">}</span>
+     <span class="c">// 方法3</span>
+     <span class="k">while</span> <span class="n">index</span> <span class="o">&lt;</span> <span class="mi">5</span> <span class="p">{</span>
+         <span class="nd">println!</span><span class="p">(</span><span class="s">"the value is: {}"</span><span class="p">,</span> <span class="n">a</span><span class="p">[</span><span class="n">index</span><span class="p">]);</span>
+         <span class="n">index</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="所有权">所有权</h3>
+
+<h4 id="什么是所有权">什么是所有权</h4>
+
+<ol>
+  <li>
+    <p>每个内存只能被所有一次, 一旦被接管了就没了.</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">// 下述代码就会报错</span>
+ <span class="k">let</span> <span class="n">s1</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+ <span class="k">let</span> <span class="n">s2</span> <span class="o">=</span> <span class="n">s1</span><span class="p">;</span>
+
+ <span class="nd">println!</span><span class="p">(</span><span class="s">"{}, world!"</span><span class="p">,</span> <span class="n">s1</span><span class="p">);</span>
+
+ <span class="cm">/*
+     error[E0382]: use of moved value: `s1`
+     --&gt; src/main.rs:5:28
+     |
+     3 |     let s2 = s1;
+     |         -- value moved here
+     4 |
+     5 |     println!("{}, world!", s1);
+     |                            ^^ value used here after move
+     |
+     = note: move occurs because `s1` has type `std::string::String`, which does
+     not implement the `Copy` trait
+ */</span>
+</code></pre></div>    </div>
+  </li>
+  <li>如果想要拿到一样的内容的话 使用 <code class="highlighter-rouge">clone</code></li>
+  <li>对基础数据类型操作的是 会自动调用 <code class="highlighter-rouge">copy</code>, 由于都是在栈区, 不会产生新的内存空间</li>
+  <li>如果直接把某个变量交付给某个函数, 而该函数没有移交所有权出来的话, 他将不能再被使用了</li>
+</ol>
+
+<h3 id="引用和借阅">引用和借阅</h3>
+
+<ol>
+  <li>
+    <p><code class="highlighter-rouge">&amp;</code> 表示引用该参数, 但不能进行变更, 如果要变更的话 需要 <code class="highlighter-rouge">&amp;mut</code></p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+
+     <span class="nf">change</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">);</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">change</span><span class="p">(</span><span class="n">some_string</span><span class="p">:</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="nb">String</span><span class="p">)</span> <span class="p">{</span>
+     <span class="n">some_string</span><span class="nf">.push_str</span><span class="p">(</span><span class="s">", world"</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>不能有两次可变引用, 因为不知道依据谁的改变</li>
+  <li>
+    <p>同上, 如果还存在多个后续依旧会使用的不可变引用时候, 不能创建可变引用, 因为不可变的引用是不知道可变引用的存在的, 但如果在使用后并且后续不再使用了之后, 就允许创建可变引用了</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+
+ <span class="k">let</span> <span class="n">r1</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">;</span> <span class="c">// no problem</span>
+ <span class="k">let</span> <span class="n">r2</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">;</span> <span class="c">// no problem</span>
+ <span class="nd">println!</span><span class="p">(</span><span class="s">"{} and {}"</span><span class="p">,</span> <span class="n">r1</span><span class="p">,</span> <span class="n">r2</span><span class="p">);</span>  <span class="c">// 这里使用之后 后续就不再使用了 说明是可以的</span>
+ <span class="c">// r1 and r2 are no longer used after this point</span>
+
+ <span class="k">let</span> <span class="n">r3</span> <span class="o">=</span> <span class="o">&amp;</span><span class="k">mut</span> <span class="n">s</span><span class="p">;</span> <span class="c">// no problem</span>
+ <span class="nd">println!</span><span class="p">(</span><span class="s">"{}"</span><span class="p">,</span> <span class="n">r3</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>悬空, 什么意思呢, 可以理解为僵尸指针</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">reference_to_nothing</span> <span class="o">=</span> <span class="nf">dangle</span><span class="p">();</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">dangle</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="nb">String</span> <span class="p">{</span>    <span class="c">// 这里将返回一个带有引用的数据类型</span>
+     <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>  <span class="c">// 生成一个新的数据类型, 开辟可以一个新的内存空间</span>
+
+     <span class="o">&amp;</span><span class="n">s</span>  <span class="c">// 移交引用出去 代表是 我只是借你拿去用的意思</span>
+ <span class="p">}</span>   <span class="c">// 但这里就已经被释放了 产生 僵尸指针</span>
+
+ <span class="k">fn</span> <span class="nf">no_dangle</span><span class="p">()</span> <span class="k">-&gt;</span> <span class="nb">String</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+
+     <span class="n">s</span>   <span class="c">// 这里是把所有权给出去了 代表是 我开辟的空间 我不要了 你拿去用吧</span>
+ <span class="p">}</span>   <span class="c">// 这样给出去的内存就不会被释放了</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="切片类型">切片类型</h4>
+
+<ol>
+  <li>
+    <p>先看一个获取第一个单词的函数</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">// 借阅一个字符串   返回单词的下标</span>
+ <span class="k">fn</span> <span class="nf">first_word</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">String</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">usize</span> <span class="p">{</span>
+     <span class="c">// 转换为数组</span>
+     <span class="k">let</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.as_bytes</span><span class="p">();</span>
+
+     <span class="c">// 遍历 bytes.iter() 并且创建迭代器 enumerate() 可以理解为 enumerate() 会产生出一个元组来</span>
+     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">item</span><span class="p">)</span> <span class="n">in</span> <span class="n">bytes</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.enumerate</span><span class="p">()</span> <span class="p">{</span>
+         <span class="c">//  借阅到了 item</span>
+         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">b</span><span class="sc">' '</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="n">i</span><span class="p">;</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+
+     <span class="n">s</span><span class="nf">.len</span><span class="p">()</span> <span class="c">// 乍一看没有问题 但, 其实这里涉及到了很多问题, 比方单词长度未知和 s 被销毁了 这组数据就失效了</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>引入切片</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">);</span>
+
+     <span class="k">let</span> <span class="n">len</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.len</span><span class="p">();</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="mi">2</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="o">..</span><span class="mi">2</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="o">..</span><span class="n">len</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="o">..</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="n">len</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="o">..</span><span class="p">];</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">&amp;str</code> 表示的是切片类型 <code class="highlighter-rouge">&amp;String</code> 表示的字符串类型</p>
+  </li>
+  <li>
+    <p>有了切片这个概念之后就可以改写取第一个单词的函数了</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">first_word</span><span class="p">(</span><span class="n">s</span><span class="p">:</span> <span class="o">&amp;</span><span class="nb">String</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="o">&amp;</span><span class="nb">str</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">bytes</span> <span class="o">=</span> <span class="n">s</span><span class="nf">.as_bytes</span><span class="p">();</span>
+
+     <span class="k">for</span> <span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">item</span><span class="p">)</span> <span class="n">in</span> <span class="n">bytes</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.enumerate</span><span class="p">()</span> <span class="p">{</span>
+         <span class="k">if</span> <span class="n">item</span> <span class="o">==</span> <span class="n">b</span><span class="sc">' '</span> <span class="p">{</span>
+             <span class="k">return</span> <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="o">..</span><span class="n">i</span><span class="p">];</span>    <span class="c">// 直接返回切片</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="c">// 刚好这里的 s 是借来的 所以直接拿着这玩意 转借给别人就行了 没我啥事了的意思</span>
+     <span class="o">&amp;</span><span class="n">s</span><span class="p">[</span><span class="o">..</span><span class="p">]</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>使用上述代码</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">s</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello world"</span><span class="p">);</span>
+
+     <span class="k">let</span> <span class="n">word</span> <span class="o">=</span> <span class="nf">first_word</span><span class="p">(</span><span class="o">&amp;</span><span class="n">s</span><span class="p">);</span> <span class="c">// 这个切片还是用的 s 的</span>
+
+     <span class="n">s</span><span class="nf">.clear</span><span class="p">();</span> <span class="c">// 这里就会直接报错了 因为会获取s的可变引用并且把它清空, 而 world是 first_word 借了s又转手给了word的一个不可变引用</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"the first word is: {}"</span><span class="p">,</span> <span class="n">word</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>把传入的 <code class="highlighter-rouge">&amp;String</code> 类型变成 <code class="highlighter-rouge">&amp;str</code> 类型 就可以接受 切片和字符串了 因为字符串就是全切片</li>
+  <li>
+    <p>其他的切片</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="k">let</span> <span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">];</span>    <span class="c">// 他的类型是   [i32; 5]</span>
+     <span class="k">let</span> <span class="n">slice</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">a</span><span class="p">[</span><span class="mi">1</span><span class="o">..</span><span class="mi">3</span><span class="p">];</span>       <span class="c">// 切片的类型是 &amp;[i32]</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="使用结构体来构造相关数据">使用结构体来构造相关数据</h3>
+
+<h4 id="定义和实例化结构">定义和实例化结构</h4>
+
+<ol>
+  <li>
+    <p>定义一个结构体</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">struct</span> <span class="n">User</span> <span class="p">{</span>
+     <span class="n">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>   <span class="c">// 现在先不声明为 &amp;str 切片类型 会涉及到生命周期</span>
+     <span class="n">email</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+     <span class="n">sign_in_count</span><span class="p">:</span> <span class="nb">u64</span><span class="p">,</span>
+     <span class="n">active</span><span class="p">:</span> <span class="nb">bool</span><span class="p">,</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">build_user</span><span class="p">(</span><span class="n">email</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">User</span> <span class="p">{</span>
+     <span class="n">User</span> <span class="p">{</span>
+         <span class="n">email</span><span class="p">:</span> <span class="n">email</span><span class="p">,</span>
+         <span class="n">username</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+         <span class="n">active</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+         <span class="n">sign_in_count</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+ <span class="c">// 简化写法</span>
+ <span class="k">fn</span> <span class="nf">build_user</span><span class="p">(</span><span class="n">email</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span> <span class="n">username</span><span class="p">:</span> <span class="nb">String</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">User</span> <span class="p">{</span>
+     <span class="n">User</span> <span class="p">{</span>
+         <span class="n">email</span><span class="p">,</span>
+         <span class="n">username</span><span class="p">,</span>
+         <span class="n">active</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+         <span class="n">sign_in_count</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">user1</span> <span class="o">=</span> <span class="n">User</span> <span class="p">{</span>
+         <span class="n">email</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"someone@example.com"</span><span class="p">),</span>
+         <span class="n">username</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"someusername123"</span><span class="p">),</span>
+         <span class="n">active</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+         <span class="n">sign_in_count</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+     <span class="p">};</span>
+
+     <span class="c">// 点语法直接更改</span>
+     <span class="n">user1</span><span class="py">.email</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"anotheremail@example.com"</span><span class="p">);</span>
+
+     <span class="c">// 新建user2</span>
+     <span class="k">let</span> <span class="n">user2</span> <span class="o">=</span> <span class="n">User</span> <span class="p">{</span>
+         <span class="n">email</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"another@example.com"</span><span class="p">),</span>
+         <span class="n">username</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"anotherusername567"</span><span class="p">),</span>
+         <span class="n">active</span><span class="p">:</span> <span class="n">user1</span><span class="py">.active</span><span class="p">,</span>
+         <span class="n">sign_in_count</span><span class="p">:</span> <span class="n">user1</span><span class="py">.sign_in_count</span><span class="p">,</span>
+     <span class="p">};</span>
+
+     <span class="c">// 但可以写成这样</span>
+     <span class="k">let</span> <span class="n">user2</span> <span class="o">=</span> <span class="n">User</span> <span class="p">{</span>
+         <span class="n">email</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"another@example.com"</span><span class="p">),</span>
+         <span class="n">username</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"anotherusername567"</span><span class="p">),</span>
+         <span class="o">..</span><span class="n">user1</span> <span class="c">// 其他字段沿用该实例</span>
+     <span class="p">};</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>元组结构</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">struct</span> <span class="nf">Color</span><span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">);</span>
+ <span class="k">struct</span> <span class="nf">Point</span><span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">);</span>
+
+ <span class="k">let</span> <span class="n">black</span> <span class="o">=</span> <span class="nf">Color</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+ <span class="k">let</span> <span class="n">origin</span> <span class="o">=</span> <span class="nf">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>打印结构 首先添加 <code class="highlighter-rouge">#[derive(Debug)]</code> 和 然后改 <code class="highlighter-rouge">{}</code> 为 <code class="highlighter-rouge">{:?}</code> 或 <code class="highlighter-rouge">{:#?}</code> 多行打印
+单行打印 : 表示打印出来的键值中间的 : ? 表示的是 值 # 表示立起来 变成多行 形式主义.. 个人理解</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span><span class="p">[</span><span class="nf">derive</span><span class="p">(</span><span class="n">Debug</span><span class="p">)]</span>
+ <span class="k">struct</span> <span class="n">Rectangle</span> <span class="p">{</span>
+     <span class="n">width</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+     <span class="n">height</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">test_rect</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">width</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span> <span class="p">};</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"rect1 is {:?}"</span><span class="p">,</span> <span class="n">rect1</span><span class="p">);</span>   <span class="c">// 表示的意思是</span>
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"rect1 is {:#?}"</span><span class="p">,</span> <span class="n">rect1</span><span class="p">);</span>
+ <span class="p">}</span>
+
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="方块语法">方块语法</h4>
+
+<ol>
+  <li>
+    <p>实现一个方法</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span><span class="p">[</span><span class="nf">derive</span><span class="p">(</span><span class="n">Debug</span><span class="p">)]</span>
+ <span class="k">struct</span> <span class="n">Rectangle</span> <span class="p">{</span>
+     <span class="n">width</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+     <span class="n">height</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+ <span class="p">}</span>
+
+ <span class="c">// 实现 可以有多个实现</span>
+ <span class="k">impl</span> <span class="n">Rectangle</span> <span class="p">{</span>
+     <span class="c">// 这里的self都只是借来的 只做访问变量使用</span>
+     <span class="c">// 但如果要用来修改其内容的话 也是需要加上mut</span>
+     <span class="k">fn</span> <span class="nf">area</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u32</span> <span class="p">{</span>
+         <span class="k">self</span><span class="py">.width</span> <span class="o">*</span> <span class="k">self</span><span class="py">.height</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="k">impl</span> <span class="n">Rectangle</span> <span class="p">{</span>
+     <span class="c">// 可以理解为定义了一个 类函数 只能通过类来调用 调用方式 采用 :: 双冒号形式</span>
+     <span class="k">fn</span> <span class="nf">square</span><span class="p">(</span><span class="n">size</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="n">Rectangle</span> <span class="p">{</span>
+         <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">width</span><span class="p">:</span> <span class="n">size</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="n">size</span> <span class="p">}</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">rect1</span> <span class="o">=</span> <span class="n">Rectangle</span> <span class="p">{</span> <span class="n">width</span><span class="p">:</span> <span class="mi">30</span><span class="p">,</span> <span class="n">height</span><span class="p">:</span> <span class="mi">50</span> <span class="p">};</span>
+
+     <span class="nd">println!</span><span class="p">(</span>
+         <span class="s">"The area of the rectangle is {} square pixels."</span><span class="p">,</span>
+         <span class="n">rect1</span><span class="nf">.area</span><span class="p">()</span>
+     <span class="p">);</span>
+
+     <span class="k">let</span> <span class="n">sq</span> <span class="o">=</span> <span class="nn">Rectangle</span><span class="p">::</span><span class="nf">square</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+ <span class="p">}</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>自动修改调用的第一个参数类型, 仅仅针对 <code class="highlighter-rouge">self</code> 参数   会自动添加他的变体 <code class="highlighter-rouge">&amp;</code>，<code class="highlighter-rouge">&amp;mut</code> 或 <code class="highlighter-rouge">*</code></p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">allow</span><span class="p">(</span><span class="n">unused_variables</span><span class="p">)]</span>
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="nd">#[derive(Debug,Copy,Clone)]</span>
+     <span class="k">struct</span> <span class="n">Point</span> <span class="p">{</span>
+         <span class="n">x</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+         <span class="n">y</span><span class="p">:</span> <span class="nb">f64</span><span class="p">,</span>
+     <span class="p">}</span>
+
+     <span class="k">impl</span> <span class="n">Point</span> <span class="p">{</span>
+         <span class="k">fn</span> <span class="nf">distance</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">,</span> <span class="n">other</span><span class="p">:</span> <span class="o">&amp;</span><span class="n">Point</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">f64</span> <span class="p">{</span>
+             <span class="k">let</span> <span class="n">x_squared</span> <span class="o">=</span> <span class="nn">f64</span><span class="p">::</span><span class="nf">powi</span><span class="p">(</span><span class="n">other</span><span class="py">.x</span> <span class="err">-</span> <span class="k">self</span><span class="py">.x</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+             <span class="k">let</span> <span class="n">y_squared</span> <span class="o">=</span> <span class="nn">f64</span><span class="p">::</span><span class="nf">powi</span><span class="p">(</span><span class="n">other</span><span class="py">.y</span> <span class="err">-</span> <span class="k">self</span><span class="py">.y</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+
+             <span class="nn">f64</span><span class="p">::</span><span class="nf">sqrt</span><span class="p">(</span><span class="n">x_squared</span> <span class="o">+</span> <span class="n">y_squared</span><span class="p">)</span>
+         <span class="p">}</span>
+     <span class="p">}</span>
+     <span class="k">let</span> <span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="mf">0.0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">0.0</span> <span class="p">};</span>
+     <span class="k">let</span> <span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="mf">6.5</span> <span class="p">};</span>
+     <span class="c">// 这两个方法的调用时一无所谓的</span>
+     <span class="n">p1</span><span class="nf">.distance</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p2</span><span class="p">);</span>
+     <span class="p">(</span><span class="o">&amp;</span><span class="n">p1</span><span class="p">)</span><span class="nf">.distance</span><span class="p">(</span><span class="o">&amp;</span><span class="n">p2</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
