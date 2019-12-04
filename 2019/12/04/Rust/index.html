@@ -906,6 +906,157 @@
   </li>
 </ol>
 
+<h4 id="枚举">枚举</h4>
+
+<ol>
+  <li>
+    <p>不得不承认 这么没有很吸引我</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">// 正常使用</span>
+ <span class="k">enum</span> <span class="n">IpAddrKind</span> <span class="p">{</span>
+     <span class="n">V4</span><span class="p">,</span>
+     <span class="n">V6</span><span class="p">,</span>
+ <span class="p">}</span>
+ <span class="c">// 混用</span>
+ <span class="k">enum</span> <span class="n">IpAddr</span> <span class="p">{</span>
+     <span class="nf">V4</span><span class="p">(</span><span class="nb">u8</span><span class="p">,</span> <span class="nb">u8</span><span class="p">,</span> <span class="nb">u8</span><span class="p">,</span> <span class="nb">u8</span><span class="p">),</span>
+     <span class="nf">V6</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+ <span class="p">}</span>
+
+ <span class="k">struct</span> <span class="n">Ipv4Addr</span> <span class="p">{</span>
+ <span class="c">// --snip--</span>
+ <span class="p">}</span>
+
+ <span class="k">struct</span> <span class="n">Ipv6Addr</span> <span class="p">{</span>
+     <span class="c">// --snip--</span>
+ <span class="p">}</span>
+
+ <span class="c">// 结构体使用</span>
+ <span class="k">enum</span> <span class="n">IpAddr</span> <span class="p">{</span>
+     <span class="nf">V4</span><span class="p">(</span><span class="n">Ipv4Addr</span><span class="p">),</span>
+     <span class="nf">V6</span><span class="p">(</span><span class="n">Ipv6Addr</span><span class="p">),</span>
+ <span class="p">}</span>
+
+ <span class="c">// 强大所在</span>
+ <span class="k">enum</span> <span class="n">Message</span> <span class="p">{</span>
+     <span class="n">Quit</span><span class="p">,</span>
+     <span class="n">Move</span> <span class="p">{</span> <span class="n">x</span><span class="p">:</span> <span class="nb">i32</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">i32</span> <span class="p">},</span>
+     <span class="nf">Write</span><span class="p">(</span><span class="nb">String</span><span class="p">),</span>
+     <span class="nf">ChangeColor</span><span class="p">(</span><span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">,</span> <span class="nb">i32</span><span class="p">),</span>
+ <span class="p">}</span>
+
+ <span class="k">impl</span> <span class="n">Message</span> <span class="p">{</span>
+     <span class="c">// 还能...实现 函数!!!</span>
+     <span class="k">fn</span> <span class="nf">call</span><span class="p">(</span><span class="o">&amp;</span><span class="k">self</span><span class="p">)</span> <span class="p">{</span>
+         <span class="c">// method body would be defined here</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Option
+ null的发明者Tony Hoare在2009年的演讲“ Null References：十亿美元的错误”中说：</p>
+
+    <div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     我称之为我的十亿美元错误。当时，我正在设计第一个全面的类型系统，以使用面向对象的语言进行引用。我的目标是确保所有引用的使用都绝对安全，并由编译器自动执行检查。但是我忍不住要插入一个空引用的诱惑，仅仅是因为它是如此容易实现。这导致了无数错误，漏洞和系统崩溃，在最近四十年中可能造成十亿美元的痛苦和破坏。
+</code></pre></div>    </div>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">enum</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span class="nf">Some</span><span class="p">(</span><span class="n">T</span><span class="p">),</span>    <span class="c">// 泛型</span>
+     <span class="nb">None</span><span class="p">,</span>
+ <span class="p">}</span>
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">some_number</span> <span class="o">=</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+     <span class="k">let</span> <span class="n">some_string</span> <span class="o">=</span> <span class="nf">Some</span><span class="p">(</span><span class="s">"a string"</span><span class="p">);</span>     <span class="c">// Some 直接赋值即可推测类型了</span>
+     <span class="k">let</span> <span class="n">absent_number</span><span class="p">:</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nb">None</span><span class="p">;</span>  <span class="c">// None 没有类型 那么就需要指代类型</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>加入Option 旨在限制null的普遍性并提高Rust代码的安全性。</p>
+  </li>
+  <li>
+    <p>匹配控制流 <code class="highlighter-rouge">match</code></p>
+
+    <p>一个强大的武器</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">enum</span> <span class="n">UsState</span> <span class="p">{</span>
+     <span class="n">Alabama</span><span class="p">,</span>
+     <span class="n">Alaska</span><span class="p">,</span>
+     <span class="c">// --snip--</span>
+ <span class="p">}</span>
+
+ <span class="k">enum</span> <span class="n">Coin</span> <span class="p">{</span>
+     <span class="n">Penny</span><span class="p">,</span>      <span class="c">// 1 美分</span>
+     <span class="n">Nickel</span><span class="p">,</span>     <span class="c">// 5 美分</span>
+     <span class="n">Dime</span><span class="p">,</span>       <span class="c">// 10 美分</span>
+     <span class="nf">Quarter</span><span class="p">(</span><span class="n">UsState</span><span class="p">),</span>    <span class="c">// 25 美分</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">value_in_cents</span><span class="p">(</span><span class="n">coin</span><span class="p">:</span> <span class="n">Coin</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u8</span> <span class="p">{</span>
+     <span class="k">match</span> <span class="n">coin</span> <span class="p">{</span>
+         <span class="c">// 类函数的调用方式 指定 枚举的每个值</span>
+         <span class="nn">Coin</span><span class="p">::</span><span class="n">Penny</span> <span class="k">=&gt;</span> <span class="p">{</span>    <span class="c">// =&gt; 匹配后直接赋值的意思</span>
+             <span class="nd">println!</span><span class="p">(</span><span class="s">"Lucky penny!"</span><span class="p">);</span>
+             <span class="mi">1</span>   <span class="c">// 返回值为1</span>
+         <span class="p">},</span>
+         <span class="nn">Coin</span><span class="p">::</span><span class="n">Nickel</span> <span class="k">=&gt;</span> <span class="mi">5</span><span class="p">,</span>
+         <span class="nn">Coin</span><span class="p">::</span><span class="n">Dime</span> <span class="k">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+         <span class="nn">Coin</span><span class="p">::</span><span class="nf">Quarter</span><span class="p">(</span><span class="n">state</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="p">{</span>
+             <span class="nd">println!</span><span class="p">(</span><span class="s">"State quarter from {:?}!"</span><span class="p">,</span> <span class="n">state</span><span class="p">);</span>
+             <span class="mi">25</span>
+         <span class="p">},</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">match</code> 搭配 <code class="highlighter-rouge">Option&lt;T&gt;</code></p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">plus_one</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span class="k">match</span> <span class="n">x</span> <span class="p">{</span>
+         <span class="nb">None</span> <span class="k">=&gt;</span> <span class="nb">None</span><span class="p">,</span>
+         <span class="nf">Some</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nf">Some</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+
+ <span class="k">let</span> <span class="n">five</span> <span class="o">=</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
+ <span class="k">let</span> <span class="n">six</span> <span class="o">=</span> <span class="nf">plus_one</span><span class="p">(</span><span class="n">five</span><span class="p">);</span>
+ <span class="k">let</span> <span class="n">none</span> <span class="o">=</span> <span class="nf">plus_one</span><span class="p">(</span><span class="nb">None</span><span class="p">);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">_</code> 占位符 类似于 <code class="highlighter-rouge">default</code></p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="n">some_u8_value</span> <span class="o">=</span> <span class="mi">0u8</span><span class="p">;</span> <span class="c">// 等价于  let some_u8_value : u8 = 1; </span>
+ <span class="k">match</span> <span class="n">some_u8_value</span> <span class="p">{</span>
+     <span class="mi">1</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"one"</span><span class="p">),</span>
+     <span class="mi">3</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"three"</span><span class="p">),</span>
+     <span class="mi">5</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"five"</span><span class="p">),</span>
+     <span class="mi">7</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"seven"</span><span class="p">),</span>
+     <span class="n">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>就算使用了占位符 但如果我们只要匹配一种模式的话 用<code class="highlighter-rouge">match</code>有点焉用牛刀的感觉了 所以引入了 <code class="highlighter-rouge">if let</code></p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="c">// 牛刀模式</span>
+ <span class="k">let</span> <span class="n">some_u8_value</span> <span class="o">=</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">0u8</span><span class="p">);</span>
+ <span class="k">match</span> <span class="n">some_u8_value</span> <span class="p">{</span>
+     <span class="nf">Some</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="k">=&gt;</span> <span class="nd">println!</span><span class="p">(</span><span class="s">"three"</span><span class="p">),</span>
+     <span class="n">_</span> <span class="k">=&gt;</span> <span class="p">(),</span>
+ <span class="p">}</span>
+ <span class="c">// 简约模式</span>
+ <span class="k">if</span> <span class="k">let</span> <span class="nf">Some</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">=</span> <span class="n">some_u8_value</span> <span class="p">{</span>
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"three"</span><span class="p">);</span>
+ <span class="p">}</span>
+
+</code></pre></div>    </div>
+
+    <p>换句话说，您可以将其<code class="highlighter-rouge">if let</code>视为<code class="highlighter-rouge">match</code>当值匹配一个模式然后忽略所有其他值时运行代码的语法语法。</p>
+  </li>
+</ol>
+
   </div>
 
   
