@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>部署新安装的centos服务器</title>
+  <meta name="description" content="服务器链接超时解决">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2020/01/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="部署新安装的centos服务器">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2020/01/28/%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2/">
+  <meta property="og:description" content="服务器链接超时解决">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="部署新安装的centos服务器">
+  <meta name="twitter:description" content="服务器链接超时解决">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">部署新安装的centos服务器</h1>
+    
+    <p class="post-meta"><time datetime="2020-01-28T01:42:42+00:00" itemprop="datePublished">Jan 28, 2020</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/mac/">Mac</a>,
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h2 id="服务器链接超时解决">服务器链接超时解决</h2>
+
+<p><code class="highlighter-rouge">vim /etc/ssh/sshd_config</code> 修改里面的两个参数</p>
+
+<div class="language-config highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ClientAliveInterval</span> <span class="m">60</span>
+<span class="n">ClientAliveCountMax</span> <span class="m">60</span>
+</code></pre></div></div>
+
+<p>然后重启<code class="highlighter-rouge">ssh</code></p>
+
+<p><code class="highlighter-rouge">systemctl restart ssh</code></p>
+
+<h2 id="出现报错">出现报错</h2>
+
+<p>内容<code class="highlighter-rouge">Failed to set locale, defaulting to C.UTF-8</code></p>
+
+<p>执行<code class="highlighter-rouge">echo "export LC_ALL=en_US.UTF-8"  &gt;&gt;  /etc/profile</code></p>
+
+<h2 id="安装docker">安装<code class="highlighter-rouge">docker</code></h2>
+
+<ol>
+  <li>
+    <p>卸载旧的版本</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="nb">sudo </span>yum remove docker <span class="se">\</span>
+                 docker-client <span class="se">\</span>
+                 docker-client-latest <span class="se">\</span>
+                 docker-common <span class="se">\</span>
+                 docker-latest <span class="se">\</span>
+                 docker-latest-logrotate <span class="se">\</span>
+                 docker-logrotate <span class="se">\</span>
+                 docker-engine
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>安装依赖</p>
+
+    <p><code class="highlighter-rouge">sudo yum install -y yum-utils  device-mapper-persistent-data  lvm2</code>
+ <code class="highlighter-rouge">sudo yum-config-manager  --add-repo   https://download.docker.com/linux/centos/docker-ce.repo</code>
+ <code class="highlighter-rouge">sudo yum install docker-ce docker-ce-cli containerd.io</code></p>
+  </li>
+  <li>
+    <p>更新containerd.io</p>
+
+    <p><code class="highlighter-rouge">dnf install https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm</code></p>
+  </li>
+  <li>
+    <p>安装</p>
+
+    <p><code class="highlighter-rouge">sudo yum install docker-ce docker-ce-cli containerd.io</code></p>
+  </li>
+  <li>
+    <p>启动docker</p>
+
+    <p><code class="highlighter-rouge">sudo systemctl start docker</code></p>
+  </li>
+</ol>
+
+<h2 id="创建-dockerfile">创建 <code class="highlighter-rouge">Dockerfile</code></h2>
+
+<ol>
+  <li>
+    <p>创建 <code class="highlighter-rouge">docker/Dockerfile</code></p>
+
+    <p><code class="highlighter-rouge">mkdir docker &amp;&amp; cd docker &amp;&amp; vim Dockerfile</code></p>
+  </li>
+  <li>
+    <p>加入下面内容</p>
+
+    <div class="language-docker highlighter-rouge"><div class="highlight"><pre class="highlight"><code> FROM jenkins/jenkins:lts
+ USER root
+ WORKDIR /dotnet
+ RUN wget -O dotnet.tar.gz https://download.visualstudio.microsoft.com/download/pr/c4b503d6-2f41-4908-b634-270a0a1dcfca/c5a20e42868a48a2cd1ae27cf038044c/dotnet-sdk-3.1.101-linux-x64.tar.gz
+ RUN tar zxf dotnet.tar.gz -C ./
+ RUN rm -rf dotnet.tar.gz
+ ENV PATH="${PATH}:/dotnet:/var/jenkins_home/.dotnet/tools"
+ ENV DOTNET_ROOT="/dotnet"
+ RUN apt update -y
+ RUN apt install icu-devtools vim zip unzip -y
+ RUN usermod -a -G root jenkins
+ USER jenkins
+</code></pre></div>    </div>
+
+    <ol>
+      <li>这个Docker镜像基于jenkins</li>
+      <li>设置当前用户为root，因为后面安装需要使用root</li>
+      <li>设置当前工作目录为dotnet</li>
+      <li>下载dotnet SDK包，保存为dotnet.tar.gz。这里要注意下载正确版本的SDK，可前往微软官方网站获取下载链接：https://dotnet.microsoft.com/download</li>
+      <li>解压dotnet SDK到当前目录，即/dotnet目录</li>
+      <li>删除dotnet SDK包</li>
+      <li>把dotnet目录和dotnet tools目录添加到环境变量PATH，这样就可以使用dotnet命令了</li>
+      <li>设置DOTNET_ROOT变量</li>
+      <li>更新源</li>
+      <li>安装一些必需的，常用的工具包，其中icu-devtools是运行dotnet需要的</li>
+      <li>修改jenkins用户到root附加组</li>
+      <li>设置当前用户为jenkins</li>
+    </ol>
+  </li>
+  <li>
+    <p>生成镜像</p>
+
+    <p><code class="highlighter-rouge">docker build -t jenkins:dotnet .</code></p>
+  </li>
+  <li>
+    <p>查看所有镜像</p>
+
+    <p><code class="highlighter-rouge">docker image</code></p>
+  </li>
+  <li>
+    <p>运行<code class="highlighter-rouge">docker</code>实例</p>
+
+    <p><code class="highlighter-rouge">docker run -p 8080:8080 -p 50000:50000 --name jenkins jenkins:dotnet</code></p>
+  </li>
+  <li>
+    <p>获取密码和访问链接</p>
+
+    <ol>
+      <li>自定义安装</li>
+      <li>补充安装<code class="highlighter-rouge">GitHub</code>和<code class="highlighter-rouge">Publish Over SSH</code></li>
+    </ol>
+  </li>
+  <li>
+    <p>添加编译执行脚本</p>
+
+    <p><code class="highlighter-rouge">dotnet publish</code></p>
+  </li>
+  <li>
+    <p>构建</p>
+  </li>
+  <li>
+    <p>添加 <code class="highlighter-rouge">github webhook</code></p>
+  </li>
+</ol>
+
+<h2 id="直接部署项目">直接部署项目</h2>
+
+<ol>
+  <li>
+    <p>安装<code class="highlighter-rouge">git</code></p>
+
+    <p><code class="highlighter-rouge">yum install git</code></p>
+  </li>
+  <li>克隆</li>
+  <li><code class="highlighter-rouge">docker build -t dotnet .</code></li>
+  <li><code class="highlighter-rouge">docker run -d -p 8080:80 dotnet</code></li>
+</ol>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>

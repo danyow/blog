@@ -1765,6 +1765,235 @@
   </li>
 </ol>
 
+<h3 id="自动化测试">自动化测试</h3>
+
+<h3 id="构建命令行程序">构建命令行程序</h3>
+
+<h3 id="闭包和迭代器">闭包和迭代器</h3>
+
+<h4 id="闭包">闭包</h4>
+
+<ol>
+  <li>
+    <p>可以不指定数据类型, 但使用的时候 不能乱用, 他不是泛型</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span>  <span class="nf">add_one_v1</span>   <span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u32</span> <span class="p">{</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">}</span>  <span class="c">// 函数 完整版</span>
+ <span class="k">let</span> <span class="n">add_one_v2</span> <span class="o">=</span> <span class="p">|</span><span class="n">x</span><span class="p">:</span> <span class="nb">u32</span><span class="p">|</span> <span class="k">-&gt;</span> <span class="nb">u32</span> <span class="p">{</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">};</span> <span class="c">// 闭包 完整版</span>
+ <span class="k">let</span> <span class="n">add_one_v3</span> <span class="o">=</span> <span class="p">|</span><span class="n">x</span><span class="p">|</span>             <span class="p">{</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">};</span> <span class="c">// 闭包 删除指定数据类型</span>
+ <span class="k">let</span> <span class="n">add_one_v4</span> <span class="o">=</span> <span class="p">|</span><span class="n">x</span><span class="p">|</span>               <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>  <span class="p">;</span> <span class="c">// 闭包 删除花括号</span>
+
+
+ <span class="c">// 但在使用后上</span>
+ <span class="k">let</span> <span class="n">example_closure</span> <span class="o">=</span> <span class="p">|</span><span class="n">x</span><span class="p">|</span> <span class="n">x</span><span class="p">;</span>
+
+ <span class="k">let</span> <span class="n">s</span> <span class="o">=</span> <span class="nf">example_closure</span><span class="p">(</span><span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hello"</span><span class="p">));</span> <span class="c">// 使用了字符串作为参数传入</span>
+ <span class="k">let</span> <span class="n">n</span> <span class="o">=</span> <span class="nf">example_closure</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>                     <span class="c">// 又使用了 数字  这里会崩</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>闭包也是有特征的, 这样的话就可以作为泛型的参数传入了 <code class="highlighter-rouge">Fn</code> <code class="highlighter-rouge">FnMut</code> <code class="highlighter-rouge">FnOnce</code></p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">struct</span> <span class="n">Cacher</span><span class="o">&lt;</span><span class="n">T</span><span class="o">&gt;</span>
+     <span class="k">where</span> <span class="n">T</span><span class="p">:</span> <span class="nf">Fn</span><span class="p">(</span><span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">u32</span>
+ <span class="p">{</span>
+     <span class="n">calculation</span><span class="p">:</span> <span class="n">T</span><span class="p">,</span>
+     <span class="n">value</span><span class="p">:</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nb">u32</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>闭包可以使用外部的变量</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+     <span class="k">let</span> <span class="n">equal_to_x</span> <span class="o">=</span> <span class="p">|</span><span class="n">z</span><span class="p">|</span> <span class="n">z</span> <span class="o">==</span> <span class="n">x</span><span class="p">;</span>    <span class="c">// 使用了 x</span>
+     <span class="c">// fn equal_to_x(z: i32) -&gt; bool { z == x } //这个就会崩</span>
+
+     <span class="k">let</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+     <span class="k">assert</span><span class="o">!</span><span class="p">(</span><span class="nf">equal_to_x</span><span class="p">(</span><span class="n">y</span><span class="p">));</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+
+    <p>所以说闭包是会强制获取所有权的
+ <code class="highlighter-rouge">FnOnce</code>    获取完后 但只能调用一次
+ <code class="highlighter-rouge">FnMut</code>     可变的形式获取了值
+ <code class="highlighter-rouge">Fn</code>        不可变的形式获取了值</p>
+  </li>
+</ol>
+
+<h4 id="迭代器">迭代器</h4>
+
+<ol>
+  <li>
+    <p>特征为 <code class="highlighter-rouge">Iterator</code> 和 具有 <code class="highlighter-rouge">next</code> 方法</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">pub</span> <span class="k">trait</span> <span class="n">Iterator</span> <span class="p">{</span>
+     <span class="k">type</span> <span class="n">Item</span><span class="p">;</span>
+
+     <span class="k">fn</span> <span class="nf">next</span><span class="p">(</span><span class="o">&amp;</span><span class="k">mut</span> <span class="k">self</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Option</span><span class="o">&lt;</span><span class="nn">Self</span><span class="p">::</span><span class="n">Item</span><span class="o">&gt;</span><span class="p">;</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">next</code> 是会消耗掉的</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span><span class="p">[</span><span class="n">test</span><span class="p">]</span>
+ <span class="k">fn</span> <span class="nf">iterator_demonstration</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">v1</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">v1_iter</span> <span class="o">=</span> <span class="n">v1</span><span class="nf">.iter</span><span class="p">();</span>
+
+     <span class="nd">assert_eq!</span><span class="p">(</span><span class="n">v1_iter</span><span class="nf">.next</span><span class="p">(),</span> <span class="nf">Some</span><span class="p">(</span><span class="o">&amp;</span><span class="mi">1</span><span class="p">));</span>
+     <span class="nd">assert_eq!</span><span class="p">(</span><span class="n">v1_iter</span><span class="nf">.next</span><span class="p">(),</span> <span class="nf">Some</span><span class="p">(</span><span class="o">&amp;</span><span class="mi">2</span><span class="p">));</span>
+     <span class="nd">assert_eq!</span><span class="p">(</span><span class="n">v1_iter</span><span class="nf">.next</span><span class="p">(),</span> <span class="nf">Some</span><span class="p">(</span><span class="o">&amp;</span><span class="mi">3</span><span class="p">));</span>
+     <span class="nd">assert_eq!</span><span class="p">(</span><span class="n">v1_iter</span><span class="nf">.next</span><span class="p">(),</span> <span class="nb">None</span><span class="p">);</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">iterator_sum</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">v1</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+     <span class="k">let</span> <span class="n">v1_iter</span> <span class="o">=</span> <span class="n">v1</span><span class="nf">.iter</span><span class="p">();</span>
+     <span class="k">let</span> <span class="n">total</span><span class="p">:</span> <span class="nb">i32</span> <span class="o">=</span> <span class="n">v1_iter</span><span class="nf">.sum</span><span class="p">();</span>
+     <span class="nd">assert_eq!</span><span class="p">(</span><span class="n">total</span><span class="p">,</span> <span class="mi">6</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>迭代器是不会自己调用的</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">let</span> <span class="n">v1</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="nb">i32</span><span class="o">&gt;</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">];</span>
+
+ <span class="n">v1</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.map</span><span class="p">(|</span><span class="n">x</span><span class="p">|</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">);</span>   <span class="c">// 这么使用时会收到警告 说明这行代码没有起到任何作用</span>
+
+ <span class="k">let</span> <span class="n">v2</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">_</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">v1</span><span class="nf">.iter</span><span class="p">()</span><span class="nf">.map</span><span class="p">(|</span><span class="n">x</span><span class="p">|</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span><span class="nf">.collect</span><span class="p">();</span>    <span class="c">// 直接进行迭代</span>
+
+ <span class="nd">assert_eq!</span><span class="p">(</span><span class="n">v2</span><span class="p">,</span> <span class="nd">vec!</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]);</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>使用场景</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="err">#</span><span class="o">!</span><span class="p">[</span><span class="nf">allow</span><span class="p">(</span><span class="n">unused_variables</span><span class="p">)]</span>
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+ <span class="nd">#[derive(PartialEq,</span> <span class="nd">Debug)]</span>
+ <span class="k">struct</span> <span class="n">Shoe</span> <span class="p">{</span>
+     <span class="n">size</span><span class="p">:</span> <span class="nb">u32</span><span class="p">,</span>
+     <span class="n">style</span><span class="p">:</span> <span class="nb">String</span><span class="p">,</span>
+ <span class="p">}</span>
+
+ <span class="k">fn</span> <span class="nf">shoes_in_my_size</span><span class="p">(</span><span class="n">shoes</span><span class="p">:</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Shoe</span><span class="o">&gt;</span><span class="p">,</span> <span class="n">shoe_size</span><span class="p">:</span> <span class="nb">u32</span><span class="p">)</span> <span class="k">-&gt;</span> <span class="nb">Vec</span><span class="o">&lt;</span><span class="n">Shoe</span><span class="o">&gt;</span> <span class="p">{</span>
+     <span class="n">shoes</span><span class="nf">.into_iter</span><span class="p">()</span>
+         <span class="nf">.filter</span><span class="p">(|</span><span class="n">s</span><span class="p">|</span> <span class="n">s</span><span class="py">.size</span> <span class="o">==</span> <span class="n">shoe_size</span><span class="p">)</span>
+         <span class="nf">.collect</span><span class="p">()</span>
+ <span class="p">}</span>
+
+ <span class="nd">#[test]</span>
+ <span class="k">fn</span> <span class="nf">filters_by_size</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">shoes</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[</span>
+         <span class="n">Shoe</span> <span class="p">{</span> <span class="n">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"sneaker"</span><span class="p">)</span> <span class="p">},</span>
+         <span class="n">Shoe</span> <span class="p">{</span> <span class="n">size</span><span class="p">:</span> <span class="mi">13</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"sandal"</span><span class="p">)</span> <span class="p">},</span>
+         <span class="n">Shoe</span> <span class="p">{</span> <span class="n">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"boot"</span><span class="p">)</span> <span class="p">},</span>
+     <span class="p">];</span>
+
+     <span class="k">let</span> <span class="n">in_my_size</span> <span class="o">=</span> <span class="nf">shoes_in_my_size</span><span class="p">(</span><span class="n">shoes</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
+
+     <span class="nd">assert_eq!</span><span class="p">(</span>
+         <span class="n">in_my_size</span><span class="p">,</span>
+         <span class="nd">vec!</span><span class="p">[</span>
+             <span class="n">Shoe</span> <span class="p">{</span> <span class="n">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"sneaker"</span><span class="p">)</span> <span class="p">},</span>
+             <span class="n">Shoe</span> <span class="p">{</span> <span class="n">size</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span> <span class="n">style</span><span class="p">:</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"boot"</span><span class="p">)</span> <span class="p">},</span>
+         <span class="p">]</span>
+     <span class="p">);</span>
+ <span class="p">}</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="cratesio">Crates.io</h3>
+
+<h3 id="智能指针">智能指针</h3>
+
+<ol>
+  <li><code class="highlighter-rouge">Rc&lt;T&gt;</code> 允许对一个变量有多个所有者；<code class="highlighter-rouge">Box&lt;T&gt;</code> 和 <code class="highlighter-rouge">RefCell&lt;T&gt;</code> 只能有一个所有者。</li>
+  <li><code class="highlighter-rouge">Box&lt;T&gt;</code> 允许在编译时检查是不可变还是可变的；<code class="highlighter-rouge">Rc&lt;T&gt;</code> 只允许在编译时检查不可变的引用；<code class="highlighter-rouge">RefCell&lt;T&gt;</code> 允许在运行时检查不可变或可变的引用。</li>
+  <li>由于<code class="highlighter-rouge">RefCell&lt;T&gt;</code>允许在运行时检查可变引用，因此 <code class="highlighter-rouge">RefCell&lt;T&gt;</code> 即使<code class="highlighter-rouge">RefCell&lt;T&gt;</code> 是不可变的，也可以在内部改变值。</li>
+</ol>
+
+<h3 id="并发">并发</h3>
+
+<h4 id="线程">线程</h4>
+
+<ol>
+  <li>
+    <p>创建线程 <code class="highlighter-rouge">thread::spawn</code></p>
+  </li>
+  <li>
+    <p>等待该线程跑完 <code class="highlighter-rouge">join</code> 阻塞的</p>
+  </li>
+  <li>
+    <p>线程内使用外部的值 其实也可以看做是 闭包内使用外部变量 但闭包是在单一线程下使用的 <code class="highlighter-rouge">move</code> 是针对线程闭包的 所以 会强制获取所有权</p>
+  </li>
+</ol>
+
+<h4 id="通道">通道</h4>
+
+<ol>
+  <li>
+    <p>例子</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">thread</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">sync</span><span class="p">::</span><span class="n">mpsc</span><span class="p">;</span>
+
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="p">(</span><span class="n">tx</span><span class="p">,</span> <span class="n">rx</span><span class="p">)</span> <span class="o">=</span> <span class="nn">mpsc</span><span class="p">::</span><span class="nf">channel</span><span class="p">();</span>
+
+     <span class="nn">thread</span><span class="p">::</span><span class="nf">spawn</span><span class="p">(</span><span class="k">move</span> <span class="p">||</span> <span class="p">{</span>
+         <span class="k">let</span> <span class="n">val</span> <span class="o">=</span> <span class="nn">String</span><span class="p">::</span><span class="nf">from</span><span class="p">(</span><span class="s">"hi"</span><span class="p">);</span>
+         <span class="n">tx</span><span class="nf">.send</span><span class="p">(</span><span class="n">val</span><span class="p">)</span><span class="nf">.unwrap</span><span class="p">();</span>  <span class="c">// 移交所有权</span>
+     <span class="p">});</span>
+
+     <span class="k">let</span> <span class="n">received</span> <span class="o">=</span> <span class="n">rx</span><span class="nf">.recv</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"Got: {}"</span><span class="p">,</span> <span class="n">received</span><span class="p">);</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="上锁">上锁</h4>
+
+<ol>
+  <li>
+    <p>互斥 和 原子引用计数</p>
+
+    <div class="language-rust highlighter-rouge"><div class="highlight"><pre class="highlight"><code> <span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="nn">sync</span><span class="p">::{</span><span class="n">Mutex</span><span class="p">,</span> <span class="nb">Arc</span><span class="p">};</span>
+ <span class="k">use</span> <span class="nn">std</span><span class="p">::</span><span class="n">thread</span><span class="p">;</span>
+
+ <span class="k">fn</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+     <span class="k">let</span> <span class="n">counter</span> <span class="o">=</span> <span class="nn">Arc</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="nn">Mutex</span><span class="p">::</span><span class="nf">new</span><span class="p">(</span><span class="mi">0</span><span class="p">));</span>
+     <span class="k">let</span> <span class="k">mut</span> <span class="n">handles</span> <span class="o">=</span> <span class="nd">vec!</span><span class="p">[];</span>
+
+     <span class="k">for</span> <span class="n">_</span> <span class="n">in</span> <span class="mi">0</span><span class="o">..</span><span class="mi">10</span> <span class="p">{</span>
+         <span class="k">let</span> <span class="n">counter</span> <span class="o">=</span> <span class="nn">Arc</span><span class="p">::</span><span class="nf">clone</span><span class="p">(</span><span class="o">&amp;</span><span class="n">counter</span><span class="p">);</span>
+         <span class="k">let</span> <span class="n">handle</span> <span class="o">=</span> <span class="nn">thread</span><span class="p">::</span><span class="nf">spawn</span><span class="p">(</span><span class="k">move</span> <span class="p">||</span> <span class="p">{</span>
+             <span class="k">let</span> <span class="k">mut</span> <span class="n">num</span> <span class="o">=</span> <span class="n">counter</span><span class="nf">.lock</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+
+             <span class="o">*</span><span class="n">num</span> <span class="o">+=</span> <span class="mi">1</span><span class="p">;</span>
+         <span class="p">});</span>
+         <span class="n">handles</span><span class="nf">.push</span><span class="p">(</span><span class="n">handle</span><span class="p">);</span>
+     <span class="p">}</span>
+
+     <span class="k">for</span> <span class="n">handle</span> <span class="n">in</span> <span class="n">handles</span> <span class="p">{</span>
+         <span class="n">handle</span><span class="nf">.join</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">();</span>
+     <span class="p">}</span>
+
+     <span class="nd">println!</span><span class="p">(</span><span class="s">"Result: {}"</span><span class="p">,</span> <span class="o">*</span><span class="n">counter</span><span class="nf">.lock</span><span class="p">()</span><span class="nf">.unwrap</span><span class="p">());</span>
+ <span class="p">}</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
   </div>
 
   
