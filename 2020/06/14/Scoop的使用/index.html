@@ -14,7 +14,7 @@
   
 
   <link rel="stylesheet" href="/assets/main.css">
-  <link rel="canonical" href="https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  <link rel="canonical" href="https://blog.danyow.cn/2020/06/14/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">
   
   
   <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
@@ -24,7 +24,7 @@
   
   <meta property="og:title" content="Scoop的安装">
   <meta property="og:site_name" content="📒 Danyow">
-  <meta property="og:url" content="https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  <meta property="og:url" content="https://blog.danyow.cn/2020/06/14/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">
   <meta property="og:description" content="Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 Bucket .">
   
   
@@ -78,7 +78,7 @@
     
       <h1 class="post-title" itemprop="name headline">Scoop的安装</h1>
     
-    <p class="post-meta"><time datetime="2019-08-15T06:55:00+00:00" itemprop="datePublished">Aug 15, 2019</time> •
+    <p class="post-meta"><time datetime="2020-06-14T06:55:00+00:00" itemprop="datePublished">Jun 14, 2020</time> •
   
     
     
@@ -247,19 +247,19 @@
       
     
       
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
         <a href="/categories/scoop/">scoop</a>
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
       
     
   
@@ -270,7 +270,27 @@
   </header>
 
   <div class="post-content" itemprop="articleBody">
-    <p>Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 <em>Bucket</em> .</p>
+    <p>Title: <del>目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 <em>Bucket</em> .</del></p>
+
+<p>反省一下，比起之前的 <em>Chocolatey</em> 来说，还是推荐的，因为它更加适合程序员和具有高度强迫症的患者。</p>
+
+<blockquote>
+  <p>优点：</p>
+</blockquote>
+
+<ol>
+  <li>环境和后续安装的软件都可以不放在<strong>C</strong>盘</li>
+  <li>扩展包也比较丰富</li>
+</ol>
+
+<blockquote>
+  <p>缺点：</p>
+</blockquote>
+
+<ol>
+  <li>如果网速慢的情况下（因为使用到了 <em>github</em> ）安装某个包的时候，可能会出现半天安装不上的情况，这时候取消的话会使得 <em>scoop</em> 误以为安装完成，这时需要卸载。</li>
+  <li>后续依据使用情况补充</li>
+</ol>
 
 <h2 id="scoop的安装">Scoop的安装</h2>
 
@@ -278,12 +298,16 @@
   <li>
     <p><em>PowerShell</em> 下运行下述内容，确保 <em>PowerShell</em> 允许可以执行本地脚本。</p>
 
-    <p><code class="highlighter-rouge">set-executionpolicy remotesigned -scope currentuser</code></p>
+    <p><code class="highlighter-rouge">Set-ExecutionPolicy RemoteSigned -scope CurrentUser</code></p>
   </li>
   <li>
     <p>然后安装 <em>Scoop</em> ，看网速来的。</p>
 
-    <p><code class="highlighter-rouge">iex (new-object net.webclient).downloadstring('https://get.scoop.sh')</code></p>
+    <p><code class="highlighter-rouge">Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')</code></p>
+
+    <p>or 更短的</p>
+
+    <p><code class="highlighter-rouge">iwr -useb get.scoop.sh | iex</code></p>
   </li>
   <li>
     <p>进入桶子环境准备阶段。即添加 <em>Bucket</em> 库。但由于 <em>Bucket</em> 是依托于 <em>Github</em> ，所以要先安装 <em>git</em> 环境</p>
@@ -293,6 +317,32 @@
 </ol>
 
 <p>如果你没有 7zip 的话，会顺手给你安装git的依赖。</p>
+
+<pre><code class="language-txt">  7zip 19.00
+  adb 30.0.0
+  anaconda3 2020.02 [dorado]
+  android-sdk 4333796 [extras]
+  android-studio 4.0.0.16 [extras]
+  ccleaner 5.67.7763 [extras]
+  clash-for-windows 0.10.1 [dorado]
+  DirectX 9.29.1974-June2010 [Scoop-Ash258]
+  dotnet-sdk 3.1.301
+  edgedriver 85.0.545.0
+  epicgameslauncher nightly-20200613 [dorado]
+  git 2.27.0.windows.1
+  lessmsi 1.6.91
+  mls-software-openssh 8.3p1-1
+  nodejs 14.4.0
+  obs-studio 25.0.8 [extras]
+  oh-my-posh 2.0.440 [extras]
+  posh-git 0.7.3.1 [extras]
+  potplayer 200512 [extras]
+  sourcetree 3.3.9 [extras]
+  steam nightly-20200613 [extras]
+  unityhub nightly-20200613 [dorado]
+  vscode 1.46.0 [extras]
+  wechat nightly-20200613 [dorado]
+</code></pre>
 
   </div>
 

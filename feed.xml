@@ -5,7 +5,7 @@
   
   <link href="https://blog.danyow.cn/feed.xml" rel="self" type="application/atom+xml" />
   <link href="https://blog.danyow.cn/" rel="alternate" type="text/html" />
-  <updated>2020-01-29T06:34:38+00:00</updated>
+  <updated>2020-06-15T13:42:12+00:00</updated>
   <id>https://blog.danyow.cn//</id>
 
   
@@ -18,6 +18,118 @@
 
   
 
+  
+  
+    <entry>
+      
+      <title type="html">Scoop的安装</title>
+      
+      
+      <link href="https://blog.danyow.cn/2020/06/14/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="alternate" type="text/html" title="Scoop的安装" />
+      
+      <published>2020-06-14T06:55:00+00:00</published>
+      <updated>2020-06-14T06:55:00+00:00</updated>
+      <id>https://blog.danyow.cn/2020/06/14/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8</id>
+      <content type="html" xml:base="https://blog.danyow.cn/2020/06/14/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">&lt;p&gt;Title: &lt;del&gt;目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 &lt;em&gt;Bucket&lt;/em&gt; .&lt;/del&gt;&lt;/p&gt;
+
+&lt;p&gt;反省一下，比起之前的 &lt;em&gt;Chocolatey&lt;/em&gt; 来说，还是推荐的，因为它更加适合程序员和具有高度强迫症的患者。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;优点：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;环境和后续安装的软件都可以不放在&lt;strong&gt;C&lt;/strong&gt;盘&lt;/li&gt;
+  &lt;li&gt;扩展包也比较丰富&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;缺点：&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;如果网速慢的情况下（因为使用到了 &lt;em&gt;github&lt;/em&gt; ）安装某个包的时候，可能会出现半天安装不上的情况，这时候取消的话会使得 &lt;em&gt;scoop&lt;/em&gt; 误以为安装完成，这时需要卸载。&lt;/li&gt;
+  &lt;li&gt;后续依据使用情况补充&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;scoop的安装&quot;&gt;Scoop的安装&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;PowerShell&lt;/em&gt; 下运行下述内容，确保 &lt;em&gt;PowerShell&lt;/em&gt; 允许可以执行本地脚本。&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Set-ExecutionPolicy RemoteSigned -scope CurrentUser&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;然后安装 &lt;em&gt;Scoop&lt;/em&gt; ，看网速来的。&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')&lt;/code&gt;&lt;/p&gt;
+
+    &lt;p&gt;or 更短的&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iwr -useb get.scoop.sh | iex&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;进入桶子环境准备阶段。即添加 &lt;em&gt;Bucket&lt;/em&gt; 库。但由于 &lt;em&gt;Bucket&lt;/em&gt; 是依托于 &lt;em&gt;Github&lt;/em&gt; ，所以要先安装 &lt;em&gt;git&lt;/em&gt; 环境&lt;/p&gt;
+
+    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scoop install git&lt;/code&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;如果你没有 7zip 的话，会顺手给你安装git的依赖。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;  7zip 19.00
+  adb 30.0.0
+  anaconda3 2020.02 [dorado]
+  android-sdk 4333796 [extras]
+  android-studio 4.0.0.16 [extras]
+  ccleaner 5.67.7763 [extras]
+  clash-for-windows 0.10.1 [dorado]
+  DirectX 9.29.1974-June2010 [Scoop-Ash258]
+  dotnet-sdk 3.1.301
+  edgedriver 85.0.545.0
+  epicgameslauncher nightly-20200613 [dorado]
+  git 2.27.0.windows.1
+  lessmsi 1.6.91
+  mls-software-openssh 8.3p1-1
+  nodejs 14.4.0
+  obs-studio 25.0.8 [extras]
+  oh-my-posh 2.0.440 [extras]
+  posh-git 0.7.3.1 [extras]
+  potplayer 200512 [extras]
+  sourcetree 3.3.9 [extras]
+  steam nightly-20200613 [extras]
+  unityhub nightly-20200613 [dorado]
+  vscode 1.46.0 [extras]
+  wechat nightly-20200613 [dorado]
+&lt;/code&gt;&lt;/pre&gt;</content>
+
+      
+      
+      
+      
+      
+
+      
+
+      
+        <category term="Windows" />
+      
+        <category term="笔记" />
+      
+        <category term="scoop" />
+      
+
+      
+
+      
+        <summary type="html">Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 Bucket .</summary>
+      
+
+      
+      
+    </entry>
+  
   
   
     <entry>
@@ -2270,68 +2382,6 @@ git clone https://github.com/powerline/fonts.git
 
       
         <summary type="html">Title:貌似这样可以让你的终端变得很好看呢</summary>
-      
-
-      
-      
-    </entry>
-  
-  
-  
-    <entry>
-      
-      <title type="html">Scoop的安装</title>
-      
-      
-      <link href="https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/" rel="alternate" type="text/html" title="Scoop的安装" />
-      
-      <published>2019-08-15T06:55:00+00:00</published>
-      <updated>2019-08-15T06:55:00+00:00</updated>
-      <id>https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8</id>
-      <content type="html" xml:base="https://blog.danyow.cn/2019/08/15/Scoop%E7%9A%84%E4%BD%BF%E7%94%A8/">&lt;p&gt;Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 &lt;em&gt;Bucket&lt;/em&gt; .&lt;/p&gt;
-
-&lt;h2 id=&quot;scoop的安装&quot;&gt;Scoop的安装&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;&lt;em&gt;PowerShell&lt;/em&gt; 下运行下述内容，确保 &lt;em&gt;PowerShell&lt;/em&gt; 允许可以执行本地脚本。&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;set-executionpolicy remotesigned -scope currentuser&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;然后安装 &lt;em&gt;Scoop&lt;/em&gt; ，看网速来的。&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;iex (new-object net.webclient).downloadstring('https://get.scoop.sh')&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;进入桶子环境准备阶段。即添加 &lt;em&gt;Bucket&lt;/em&gt; 库。但由于 &lt;em&gt;Bucket&lt;/em&gt; 是依托于 &lt;em&gt;Github&lt;/em&gt; ，所以要先安装 &lt;em&gt;git&lt;/em&gt; 环境&lt;/p&gt;
-
-    &lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;scoop install git&lt;/code&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;如果你没有 7zip 的话，会顺手给你安装git的依赖。&lt;/p&gt;</content>
-
-      
-      
-      
-      
-      
-
-      
-
-      
-        <category term="Windows" />
-      
-        <category term="笔记" />
-      
-        <category term="scoop" />
-      
-
-      
-
-      
-        <summary type="html">Title: 目前暂不推荐, 因为自带的软件较少, 而且更多的需要使用到别人的 Bucket .</summary>
       
 
       
