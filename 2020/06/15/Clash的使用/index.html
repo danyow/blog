@@ -1,0 +1,3638 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  
+  
+  <title>Clash的使用</title>
+  <meta name="description" content="Title: 这是一个翻墙工具，支持v2ray协议，这点就很重要。">
+  
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://blog.danyow.cn/2020/06/15/Clash%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  
+  
+  <link rel="alternate" type="application/rss+xml" title="📒 Danyow" href="https://blog.danyow.cn/feed.xml">
+
+  
+
+  
+  <meta property="og:title" content="Clash的使用">
+  <meta property="og:site_name" content="📒 Danyow">
+  <meta property="og:url" content="https://blog.danyow.cn/2020/06/15/Clash%E7%9A%84%E4%BD%BF%E7%94%A8/">
+  <meta property="og:description" content="Title: 这是一个翻墙工具，支持v2ray协议，这点就很重要。">
+  
+  
+  <meta name="twitter:card" content="summary">
+  
+  <meta name="twitter:title" content="Clash的使用">
+  <meta name="twitter:description" content="Title: 这是一个翻墙工具，支持v2ray协议，这点就很重要。">
+  
+  
+
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css?family=Bitter:400,400i,700&display=swap" rel="stylesheet">
+
+  
+
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+
+    <a class="site-title" href="/">📒 Danyow</a>
+
+    <nav class="site-nav">
+      
+        
+        <a class="page-link" href="/about/">关于</a>
+      
+        
+        <a class="page-link" href="/archives/">归档</a>
+      
+        
+        <a class="page-link" href="https://github.com/danyow">GitHub</a>
+      
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    
+      <h1 class="post-title" itemprop="name headline">Clash的使用</h1>
+    
+    <p class="post-meta"><time datetime="2020-06-15T01:42:42+00:00" itemprop="datePublished">Jun 15, 2020</time> •
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/window/">Window</a>,
+      
+    
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/clash/">Clash</a>,
+      
+    
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/v2ray/">v2ray</a>,
+      
+    
+  
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <a href="/categories/%E7%AC%94%E8%AE%B0/">笔记</a>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  
+
+
+
+</p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>Title: 这是一个翻墙工具，支持v2ray协议，这点就很重要。</p>
+
+<p>配置：</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">###############################################################</span>
+
+<span class="c1"># 本范例来源为网络</span>
+
+<span class="c1"># YouTube 搜索 波仔分享</span>
+
+<span class="c1"># 原文发布地址 https://www.v2rayssr.com/clashxx.html</span>
+
+<span class="c1">###############################################################</span>
+
+<span class="na">port</span><span class="pi">:</span> <span class="s">7890</span>
+
+<span class="na">socks-port</span><span class="pi">:</span> <span class="s">7891</span>
+
+<span class="na">redir-port</span><span class="pi">:</span> <span class="s">7892</span>
+
+<span class="na">allow-lan</span><span class="pi">:</span> <span class="no">false</span>
+
+<span class="na">mode</span><span class="pi">:</span> <span class="s">Rule</span>
+
+<span class="na">log-level</span><span class="pi">:</span> <span class="s">info</span>
+
+<span class="na">external-controller</span><span class="pi">:</span> <span class="s">127.0.0.1:9090</span>
+
+<span class="na">secret</span><span class="pi">:</span> <span class="s1">'</span><span class="s">'</span>
+
+
+
+<span class="na">dns</span><span class="pi">:</span>
+
+  <span class="na">enable</span><span class="pi">:</span> <span class="no">true</span>
+
+  <span class="na">nameserver</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s">1.2.4.8</span>
+
+    <span class="pi">-</span> <span class="s">114.114.114.114</span>
+
+    <span class="pi">-</span> <span class="s">223.5.5.5</span>
+
+    <span class="pi">-</span> <span class="s">tls://dns.rubyfish.cn:853</span>
+
+  <span class="na">fallback</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s">tls://1.0.0.1:853</span>
+
+    <span class="pi">-</span> <span class="s">tls://dns.google:853</span>
+
+
+
+<span class="na">cfw-bypass</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s">qq.com</span>
+
+    <span class="pi">-</span> <span class="s">taobao.com</span>
+
+    <span class="pi">-</span> <span class="s">music.163.com</span>
+
+    <span class="pi">-</span> <span class="s1">'</span><span class="s">*.music.126.net'</span>
+
+    <span class="pi">-</span> <span class="s">localhost</span>
+
+    <span class="pi">-</span> <span class="s">127.*</span>
+
+    <span class="pi">-</span> <span class="s">10.*</span>
+
+    <span class="pi">-</span> <span class="s">172.16.*</span>
+
+    <span class="pi">-</span> <span class="s">172.17.*</span>
+
+    <span class="pi">-</span> <span class="s">172.18.*</span>
+
+    <span class="pi">-</span> <span class="s">172.19.*</span>
+
+    <span class="pi">-</span> <span class="s">172.20.*</span>
+
+    <span class="pi">-</span> <span class="s">172.21.*</span>
+
+    <span class="pi">-</span> <span class="s">172.22.*</span>
+
+    <span class="pi">-</span> <span class="s">172.23.*</span>
+
+    <span class="pi">-</span> <span class="s">172.24.*</span>
+
+    <span class="pi">-</span> <span class="s">172.25.*</span>
+
+    <span class="pi">-</span> <span class="s">172.26.*</span>
+
+    <span class="pi">-</span> <span class="s">172.27.*</span>
+
+    <span class="pi">-</span> <span class="s">172.28.*</span>
+
+    <span class="pi">-</span> <span class="s">172.29.*</span>
+
+    <span class="pi">-</span> <span class="s">172.30.*</span>
+
+    <span class="pi">-</span> <span class="s">172.31.*</span>
+
+    <span class="pi">-</span> <span class="s">192.168.*</span>
+
+    <span class="pi">-</span> <span class="s">&lt;local&gt;</span>
+
+<span class="na">cfw-latency-timeout</span><span class="pi">:</span> <span class="s">5000</span>
+
+
+
+<span class="c1"># 代理节点</span>
+
+<span class="na">Proxy</span><span class="pi">:</span>
+
+<span class="c1">###############################################################配置分割线</span>
+
+<span class="c1"># Shadowsocks 支持的加密方式:</span>
+
+<span class="c1">#   aes-128-gcm aes-192-gcm aes-256-gcm</span>
+
+<span class="c1">#   aes-128-cfb aes-192-cfb aes-256-cfb</span>
+
+<span class="c1">#   aes-128-ctr aes-192-ctr aes-256-ctr</span>
+
+<span class="c1">#   rc4-md5 chacha20-ietf xchacha20</span>
+
+<span class="c1">#   chacha20-ietf-poly1305 xchacha20-ietf-poly1305</span>
+
+<span class="c1"># Shadowsocks 配置范本</span>
+
+<span class="c1"># 第一种配置</span>
+
+<span class="c1">#- name: "你的SS节点1"               # 软件显示的节点名字</span>
+
+<span class="c1">#  type: ss                                  # 代理类型</span>
+
+<span class="c1">#  server: 1.2.4.8                          # 服务器 IP</span>
+
+<span class="c1">#  port: 443                                 #  端口号</span>
+
+<span class="c1">#  cipher: chacha20-ietf-poly1305   # 加密方法</span>
+
+<span class="c1">#  password: "password"                # SS 密码</span>
+
+<span class="c1">#  # udp: true                                #默认不开启</span>
+
+  
+
+<span class="c1">#第二种配置</span>
+
+<span class="c1"># Shadowsocks + simple-obfs   配置范本</span>
+
+<span class="c1">#- name: "你的SS节点2"</span>
+
+<span class="c1">#  type: ss</span>
+
+<span class="c1">#  server: 1.2.4.8</span>
+
+<span class="c1">#  port: 443</span>
+
+<span class="c1">#  cipher: chacha20-ietf-poly1305</span>
+
+<span class="c1">#  password: "password"</span>
+
+<span class="c1">#  plugin: obfs</span>
+
+<span class="c1">#  plugin-opts:</span>
+
+<span class="c1">#    mode: tls # or http               #  大部分选择 HTTP</span>
+
+<span class="c1">#    # host: bing.com                  #  伪装</span>
+
+<span class="c1"># VMess 的配置</span>
+
+<span class="c1">#- name: "你的V2RAY节点1" # 软件显示的节点名字</span>
+
+<span class="c1">#  type: vmess # 代理类型</span>
+
+<span class="c1">#  server: v2rayssr.com # 服务器 IP</span>
+
+<span class="c1">#  port: 443 #  端口号</span>
+
+<span class="c1">#  uuid: a3482e88-686a-4a58-8126-99c9df64b7bf</span>
+
+<span class="c1">#  alterId: 64  #额外的 ID</span>
+
+<span class="c1">#  cipher: auto</span>
+
+<span class="c1">#  #上面几行为必选参数</span>
+
+<span class="c1">#  #下面几行为可选参数  根据你的配置情况来</span>
+
+<span class="c1">#  # udp: true    #默认不开启</span>
+
+<span class="c1">#  # tls: true      #TLS 开启</span>
+
+<span class="c1">#  # skip-cert-verify: true     #默认不开启</span>
+
+<span class="c1">#  # network: ws    # 网路类型 WS HTTP 等</span>
+
+<span class="c1">#  # ws-path: /path  # 路径</span>
+
+<span class="c1">#  # ws-headers:     #默认不开启</span>
+
+<span class="c1">#  #  Host: v2ray.com    # HOST</span>
+
+<span class="c1"># Trojan 的配置</span>
+
+<span class="c1">#- name: "trojan"</span>
+
+<span class="c1">#  type: trojan</span>
+
+<span class="c1">#  server: server</span>
+
+<span class="c1">#  port: 443</span>
+
+<span class="c1">#  password: yourpsk</span>
+
+<span class="c1">#  # udp: true</span>
+
+<span class="c1">#  # sni: example.com # aka server name</span>
+
+<span class="c1">#  # alpn:</span>
+
+<span class="c1">#  #   - h2</span>
+
+<span class="c1">#  #   - http/1.1</span>
+
+<span class="c1">#  # skip-cert-verify: true</span>
+
+<span class="c1"># 配置开始</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">V2ray节点的主机测试"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">vmess</span>
+
+  <span class="na">server</span><span class="pi">:</span> <span class="s">xxxx.com</span>
+
+  <span class="na">port</span><span class="pi">:</span> <span class="s">443</span>
+
+  <span class="na">uuid</span><span class="pi">:</span> <span class="s">8e8ed232-4422-1k23-askd-f4524b823f36</span>
+
+  <span class="na">alterId</span><span class="pi">:</span> <span class="s">0</span>
+
+  <span class="na">cipher</span><span class="pi">:</span> <span class="s">chacha20-poly1305</span>
+
+  <span class="na">tls</span><span class="pi">:</span> <span class="no">true</span>
+
+  <span class="na">network</span><span class="pi">:</span> <span class="s">ws</span>
+
+  <span class="na">ws-path</span><span class="pi">:</span> <span class="s">/paths</span>
+
+  <span class="na">Host</span><span class="pi">:</span> <span class="s">xxxx.com</span>
+
+
+<span class="c1">###############################################################配置分割线</span>
+
+
+
+<span class="c1"># 代理组策略</span>
+
+<span class="na">Proxy Group</span><span class="pi">:</span>
+
+
+
+<span class="c1"># url-test 通过指定的 URL 测试并选择延迟最低的节点</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">自动节点选择"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">url-test</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">V2ray节点的主机测试"</span>
+
+  <span class="na">url</span><span class="pi">:</span> <span class="s1">'</span><span class="s">http://www.gstatic.com/generate_204'</span>
+
+  <span class="na">interval</span><span class="pi">:</span> <span class="s">300</span>
+
+
+
+<span class="c1"># 代理节点选择</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">PROXY"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">select</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">自动节点选择"</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">V2ray节点的主机测试"</span>
+
+<span class="c1"># 白名单模式 PROXY，黑名单模式 DIRECT</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Final"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">select</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">PROXY"</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">DIRECT"</span>
+
+<span class="c1"># Apple 服务代理</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Apple"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">select</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">DIRECT"</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">PROXY"</span>
+
+<span class="c1"># 国际流媒体服务</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GlobalMedia"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">select</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">PROXY"</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">V2ray节点的主机测试"</span>
+
+<span class="c1"># 大陆流媒体面向港澳台限定服务</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">HKMTMedia"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">select</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">DIRECT"</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">V2ray节点的主机测试"</span>
+
+<span class="c1"># 运营商及声名狼藉网站劫持</span>
+
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Hijacking"</span>
+
+  <span class="na">type</span><span class="pi">:</span> <span class="s">select</span>
+
+  <span class="na">proxies</span><span class="pi">:</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">REJECT"</span>
+
+    <span class="pi">-</span> <span class="s2">"</span><span class="s">DIRECT"</span>
+
+
+
+<span class="c1"># 规则</span>
+
+<span class="na">Rule</span><span class="pi">:</span>
+
+<span class="c1"># Unbreak</span>
+
+<span class="c1"># &gt; Google</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,googletraveladservices.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,dl.google.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,mtalk.google.com,DIRECT</span>
+
+
+
+<span class="c1"># Internet Service Providers Hijacking 运营商劫持</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,17gouwuba.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,186078.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,189zj.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,285680.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,3721zh.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,4336wang.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,51chumoping.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,51mld.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,51mypc.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,58mingri.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,58mingtian.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,5vl58stm.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,6d63d3.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,7gg.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,91veg.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,9s6q.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,adsame.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aiclk.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,akuai.top,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,atplay.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,baiwanchuangyi.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,beerto.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,beilamusi.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,benshiw.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bianxianmao.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bryonypie.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cishantao.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cszlks.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cudaojia.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dafapromo.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,daitdai.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dsaeerf.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dugesheying.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dv8c1t.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,echatu.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,erdoscs.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fan-yong.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,feih.com.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fjlqqc.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fkku194.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,freedrive.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gclick.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,goufanli100.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,goupaoerdai.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gouwubang.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gzxnlk.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,haoshengtoys.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hyunke.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ichaosheng.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ishop789.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jdkic.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jiubuhua.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jsncke.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,junkucm.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jwg365.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kawo77.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kualianyingxiao.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kumihua.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ltheanine.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,maipinshangmao.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,minisplat.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mkitgfs.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mlnbike.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mobjump.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nbkbgd.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,newapi.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pinzhitmall.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,poppyta.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qianchuanghr.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qichexin.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qinchugudao.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,quanliyouxi.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qutaobi.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ry51w.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sg536.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifubo.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuce.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuda.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifufu.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuge.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifugu.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuhe.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuhu.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuji.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sifuka.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,smgru.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,taoggou.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tcxshop.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tjqonline.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,topitme.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tt3sm4.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tuia.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tuipenguin.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tuitiger.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,websd8.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wsgblw.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wx16999.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xchmai.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xiaohuau.xyz,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ygyzx.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yinmong.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yitaopt.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yjqiqi.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yukhj.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhaozecheng.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhenxinet.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zlne800.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zunmi.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zzd6.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,39.107.15.115/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,47.89.59.182/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,103.49.209.27/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,123.56.152.96/32,Hijacking,no-resolve</span>
+
+<span class="c1"># &gt; ChinaTelecom</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,61.160.200.223/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,61.160.200.242/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,61.160.200.252/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,61.174.50.214/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,111.175.220.163/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,111.175.220.164/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,122.229.8.47/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,122.229.29.89/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,124.232.160.178/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,175.6.223.15/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,183.59.53.237/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,218.93.127.37/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,221.228.17.152/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,221.231.6.79/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,222.186.61.91/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,222.186.61.95/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,222.186.61.96/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,222.186.61.97/32,Hijacking,no-resolve</span>
+
+<span class="c1"># &gt; ChinaUnicom</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,106.75.231.48/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,119.4.249.166/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,220.196.52.141/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,221.6.4.148/32,Hijacking,no-resolve</span>
+
+<span class="c1"># &gt; ChinaMobile</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,114.247.28.96/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,221.179.131.72/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,221.179.140.145/32,Hijacking,no-resolve</span>
+
+<span class="c1"># &gt; Dr.Peng</span>
+
+<span class="c1"># - IP-CIDR,10.72.25.0/24,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,115.182.16.79/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,118.144.88.126/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,118.144.88.215/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,118.144.88.216/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,120.76.189.132/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,124.14.21.147/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,124.14.21.151/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,180.166.52.24/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,211.161.101.106/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,220.115.251.25/32,Hijacking,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,222.73.156.235/32,Hijacking,no-resolve</span>
+
+
+
+<span class="c1"># Malware 恶意网站</span>
+
+<span class="c1"># &gt; 快压</span>
+
+<span class="c1"># https://zhuanlan.zhihu.com/p/39534279</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kuaizip.com,Hijacking</span>
+
+<span class="c1"># &gt; MacKeeper</span>
+
+<span class="c1"># https://www.lizhi.io/blog/40002904</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mackeeper.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zryydi.com,Hijacking</span>
+
+<span class="c1"># &gt; Adobe Flash China Special Edition</span>
+
+<span class="c1"># https://www.zhihu.com/question/281163698/answer/441388130</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,flash.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,geo2.adobe.com,Hijacking</span>
+
+<span class="c1"># &gt; C&amp;J Marketing 思杰马克丁软件</span>
+
+<span class="c1"># https://www.zhihu.com/question/46746200</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,4009997658.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abbyychina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bartender.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,betterzip.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,betterzipcn.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,beyondcompare.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bingdianhuanyuan.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chemdraw.com.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cjmakeding.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cjmkt.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,codesoftchina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,coreldrawchina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,crossoverchina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dongmansoft.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,earmasterchina.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,easyrecoverychina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ediuschina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,flstudiochina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,formysql.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,guitarpro.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,huishenghuiying.com.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hypersnap.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iconworkshop.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,imindmap.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jihehuaban.com.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,keyshot.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kingdeecn.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,logoshejishi.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,luping.net.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mairuan.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mairuan.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mairuan.com.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mairuan.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mairuanwang.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,makeding.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mathtype.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mindmanager.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mindmanager.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mindmapper.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mycleanmymac.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nicelabel.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ntfsformac.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ntfsformac.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,overturechina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,passwordrecovery.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pdfexpert.cc,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,photozoomchina.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,shankejingling.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ultraiso.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vegaschina.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xmindchina.net,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xshellcn.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yihuifu.cn,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yuanchengxiezuo.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zbrushcn.com,Hijacking</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhzzx.com,Hijacking</span>
+
+
+
+<span class="c1"># Global Area Network</span>
+
+<span class="c1"># (GlobalMedia)</span>
+
+<span class="c1"># (Music)</span>
+
+<span class="c1"># &gt; Deezer</span>
+
+<span class="c1"># USER-AGENT,Deezer*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,deezer.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dzcdn.net,GlobalMedia</span>
+
+<span class="c1"># &gt; KKBOX</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kkbox.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kkbox.com.tw,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kfs.io,GlobalMedia</span>
+
+<span class="c1"># &gt; JOOX</span>
+
+<span class="c1"># USER-AGENT,WeMusic*,GlobalMedia</span>
+
+<span class="c1"># USER-AGENT,JOOX*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,joox.com,GlobalMedia</span>
+
+<span class="c1"># &gt; Pandora</span>
+
+<span class="c1"># USER-AGENT,Pandora*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pandora.com,GlobalMedia</span>
+
+<span class="c1"># &gt; SoundCloud</span>
+
+<span class="c1"># USER-AGENT,SoundCloud*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,p-cdn.us,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sndcdn.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,soundcloud.com,GlobalMedia</span>
+
+<span class="c1"># &gt; Spotify</span>
+
+<span class="c1"># USER-AGENT,Spotify*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pscdn.co,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,scdn.co,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,spotify.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,spoti.fi,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,spotify.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,-spotify-com,GlobalMedia</span>
+
+<span class="c1"># &gt; TIDAL</span>
+
+<span class="c1"># USER-AGENT,TIDAL*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tidal.com,GlobalMedia</span>
+
+<span class="c1"># &gt; YouTubeMusic</span>
+
+<span class="c1"># USER-AGENT,com.google.ios.youtubemusic*,GlobalMedia</span>
+
+<span class="c1"># USER-AGENT,YouTubeMusic*,GlobalMedia</span>
+
+<span class="c1"># (Video)</span>
+
+<span class="c1"># &gt; All4</span>
+
+<span class="c1"># USER-AGENT,All4*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,c4assets.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,channel4.com,GlobalMedia</span>
+
+<span class="c1"># &gt; AbemaTV</span>
+
+<span class="c1"># USER-AGENT,AbemaTV*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abema.io,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ameba.jp,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abema.tv,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hayabusa.io,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,abematv.akamaized.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,ds-linear-abematv.akamaized.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,ds-vod-abematv.akamaized.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,linear-abematv.akamaized.net,GlobalMedia</span>
+
+<span class="c1"># &gt; Amazon Prime Video</span>
+
+<span class="c1"># USER-AGENT,InstantVideo.US*,GlobalMedia</span>
+
+<span class="c1"># USER-AGENT,Prime%20Video*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aiv-cdn.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aiv-delivery.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,amazonvideo.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,primevideo.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,avodmp4s3ww-a.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d25xi40x97liuc.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,dmqdd6hw24ucf.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d22qjgkvxw22r6.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d1v5ir2lpwr8os.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,avoddashs,GlobalMedia</span>
+
+<span class="c1"># &gt; Bahamut</span>
+
+<span class="c1"># USER-AGENT,Anime*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bahamut.com.tw,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gamer.com.tw,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,gamer-cds.cdn.hinet.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,gamer2-cds.cdn.hinet.net,GlobalMedia</span>
+
+<span class="c1"># &gt; BBC iPlayer</span>
+
+<span class="c1"># USER-AGENT,BBCiPlayer*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bbc.co.uk,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bbci.co.uk,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,bbcfmt,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,uk-live,GlobalMedia</span>
+
+<span class="c1"># &gt; DAZN</span>
+
+<span class="c1"># USER-AGENT,DAZN*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dazn.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dazn-api.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d151l6v8er5bdm.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,voddazn,GlobalMedia</span>
+
+<span class="c1"># &gt; Disney+</span>
+
+<span class="c1"># USER-AGENT,Disney+*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bamgrid.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,disney-plus.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,disneyplus.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dssott.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,cdn.registerdisney.go.com,GlobalMedia</span>
+
+<span class="c1"># &gt; encoreTVB</span>
+
+<span class="c1"># USER-AGENT,encoreTVB*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,encoretvb.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,edge.api.brightcove.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,bcbolt446c5271-a.akamaihd.net,GlobalMedia</span>
+
+<span class="c1"># &gt; FOX NOW</span>
+
+<span class="c1"># USER-AGENT,FOX%20NOW*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fox.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,foxdcg.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,theplatform.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,uplynk.com,GlobalMedia</span>
+
+<span class="c1"># &gt; HBO NOW</span>
+
+<span class="c1"># USER-AGENT,HBO%20NOW*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hbo.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hbogo.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hbonow.com,GlobalMedia</span>
+
+<span class="c1"># &gt; HBO GO HKG</span>
+
+<span class="c1"># USER-AGENT,HBO%20GO%20PROD%20HKG*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hbogoasia.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hbogoasia.hk,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,bcbolthboa-a.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,players.brightcove.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,s3-ap-southeast-1.amazonaws.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,dai3fd1oh325y.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,44wilhpljf.execute-api.ap-southeast-1.amazonaws.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hboasia1-i.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hboasia2-i.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hboasia3-i.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hboasia4-i.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hboasia5-i.akamaihd.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,cf-images.ap-southeast-1.prod.boltdns.net,GlobalMedia</span>
+
+<span class="c1"># &gt; 华文电视</span>
+
+<span class="c1"># USER-AGENT,HWTVMobile*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,5itv.tv,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ocnttv.com,GlobalMedia</span>
+
+<span class="c1"># &gt; Hulu</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hulu.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,huluim.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hulustream.com,GlobalMedia</span>
+
+<span class="c1"># &gt; Hulu(フールー)</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,happyon.jp,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hulu.jp,GlobalMedia</span>
+
+<span class="c1"># &gt; ITV</span>
+
+<span class="c1"># USER-AGENT,ITV_Player*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,itv.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,itvstatic.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,itvpnpmobile-a.akamaihd.net,GlobalMedia</span>
+
+<span class="c1"># &gt; KKTV</span>
+
+<span class="c1"># USER-AGENT,KKTV*,GlobalMedia</span>
+
+<span class="c1"># USER-AGENT,com.kktv.ios.kktv*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kktv.com.tw,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kktv.me,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,kktv-theater.kk.stream,GlobalMedia</span>
+
+<span class="c1"># &gt; Line TV</span>
+
+<span class="c1"># USER-AGENT,LINE%20TV*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,linetv.tw,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d3c7rimkq79yfu.cloudfront.net,GlobalMedia</span>
+
+<span class="c1"># &gt; LiTV</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,litv.tv,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,litvfreemobile-hichannel.cdn.hinet.net,GlobalMedia</span>
+
+<span class="c1"># &gt; My5</span>
+
+<span class="c1"># USER-AGENT,My5*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,channel5.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,my5.tv,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d349g9zuie06uo.cloudfront.net,GlobalMedia</span>
+
+<span class="c1"># &gt; myTV SUPER</span>
+
+<span class="c1"># USER-AGENT,mytv*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mytvsuper.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tvb.com,GlobalMedia</span>
+
+<span class="c1"># &gt; Netflix</span>
+
+<span class="c1"># USER-AGENT,Argo*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflix.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflix.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nflxext.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nflximg.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nflximg.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nflxso.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nflxvideo.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest0.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest1.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest2.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest3.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest4.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest5.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest6.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest7.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest8.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netflixdnstest9.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,23.246.0.0/18,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,37.77.184.0/21,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,45.57.0.0/17,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,64.120.128.0/17,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,66.197.128.0/17,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,108.175.32.0/20,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,192.173.64.0/18,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,198.38.96.0/19,GlobalMedia,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,198.45.48.0/20,GlobalMedia,no-resolve</span>
+
+<span class="c1"># &gt; niconico</span>
+
+<span class="c1"># USER-AGENT,Niconico*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dmc.nico,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nicovideo.jp,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nimg.jp,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,socdm.com,GlobalMedia</span>
+
+<span class="c1"># &gt; PBS</span>
+
+<span class="c1"># USER-AGENT,PBS*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pbs.org,GlobalMedia</span>
+
+<span class="c1"># &gt; Pornhub</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,phncdn.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pornhub.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pornhubpremium.com,GlobalMedia</span>
+
+<span class="c1"># &gt; 台湾好</span>
+
+<span class="c1"># USER-AGENT,TaiwanGood*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,skyking.com.tw,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hamifans.emome.net,GlobalMedia</span>
+
+<span class="c1"># &gt; Twitch</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,twitch.tv,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,twitchcdn.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ttvnw.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jtvnw.net,GlobalMedia</span>
+
+<span class="c1"># &gt; ViuTV</span>
+
+<span class="c1"># USER-AGENT,Viu*,GlobalMedia</span>
+
+<span class="c1"># USER-AGENT,ViuTV*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,viu.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,viu.tv,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,api.viu.now.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d1k2us671qcoau.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,d2anahhhmp1ffz.cloudfront.net,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,dfp6rglgjqszk.cloudfront.net,GlobalMedia</span>
+
+<span class="c1"># &gt; YouTube</span>
+
+<span class="c1"># USER-AGENT,com.google.ios.youtube*,GlobalMedia</span>
+
+<span class="c1"># USER-AGENT,YouTube*,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,googlevideo.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,youtube.com,GlobalMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,youtubei.googleapis.com,GlobalMedia</span>
+
+
+
+<span class="c1"># (HKMTMedia)</span>
+
+<span class="c1"># &gt; 愛奇藝台灣站</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iqiyi.com,HKMTMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,71.am,HKMTMedia</span>
+
+<span class="c1"># &gt; bilibili</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bilibili.com,HKMTMedia</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,upos-hz-mirrorakam.akamaized.net,HKMTMedia</span>
+
+
+
+<span class="c1"># (DNS Cache Pollution Protection)</span>
+
+<span class="c1"># &gt; Google</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ampproject.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,appspot.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blogger.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,getoutline.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gvt0.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gvt1.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gvt3.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xn--ngstr-lra8j.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,google,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,blogspot,PROXY</span>
+
+<span class="c1"># &gt; Microsoft</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,onedrive.live.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xboxlive.com,PROXY</span>
+
+<span class="c1"># &gt; Facebook</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cdninstagram.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fb.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fb.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fbaddins.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fbcdn.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fbsbx.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fbworkmail.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,instagram.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,m.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,messenger.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oculus.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oculuscdn.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,rocksdb.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,whatsapp.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,whatsapp.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,facebook,PROXY</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,3.123.36.126/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,35.157.215.84/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,35.157.217.255/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,52.58.209.134/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,54.93.124.31/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,54.162.243.80/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,54.173.34.141/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,54.235.23.242/32,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,169.45.248.118/32,PROXY,no-resolve</span>
+
+<span class="c1"># &gt; Twitter</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pscp.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,periscope.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,t.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,twimg.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,twimg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,twitpic.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vine.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,twitter,PROXY</span>
+
+<span class="c1"># &gt; Telegram</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,t.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tdesktop.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,telegra.ph,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,telegram.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,telegram.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,91.108.4.0/22,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,91.108.8.0/22,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,91.108.12.0/22,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,91.108.16.0/22,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,91.108.56.0/22,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,149.154.160.0/20,PROXY,no-resolve</span>
+
+<span class="c1"># &gt; Line</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,line.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,line-apps.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,line-scdn.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,naver.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,103.2.30.0/23,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,125.209.208.0/20,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,147.92.128.0/17,PROXY,no-resolve</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,203.104.144.0/21,PROXY,no-resolve</span>
+
+<span class="c1"># &gt; Other</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,4shared.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,520cc.cc,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,881903.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,9cache.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,9gag.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abc.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abc.net.au,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abebooks.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,amazon.co.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apigee.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apk-dl.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apkfind.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apkmirror.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apkmonk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apkpure.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aptoide.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,archive.is,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,archive.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,arte.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,artstation.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,arukas.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ask.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,avg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,avgle.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,badoo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bandwagonhost.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bbc.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,behance.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bibox.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,biggo.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,binance.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bitcointalk.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bitfinex.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bitmex.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bit-z.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bloglovin.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bloomberg.cn,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bloomberg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blubrry.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,book.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,booklive.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,books.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,boslife.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,box.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,businessinsider.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bwh1.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,castbox.fm,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cbc.ca,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cdw.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,change.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,channelnewsasia.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ck101.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,clarionproject.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,clyp.it,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cna.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,comparitech.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,conoha.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,crucial.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cts.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cw.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cyberctm.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dailymotion.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dailyview.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,daum.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,daumcdn.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dcard.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,deepdiscount.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,depositphotos.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,deviantart.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,disconnect.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,discordapp.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,discordapp.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,disqus.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dlercloud.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dns2go.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dowjones.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dropbox.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dropboxusercontent.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,duckduckgo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dw.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dynu.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,earthcam.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ebookservice.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,economist.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,edgecastcdn.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,edu,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,elpais.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,enanyang.my,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,encyclopedia.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,esoir.be,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,etherscan.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,euronews.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,evozi.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,feedly.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,firech.at,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,flickr.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,flitto.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,foreignpolicy.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,freebrowser.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,freewechat.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,freeweibo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,friday.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ftchinese.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ftimg.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gate.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,getlantern.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,getsync.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,globalvoices.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,goo.ne.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,goodreads.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gov,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gov.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,greatfire.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gumroad.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hbg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,heroku.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hightail.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hk01.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hkbf.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hkbookcity.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hkej.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hket.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hkgolden.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hootsuite.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hudson.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hyread.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ibtimes.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,i-cable.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,icij.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,icoco.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,imgur.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,initiummall.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,insecam.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ipfs.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,issuu.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,istockphoto.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,japantimes.co.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jiji.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jinx.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jkforum.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,joinmastodon.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,justmysocks.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,justpaste.it,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kakao.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kakaocorp.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kik.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kobo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kobobooks.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kodingen.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,lemonde.fr,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,lepoint.fr,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,lihkg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,listennotes.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,livestream.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,logmein.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mail.ru,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mailchimp.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,marc.info,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,matters.news,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,maying.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,medium.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mega.nz,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mil,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mingpao.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mobile01.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myspace.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myspacecdn.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nanyang.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,naver.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,neowin.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,newstapa.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nexitally.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nhk.or.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nicovideo.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nii.ac.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nikkei.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nofile.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,now.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nrk.no,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nyt.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytchina.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytcn.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytco.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytimes.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytimg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytlog.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nytstyle.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ok.ru,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,okex.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,on.cc,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,orientaldaily.com.my,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,overcast.fm,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,paltalk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pao-pao.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,parsevideo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pbxes.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pcdvd.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pchome.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pcloud.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,picacomic.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pinimg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pixiv.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,player.fm,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,plurk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,po18.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,potato.im,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,potatso.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,prism-break.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,proxifier.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pt.im,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pts.org.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pubu.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pubu.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pureapk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,quora.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,quoracdn.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,rakuten.co.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,readingtimes.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,readmoo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,redbubble.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,reddit.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,redditmedia.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,resilio.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,reuters.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,reutersmedia.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,rfi.fr,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,rixcloud.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,roadshow.hk,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,scmp.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,scribd.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,seatguru.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,shadowsocks.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,shopee.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,slideshare.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,softfamous.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,soundcloud.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ssrcloud.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,startpage.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamcommunity.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steemit.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steemitwallet.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,t66y.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tapatalk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,teco-hk.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,teco-mo.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,teddysun.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,textnow.me,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,theguardian.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,theinitium.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,thetvdb.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tineye.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,torproject.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tumblr.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,turbobit.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tutanota.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tvboxnow.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,udn.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,unseen.is,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,upmedia.mg,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,uptodown.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,urbandictionary.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ustream.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,uwants.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,v2ray.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,viber.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,videopress.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vimeo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,voachinese.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,voanews.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,voxer.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vzw.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,w3schools.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,washingtonpost.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wattpad.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,whoer.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wikimapia.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wikipedia.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wikiquote.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wikiwand.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,winudf.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wire.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wordpress.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,workflow.is,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,worldcat.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wsj.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wsj.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xhamster.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xn--90wwvt03e.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xn--i2ru8q2qg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xnxx.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xvideos.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yahoo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yandex.ru,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ycombinator.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yesasia.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yes-news.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yomiuri.co.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,you-get.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zaobao.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zb.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zello.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zeronet.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zoom.us,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,github,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,jav,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,pinterest,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,porn,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-KEYWORD,wikileaks,PROXY</span>
+
+
+
+<span class="c1"># (Region-Restricted Access Denied)</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apartmentratings.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apartments.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bankmobilevibe.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bing.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,booktopia.com.au,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cccat.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,centauro.com.br,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,clearsurance.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,costco.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,crackle.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,depositphotos.cn,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dish.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dmm.co.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dmm.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dnvod.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,esurance.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,extmatrix.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fastpic.ru,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,flipboard.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fnac.be,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fnac.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,funkyimg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fxnetworks.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gettyimages.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,go.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,here.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jcpenney.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jiehua.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mailfence.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nationwide.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nbc.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nexon.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nordstrom.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nordstromimage.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nordstromrack.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,superpages.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,target.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,thinkgeek.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tracfone.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,unity3d.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,uploader.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vevo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,viu.tv,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vsco.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xfinity.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zattoo.com,PROXY</span>
+
+<span class="c1"># USER-AGENT,Roam*,PROXY</span>
+
+
+
+<span class="c1"># (The Most Popular Sites)</span>
+
+<span class="c1"># &gt; Apple</span>
+
+<span class="c1"># &gt;&gt; TestFlight</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,testflight.apple.com,PROXY</span>
+
+<span class="c1"># &gt;&gt; Apple URL Shortener</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,appsto.re,PROXY</span>
+
+<span class="c1"># &gt;&gt; iBooks Store download</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,books.itunes.apple.com,PROXY</span>
+
+<span class="c1"># &gt;&gt; iTunes Store Moveis Trailers</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,hls.itunes.apple.com,PROXY</span>
+
+<span class="c1"># &gt;&gt; App Store Preview</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,apps.apple.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,itunes.apple.com,PROXY</span>
+
+<span class="c1"># &gt;&gt; Spotlight</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,api-glb-sea.smoot.apple.com,PROXY</span>
+
+<span class="c1"># &gt;&gt; Dictionary</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,lookup-api.apple.com,PROXY</span>
+
+<span class="c1"># &gt; Google</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abc.xyz,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,android.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,androidify.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dialogflow.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,autodraw.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,capitalg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,certificate-transparency.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chrome.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chromeexperiments.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chromestatus.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chromium.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,creativelab5.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,debug.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,deepmind.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,firebaseio.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,getmdl.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ggpht.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gmail.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gmodules.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,godoc.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,golang.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gstatic.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gv.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gwtproject.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,itasoftware.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,madewithcode.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,material.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,polymer-project.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,admin.recaptcha.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,recaptcha.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,shattered.io,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,synergyse.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tensorflow.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tfhub.dev,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tiltbrush.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,waveprotocol.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,waymo.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,webmproject.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,webrtc.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,whatbrowser.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,widevine.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,x.company,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,youtu.be,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yt.be,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ytimg.com,PROXY</span>
+
+<span class="c1"># &gt; Microsoft</span>
+
+<span class="c1"># &gt;&gt; Microsoft OneDrive</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,1drv.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,1drv.ms,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blob.core.windows.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,livefilestore.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,onedrive.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,storage.live.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,storage.msn.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,oneclient.sfx.ms,PROXY</span>
+
+<span class="c1"># &gt; Other</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,0rz.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,4bluestones.biz,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,9bis.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,allconnected.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aol.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bcc.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bit.ly,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bitshare.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blog.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blogimg.jp,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blogtd.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,broadcast.co.nz,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,camfrog.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cfos.de,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,citypopulation.de,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cloudfront.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ctitv.com.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cuhk.edu.hk,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cusu.hk,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,discord.gg,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,discuss.com.hk,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dropboxapi.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,duolingo.cn,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,edditstatic.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,flickriver.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,focustaiwan.tw,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,free.fr,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gigacircle.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hk-pub.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hosting.co.uk,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hwcdn.net,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ifixit.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iphone4hongkong.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iphonetaiwan.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iptvbin.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,linksalpha.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,manyvids.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myactimes.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,newsblur.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,now.im,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nowe.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,redditlist.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,s3.amazonaws.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,signal.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,smartmailcloud.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sparknotes.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,streetvoice.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,supertop.co,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tv.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,typepad.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,udnbkk.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,urbanairship.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,whispersystems.org,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wikia.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wn.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wolframalpha.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,x-art.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yimg.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,api.steampowered.com,PROXY</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,store.steampowered.com,PROXY</span>
+
+
+
+<span class="c1"># China Area Network</span>
+
+<span class="c1"># &gt; 360</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qhres.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qhimg.com,DIRECT</span>
+
+<span class="c1"># &gt; Akamai</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,akadns.net,DIRECT</span>
+
+<span class="c1"># - DOMAIN-SUFFIX,akamai.net,DIRECT</span>
+
+<span class="c1"># - DOMAIN-SUFFIX,akamaiedge.net,DIRECT</span>
+
+<span class="c1"># - DOMAIN-SUFFIX,akamaihd.net,DIRECT</span>
+
+<span class="c1"># - DOMAIN-SUFFIX,akamaistream.net,DIRECT</span>
+
+<span class="c1"># - DOMAIN-SUFFIX,akamaized.net,DIRECT</span>
+
+<span class="c1"># &gt; Alibaba</span>
+
+<span class="c1"># USER-AGENT,%E4%BC%98%E9%85%B7*,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,alibaba.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,alicdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,alikunlun.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,alipay.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,amap.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,autonavi.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dingtalk.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mxhichina.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,soku.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,taobao.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tmall.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tmall.hk,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ykimg.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,youku.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xiami.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xiami.net,DIRECT</span>
+
+<span class="c1"># &gt; Baidu</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,baidu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,baidubcr.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bdstatic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yunjiasu-cdn.net,DIRECT</span>
+
+<span class="c1"># &gt; bilibili</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,acgvideo.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,biliapi.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,biliapi.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bilibili.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bilibili.tv,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hdslb.com,DIRECT</span>
+
+<span class="c1"># &gt; Blizzard</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,blizzard.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,battle.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,blzddist1-a.akamaihd.net,DIRECT</span>
+
+<span class="c1"># &gt; ByteDance</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,feiliao.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pstatp.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,snssdk.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iesdouyin.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,toutiao.com,DIRECT</span>
+
+<span class="c1"># &gt; CCTV</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cctv.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cctvpic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,livechina.com,DIRECT</span>
+
+<span class="c1"># &gt; DiDi</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,didialift.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,didiglobal.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,udache.com,DIRECT</span>
+
+<span class="c1"># &gt; 蛋蛋赞</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,343480.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,baduziyuan.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,com-hs-hkdy.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,czybjz.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dandanzan.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fjhps.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kuyunbo.club,DIRECT</span>
+
+<span class="c1"># &gt; ChinaNet</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,21cn.com,DIRECT</span>
+
+<span class="c1"># &gt; HunanTV</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hitv.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mgtv.com,DIRECT</span>
+
+<span class="c1"># &gt; iQiyi</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iqiyi.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iqiyipic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,71.am.com,DIRECT</span>
+
+<span class="c1"># &gt; JD</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jd.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jd.hk,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jdpay.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,360buyimg.com,DIRECT</span>
+
+<span class="c1"># &gt; Kingsoft</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iciba.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ksosoft.com,DIRECT</span>
+
+<span class="c1"># &gt; Meitu</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meitu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meitudata.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meitustat.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meipai.com,DIRECT</span>
+
+<span class="c1"># &gt; MI</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,duokan.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mi-img.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,miui.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,miwifi.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xiaomi.com,DIRECT</span>
+
+<span class="c1"># &gt; Microsoft</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,microsoft.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,msecnd.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,office365.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,outlook.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,s-microsoft.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,visualstudio.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,windows.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,windowsupdate.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,officecdn-microsoft-com.akamaized.net,DIRECT</span>
+
+<span class="c1"># &gt; NetEase</span>
+
+<span class="c1"># USER-AGENT,NeteaseMusic*,DIRECT</span>
+
+<span class="c1"># USER-AGENT,%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90*,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,163.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,126.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,127.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,163yun.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,lofter.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netease.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ydstatic.com,DIRECT</span>
+
+<span class="c1"># &gt; Sina</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sina.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,weibo.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,weibocdn.com,DIRECT</span>
+
+<span class="c1"># &gt; Sohu</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sohu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sohucs.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sohu-inc.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,v-56.com,DIRECT</span>
+
+<span class="c1"># &gt; Sogo</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sogo.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sogou.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sogoucdn.com,DIRECT</span>
+
+<span class="c1"># &gt; Steam</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steampowered.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steam-chat.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamgames.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamusercontent.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamcontent.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamstatic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamcdn-a.akamaihd.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,steamstat.us,DIRECT</span>
+
+<span class="c1"># &gt; Tencent</span>
+
+<span class="c1"># USER-AGENT,MicroMessenger%20Client,DIRECT</span>
+
+<span class="c1"># USER-AGENT,WeChat*,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gtimg.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,idqqimg.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,igamecj.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myapp.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myqcloud.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qq.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tencent.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tencent-cloud.net,DIRECT</span>
+
+<span class="c1"># &gt; YYeTs</span>
+
+<span class="c1"># USER-AGENT,YYeTs*,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jstucdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zimuzu.io,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zimuzu.tv,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zmz2019.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zmzapi.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zmzapi.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zmzfile.com,DIRECT</span>
+
+<span class="c1"># &gt; Content Delivery Network</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ccgslb.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ccgslb.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chinanetcenter.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meixincdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ourdvs.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,staticdn.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wangsu.com,DIRECT</span>
+
+<span class="c1"># &gt; IP Query</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ipip.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ip.la,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ip-cdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ipv6-test.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,test-ipv6.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,whatismyip.com,DIRECT</span>
+
+<span class="c1"># &gt; Speed Test</span>
+
+<span class="c1"># - DOMAIN-SUFFIX,speedtest.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,netspeedtestmaster.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,speedtest.macpaw.com,DIRECT</span>
+
+<span class="c1"># &gt; Private Tracker</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,awesome-hd.me,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,broadcasthe.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chdbits.co,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,classix-unlimited.co.uk,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,empornium.me,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gazellegames.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hdchina.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hdsky.me,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,icetorrent.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jpopsuki.eu,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,keepfrds.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,madsrevolution.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,m-team.cc,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nanyangpt.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ncore.cc,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,open.cd,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ourbits.club,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,passthepopcorn.me,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,privatehd.to,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,redacted.ch,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,springsunday.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tjupt.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,totheglory.im,DIRECT</span>
+
+<span class="c1"># &gt; Scholar</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,acm.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,acs.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aip.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ams.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,annualreviews.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aps.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ascelibrary.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,asm.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,asme.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,astm.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bmj.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cambridge.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cas.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,clarivate.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ebscohost.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,emerald.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,engineeringvillage.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,icevirtuallibrary.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ieee.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,imf.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,iop.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jamanetwork.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jhu.edu,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jstor.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,karger.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,libguides.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,madsrevolution.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mpg.de,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myilibrary.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nature.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oecd-ilibrary.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,osapublishing.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oup.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ovid.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oxfordartonline.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oxfordbibliographies.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oxfordmusiconline.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,pnas.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,proquest.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,rsc.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sagepub.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sciencedirect.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sciencemag.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,scopus.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,siam.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,spiedigitallibrary.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,springer.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,springerlink.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tandfonline.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,un.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,uni-bielefeld.de,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,webofknowledge.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,westlaw.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,wiley.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,worldbank.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,worldscientific.com,DIRECT</span>
+
+<span class="c1"># &gt; Other</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cn,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,360in.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,51ym.me,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,8686c.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,abchina.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,accuweather.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aicoinstorge.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,air-matters.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,air-matters.io,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aixifan.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,amd.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,b612.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bdatu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,beitaichufang.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bjango.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,booking.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,bstatic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cailianpress.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,camera360.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chinaso.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chua.pro,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chuimg.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chunyu.mobi,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,chushou.tv,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cmbchina.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cmbimg.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ctrip.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dfcfw.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,docschina.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,douban.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,doubanio.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,douyu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dxycdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,dytt8.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,eastmoney.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,eudic.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,feng.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,fengkongcloud.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,frdic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,futu5.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,futunn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gandi.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,geilicdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,getpricetag.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,gifshow.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,godic.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hicloud.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hongxiu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,hostbuf.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,huxiucdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,huya.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,infinitynewtab.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ithome.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,java.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,jidian.im,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kaiyanapp.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kaspersky-labs.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,keepcdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,kkmh.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,licdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,linkedin.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,loli.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,luojilab.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,maoyan.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,maoyun.tv,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meituan.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,meituan.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mobike.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,moke.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mubu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,myzaker.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nim-lang-cn.org,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,nvidia.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,oracle.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,paypal.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,paypalobjects.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qdaily.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qidian.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qyer.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,qyerstatic.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,raychase.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ronghub.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ruguoapp.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,s-reader.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sankuai.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,scomper.me,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,seafile.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sm.ms,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,smzdm.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,snapdrop.net,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,snwx.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,sspai.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,takungpao.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,teamviewer.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,tianyancha.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,udacity.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,uning.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,vmware.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,weather.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,weico.cc,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,weidian.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xiachufang.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,ximalaya.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xinhuanet.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,xmcdn.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,yangkeduo.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhangzishi.cc,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhihu.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhimg.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,zhuihd.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,download.jetbrains.com,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,images-cn.ssl-images-amazon.com,DIRECT</span>
+
+
+
+<span class="c1"># &gt; Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,aaplimg.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apple.co,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apple.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,apple-cloudkit.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,appstore.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,cdn-apple.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,crashlytics.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,icloud.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,icloud-content.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,me.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN-SUFFIX,mzstatic.com,Apple</span>
+
+<span class="pi">-</span> <span class="s">DOMAIN,www-cdn.icloud.com.akadns.net,Apple</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,17.0.0.0/8,Apple,no-resolve</span>
+
+
+
+<span class="c1"># Local Area Network</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,192.168.0.0/16,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,10.0.0.0/8,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,172.16.0.0/12,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,127.0.0.0/8,DIRECT</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,100.64.0.0/10,DIRECT</span>
+
+
+
+<span class="c1"># DNSPod Public DNS+</span>
+
+<span class="pi">-</span> <span class="s">IP-CIDR,119.28.28.28/32,DIRECT,no-resolve</span>
+
+<span class="c1"># GeoIP China</span>
+
+<span class="pi">-</span> <span class="s">GEOIP,CN,DIRECT</span>
+
+
+
+<span class="pi">-</span> <span class="s">MATCH,Final</span>
+</code></pre></div></div>
+
+  </div>
+
+  
+    <div class="post-comments" itemprop="comment">
+      
+
+<div id="disqus_thread"></div>
+<script>
+
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = 'https://danyow.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+<script id="dsq-count-scr" src="//danyow.disqus.com/count.js" async></script>
+
+
+    </div>
+  
+
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <p>
+      
+
+&copy;  - Powered by <a href="https://jekyllrb.com">Jekyll</a> &amp; <a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via <a href="https://blog.danyow.cn/feed.xml">RSS</a>
+
+    </p>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
